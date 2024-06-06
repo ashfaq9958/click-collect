@@ -1,8 +1,11 @@
 import React from 'react'
+import SignIn from './components/SignIn/SignIn'
 
 const App = () => {
   return (
-    <div className='font-cabin'>App</div>
+    <div>
+      <SignIn/>
+    </div>
   )
 }
 

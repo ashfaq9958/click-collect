@@ -19,7 +19,7 @@ export default {
       // => @media (min-width: 1536px) { ... }
     },
     fontFamily: {
-      cabin: ["Cabin"],
+      eczar: ["Eczar"],
     },
     extend: {},
   },
