@@ -2,9 +2,10 @@ import React from "react";
 import companylogo from "../../assets/elogo2.jpg";
 import google from "../../assets/google.png";
 import facebook from "../../assets/facebook.png";
+import login from "../../assets/img_4.jpg";
 const SignIn = () => {
   return (
-    <div className="flex w-full h-screen">
+    <div className="flex w-full  h-screen">
       <div className=" w-1/2 ">
         <div className="flex justify-center">
           <img src={companylogo} alt="Company Logo" className="h-28 mt-2" />
@@ -111,7 +112,9 @@ const SignIn = () => {
           </div>
         </div>
       </div>
- 
+      <div>
+        <img src={login} alt="Login Image" className="w-full h-screen " />
+      </div>
     </div>
   );
 };
