@@ -2,13 +2,14 @@ import React from "react";
 import companylogo from "../../assets/elogo2.jpg";
 import google from "../../assets/google.png";
 import facebook from "../../assets/facebook.png";
-import login from "../../assets/img_5.jpg"
+import login from "../../assets/img_5.jpg";
+import Input from "../Input/Input";
 const SignIn = () => {
   return (
     <div className="flex w-full h-screen">
-      <div className=" w-[49%] ">
+      <div className=" w-1/2 ">
         <div className="flex justify-center">
-          <img src={companylogo} alt="Company Logo" className="h-28 mt-2" />
+          <img src={companylogo} alt="Company Logo" className="h-24 mt-2" />
         </div>
         <div className=" w-1/2 mx-auto mt-2 ">
           <div className="mb-4">
@@ -21,34 +22,10 @@ const SignIn = () => {
           </div>
           <form className="space-y-6">
             <div>
-              <label
-                for="email"
-                className="block text-sm font-medium font-eczar  "
-              >
-                Email address *
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-              />
+              <Input label="Email address" type="email" name="email" />
             </div>
             <div>
-              <label
-                for="password"
-                className="block text-sm font-medium  font-eczar"
-              >
-                Password *
-              </label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                required
-                className="mt-1  w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-              />
+              <Input label="Password" type="passwod" name="password" />
             </div>
             <div className="flex items-center justify-between">
               <div className="flex items-center">
@@ -110,7 +87,11 @@ const SignIn = () => {
         </div>
       </div>
       <div className="w-1/2">
-        <img src={login} alt="login image" className="w-full h-screen object-contain"/>
+        <img
+          src={login}
+          alt="login image"
+          className="w-full h-screen object-contain"
+        />
       </div>
     </div>
   );
