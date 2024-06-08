@@ -2,11 +2,11 @@ import React from "react";
 import companylogo from "../../assets/elogo2.jpg";
 import google from "../../assets/google.png";
 import facebook from "../../assets/facebook.png";
-import login from "../../assets/img_4.jpg";
+import login from "../../assets/img_5.jpg"
 const SignIn = () => {
   return (
-    <div className="flex w-full  h-screen">
-      <div className=" w-1/2 ">
+    <div className="flex w-full h-screen">
+      <div className=" w-[49%] ">
         <div className="flex justify-center">
           <img src={companylogo} alt="Company Logo" className="h-28 mt-2" />
         </div>
@@ -60,16 +60,13 @@ const SignIn = () => {
                 />
                 <label
                   for="remember_me"
-                  className="ml-2 block text-sm  font-eczar mt-1"
+                  className="ml-2  text-sm  font-eczar mt-1"
                 >
                   Remember me
                 </label>
               </div>
               <div className="text-sm">
-                <a
-                  href="#"
-                  className="font-medium text-indigo-600 hover:text-indigo-500 font-eczar"
-                >
+                <a href="#" className="  hover:text-indigo-500 font-eczar">
                   Forgot password?
                 </a>
               </div>
@@ -112,8 +109,8 @@ const SignIn = () => {
           </div>
         </div>
       </div>
-      <div>
-        <img src={login} alt="Login Image" className="w-full h-screen " />
+      <div className="w-1/2">
+        <img src={login} alt="login image" className="w-full h-screen object-contain"/>
       </div>
     </div>
   );
