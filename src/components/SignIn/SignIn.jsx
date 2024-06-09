@@ -1,22 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import companylogo from "../../assets/elogo2.jpg";
 import google from "../../assets/google.png";
 import facebook from "../../assets/facebook.png";
-import login from "../../assets/img_5.jpg";
+import login from "../../assets/img_3.jpg";
 import Input from "../Input/Input";
 const SignIn = () => {
   return (
-    <div className="flex w-full h-screen">
+    <div className="flex w-full h-screen justify-between">
       <div className=" w-1/2 ">
-        <div className="flex justify-center">
-          <img src={companylogo} alt="Company Logo" className="h-24 mt-2" />
+        <div className="flex ">
+          <img src={companylogo} alt="Company Logo" className="h-20 " />
         </div>
-        <div className=" w-1/2 mx-auto mt-2 ">
+        <div className=" w-1/2 mx-auto">
           <div className="mb-4">
             <h1 className="text-[46px] text-[#ff5e38] font-semibold font-eczar inline  mr-44">
               Hello,
             </h1>
-            <p className="text-[46px] font-bold font-eczar -mt-4 ">
+            <p className="text-[46px] font-semibold font-eczar -mt-4 ">
               Welcome Back !!
             </p>
           </div>
@@ -25,7 +25,7 @@ const SignIn = () => {
               <Input label="Email address" type="email" name="email" />
             </div>
             <div>
-              <Input label="Password" type="passwod" name="password" />
+              <Input label="Password" type="password" name="password" />
             </div>
             <div className="flex items-center justify-between">
               <div className="flex items-center">
@@ -43,7 +43,7 @@ const SignIn = () => {
                 </label>
               </div>
               <div className="text-sm">
-                <a href="#" className="  hover:text-indigo-500 font-eczar">
+                <a href="#" className="text-indigo-500 font-eczar">
                   Forgot password?
                 </a>
               </div>
@@ -53,11 +53,17 @@ const SignIn = () => {
                 type="submit"
                 className="w-full font-eczar py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#FF5E38] hover:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               >
-                Sign in
+                Login
               </button>
             </div>
           </form>
-          <div className="flex items-center  my-4">
+          <p className="mt-3 font-eczar text-sm">
+            Don't have an account?
+            <span>
+              <a href="#" className="text-blue-600"> Sign up</a>
+            </span>
+          </p>
+          <div className="flex items-center my-4">
             <div className="flex-grow border-t border-gray-300"></div>
             <span className="mx-4  font-eczar">Or continue with</span>
             <div className="flex-grow border-t border-gray-300"></div>
@@ -86,12 +92,8 @@ const SignIn = () => {
           </div>
         </div>
       </div>
-      <div className="w-1/2">
-        <img
-          src={login}
-          alt="login image"
-          className="w-full h-screen object-contain"
-        />
+      <div className=" w-[50%]">
+        <img src={login} alt="login image" className=" h-screen w-full" />
       </div>
     </div>
   );
