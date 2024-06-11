@@ -92,8 +92,8 @@ const SignIn = () => {
           </div>
         </div>
       </div>
-      <div className=" w-[50%]">
-        <img src={login} alt="login image" className=" h-screen w-full" />
+      <div className="">
+        <img src={login} alt="login image" className=" h-screen w-full object-contain" />
       </div>
     </div>
   );
