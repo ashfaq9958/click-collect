@@ -7,8 +7,15 @@ import Input from "../Input/Input";
 const SignIn = () => {
   return (
     <div className="flex w-full h-screen justify-between">
+      <div className="">
+        <img
+          src={login}
+          alt="login image"
+          className=" h-screen w-full object-contain p-2 rounded-2xl"
+        />
+      </div>
       <div className=" w-1/2 ">
-        <div className="flex ">
+        <div className="flex justify-center ">
           <img src={companylogo} alt="Company Logo" className="h-20 " />
         </div>
         <div className=" w-1/2 mx-auto">
@@ -60,7 +67,10 @@ const SignIn = () => {
           <p className="mt-3 font-eczar text-sm">
             Don't have an account?
             <span>
-              <a href="#" className="text-blue-600"> Sign up</a>
+              <a href="#" className="text-blue-600">
+                {" "}
+                Sign up
+              </a>
             </span>
           </p>
           <div className="flex items-center my-4">
@@ -91,9 +101,6 @@ const SignIn = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div className="">
-        <img src={login} alt="login image" className=" h-screen w-full object-contain" />
       </div>
     </div>
   );
