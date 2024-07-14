@@ -1,14 +1,13 @@
 import React from "react";
 import MainNavigation from "./components/Main_Navigation/MainNavigation";
-import { Outlet } from "react-router-dom";
+import UnAuthorized_Navigation from "./components/Main_Navigation/UnAuthorized_Navigation";
+
 
 const Root = () => {
   return (
     <div>
-      <MainNavigation />
-      <main>
-        <Outlet />
-      </main>
+      {/* <MainNavigation /> */}
+      <UnAuthorized_Navigation/>
     </div>
   );
 };
