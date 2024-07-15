@@ -14,10 +14,10 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { Outlet } from "react-router-dom";
 import ShoppingCartSharpIcon from "@mui/icons-material/ShoppingCartSharp";
-import logo from "../../assets/bg_logo.png";
-import SearchBar from "../SearchBar/SearchBar";
+import logo from "../../../assets/bg_logo.png";
+import SearchBar from "../../SearchBar/SearchBar";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import avatar from "../../assets/avatar_1.jpg"
+import avatar from "../../../assets/avatar_1.jpg";
 
 const pages = ["Discovery", "Products", "About Us", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -45,10 +45,14 @@ function UnAuthorized_Navigation() {
     <>
       <AppBar position="static">
         <Container maxWidth="xl" className="bg-white">
-          <Toolbar disableGutters className="md:flex  md:justify-between">
-            <img src={logo} alt="" className="h-20 hidden md:flex " />
+          <Toolbar
+            disableGutters
+            className="md:flex md:justify-between"
+          >
+            <div className="flex gap-16">
+              <img src={logo} alt="" className="h-20 hidden md:flex " />
 
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+              <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <IconButton
                 size="large"
                 aria-label="account of current user"
@@ -83,24 +87,31 @@ function UnAuthorized_Navigation() {
                   </MenuItem>
                 ))}
               </Menu>
-            </Box>
+             </Box>
 
-            <img src={logo} alt="" className="h-20 hidden xs:flex" />
+              <img src={logo} alt="" className="h-20 hidden xs:flex" />
 
-            <Box className="md:flex gap-2 hidden">
-              {pages.map((page) => (
-                <Button
-                  key={page}
-                  onClick={handleCloseNavMenu}
-                  //   sx={{ my: 2, color: "black", display: "block" }}
-                  className="!text-[14px] !text-black"
-                >
-                  {page}
-                </Button>
-              ))}
-            </Box>
-
-            <Box sx={{ flexGrow: 0, display: "flex", gap: 4, alignItems: 'center' }}>
+              <Box className="md:flex gap-9 hidden">
+                {pages.map((page) => (
+                  <Button
+                    key={page}
+                    onClick={handleCloseNavMenu}
+                    //   sx={{ my: 2, color: "black", display: "block" }}
+                    className="!text-[14px] !text-black"
+                  >
+                    {page}
+                  </Button>
+                ))}
+              </Box>
+            </div>
+            <Box
+              sx={{
+                flexGrow: 0,
+                display: "flex",
+                gap: 4,
+                alignItems: "center",
+              }}
+            >
               <SearchBar />
               <Tooltip title="Your Cart">
                 <ShoppingCartIcon className="text-black cursor-pointer" />
