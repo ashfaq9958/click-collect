@@ -151,9 +151,10 @@ function UnAuthorized_Navigation() {
           </Toolbar>
         </Container>
       </AppBar>
-      <main>
+      {/* <main>
         <Outlet />
-      </main>
+      </main> */}
+      
     </>
   );
 }

@@ -15,13 +15,13 @@ const Featured = () => {
       key: 2,
       img: Feature_2,
       title: "White T-Shirt",
-      desc: "finest Quality Hoodie ",
+      desc: "finest Quality T-Shirt ",
     },
     {
       key: 3,
       img: Feature_3,
-      title: "Stylish Child",
-      desc: "Premium fabric",
+      title: "Kids Clothes",
+      desc: "Blue Demin Jacket",
     },
   ];
   return (
@@ -31,8 +31,8 @@ const Featured = () => {
         The Featured Products
         <hr className="w-[30%] mx-auto " />
       </h1>
-      <div className="grid grid-cols-3 ">
-        <div className="flex mx-auto gap-16 mt-8 items-center p-5 relative overflow-hidden cursor-pointer group w-[85%]">
+      <div className="grid grid-cols-3 gap-10 w-[85%] mx-auto p-8">
+        <div className="  mt-8  p-5 relative overflow-hidden cursor-pointer group  ">
           <img
             src={Feature_1}
             alt=""
@@ -45,7 +45,7 @@ const Featured = () => {
             </div>
           </div>
         </div>
-        <div className="flex mx-auto gap-16 mt-8 items-center p-5 relative overflow-hidden cursor-pointer group w-[85%]">
+        <div className=" gap-16 mt-8 items-center p-5 relative overflow-hidden cursor-pointer group ">
           <img
             src={Feature_2}
             alt=""
@@ -59,11 +59,11 @@ const Featured = () => {
           </div>
         </div>
 
-        <div className="flex mx-auto gap-16 mt-8 items-center p-5 relative overflow-hidden cursor-pointer group h-[430px] w-[370px]">
+        <div className="flex mx-auto gap-16 mt-8 items-center p-5 relative overflow-hidden cursor-pointer group">
           <img
             src={Feature_3}
             alt=""
-            className="w-full h-full object-contain transition-transform duration-500 transform group-hover:scale-110 bg-[#f9f9f9] rounded-md "
+            className=" h-[335px] w-[370px] object-contain transition-transform duration-500 transform group-hover:scale-110 bg-[#f9f9f9] rounded-md "
           />
           <div className="absolute inset-0 flex items-center justify-center mb-2 rounded-md  bg-black bg-opacity-50 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
             <div className="text-white text-center">

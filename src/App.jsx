@@ -20,17 +20,19 @@ const App = () => {
         //   path: "/products",
         //   element: <Products />,
         // },
-        // {
-        //   path: "/signin",
-        //   element: <SignIn />,
-        // },
+        {
+          path: "/signin",
+          element: <SignIn />,
+        },
       ],
+      
     },
   ]);
 
   return (
     <div>
       <RouterProvider router={router} />
+      
     </div>
   );
 };

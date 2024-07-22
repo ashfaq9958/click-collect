@@ -20,10 +20,10 @@ const SignIn = () => {
         </div>
         <div className=" w-1/2 mx-auto">
           <div className="mb-4">
-            <h1 className="text-[46px] text-[#ff5e38] font-semibold font-eczar inline  mr-44">
+            <h1 className="text-[46px] text-[#ff5e38] font-semibold  inline  mr-44">
               Hello,
             </h1>
-            <p className="text-[46px] font-semibold font-eczar -mt-4 ">
+            <p className="text-[46px] font-semibold r -mt-4 ">
               Welcome Back !!
             </p>
           </div>
@@ -44,13 +44,13 @@ const SignIn = () => {
                 />
                 <label
                   for="remember_me"
-                  className="ml-2  text-sm  font-eczar mt-1"
+                  className="ml-2  text-sm   mt-1"
                 >
                   Remember me
                 </label>
               </div>
               <div className="text-sm">
-                <a href="#" className="text-indigo-500 font-eczar">
+                <a href="#" className="text-indigo-500 ">
                   Forgot password?
                 </a>
               </div>
@@ -58,13 +58,13 @@ const SignIn = () => {
             <div>
               <button
                 type="submit"
-                className="w-full font-eczar py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#FF5E38] hover:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                className="w-full  py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#FF5E38] hover:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               >
                 Login
               </button>
             </div>
           </form>
-          <p className="mt-3 font-eczar text-sm">
+          <p className="mt-3  text-sm">
             Don't have an account?
             <span>
               <a href="#" className="text-blue-600">
@@ -75,7 +75,7 @@ const SignIn = () => {
           </p>
           <div className="flex items-center my-4">
             <div className="flex-grow border-t border-gray-300"></div>
-            <span className="mx-4  font-eczar">Or continue with</span>
+            <span className="mx-4  ">Or continue with</span>
             <div className="flex-grow border-t border-gray-300"></div>
           </div>
 
@@ -83,7 +83,7 @@ const SignIn = () => {
             <div className=" w-[45%]">
               <a
                 href="#"
-                className=" w-full inline-flex justify-center gap-3 !font-eczar items-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium  hover:bg-gray-50"
+                className=" w-full inline-flex justify-center gap-3 ! items-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium  hover:bg-gray-50"
               >
                 <img className="h-5 w-5 " src={google} alt="Google" />
                 <span>Google</span>
@@ -93,7 +93,7 @@ const SignIn = () => {
             <div className="w-[45%]">
               <a
                 href="#"
-                className="w-full inline-flex justify-center gap-3 !font-eczar items-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium  hover:bg-gray-50"
+                className="w-full inline-flex justify-center gap-3 ! items-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium  hover:bg-gray-50"
               >
                 <img className="h-6 w-6" src={facebook} alt="Google" />
                 <span>Facebook</span>
