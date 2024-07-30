@@ -5,6 +5,7 @@ import feature_2 from "../../../assets/fea_1.png";
 import Featured from "./The_Featured_Products/Featured";
 import sale from "../../../assets/sale.png";
 import ChildSection from "../Child_Section/ChildSection";
+import Footer from "../Footer/Footer";
 
 const Dashboard = () => {
   return (
@@ -20,6 +21,7 @@ const Dashboard = () => {
       <img src={dashboard_img} alt="" />
       <Featured />
       <ChildSection />
+      <Footer />
     </>
   );
 };
