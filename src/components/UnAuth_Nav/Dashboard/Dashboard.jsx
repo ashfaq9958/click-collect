@@ -13,7 +13,7 @@ const Dashboard = () => {
       <div className="bg-black h-14 flex flex-col justify-center">
         <div className="flex justify-center gap-4 items-center">
           <h1 className="text-center text-white text-base font-semibold">
-            Sale Up To 50% Biggest Discounts. Hurry! Limited Perriod Offer
+            Sale Up To 50% Biggest Discounts. Hurry! Limited Period Offer
           </h1>
           <img src={sale} alt="" className="w-8" />
         </div>
