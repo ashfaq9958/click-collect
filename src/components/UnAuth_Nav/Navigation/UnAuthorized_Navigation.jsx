@@ -11,13 +11,11 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
-import { Outlet } from "react-router-dom";
-import ShoppingCartSharpIcon from "@mui/icons-material/ShoppingCartSharp";
-import logo from "../../../assets/bg_logo.png";
 import SearchBar from "../../SearchBar/SearchBar";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import logo from "../../../assets/bg_logo.png";
 import avatar from "../../../assets/avatar_1.jpg";
+import { Link } from "react-router-dom";
 
 const pages = ["Discovery", "Products", "About Us", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -43,86 +41,48 @@ function UnAuthorized_Navigation() {
 
   return (
     <>
-      <AppBar position="static">
-        <Container maxWidth="xl" className="bg-white">
-          <Toolbar
-            disableGutters
-            className="md:flex md:justify-between"
-          >
-            <div className="flex gap-16">
-              <img src={logo} alt="" className="h-20 hidden md:flex " />
-
-              <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+      <AppBar position="static" className="!bg-white shadow-none">
+        <Container maxWidth="xl">
+          <Toolbar disableGutters className="justify-between gap-10">
+            <Box className="flex items-center gap-2">
+              {/* Show IconButton on mobile views only */}
               <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
+                edge="start"
+                aria-label="menu"
                 onClick={handleOpenNavMenu}
-                color="inherit"
+                sx={{ display: { xs: "flex", md: "none" } }} // Show on xs and sm, hide on md and up
               >
                 <MenuIcon />
               </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "left",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "left",
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
-                sx={{
-                  display: { xs: "block", md: "none" },
-                }}
-              >
-                {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
-                  </MenuItem>
-                ))}
-              </Menu>
-             </Box>
+              <img src={logo} alt="Logo" className="h-16 w-auto" />
+            </Box>
 
-              <img src={logo} alt="" className="h-20 hidden xs:flex" />
-
-              <Box className="md:flex gap-9 hidden">
-                {pages.map((page) => (
-                  <Button
-                    key={page}
-                    onClick={handleCloseNavMenu}
-                    //   sx={{ my: 2, color: "black", display: "block" }}
-                    className="!text-[14px] !text-black"
-                  >
-                    {page}
-                  </Button>
-                ))}
-              </Box>
-            </div>
+            {/* Hide on small screens and show on larger screens */}
             <Box
-              sx={{
-                flexGrow: 0,
-                display: "flex",
-                gap: 4,
-                alignItems: "center",
-              }}
+              sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
+              className="gap-6"
             >
+              {pages.map((page) => (
+                <Button
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  className="!text-black !text-[14px]"
+                >
+                  {page}
+                </Button>
+              ))}
+            </Box>
+
+            <Box className="flex items-center gap-4">
               <SearchBar />
               <Tooltip title="Your Cart">
-                <ShoppingCartIcon className="text-black cursor-pointer" />
+                <IconButton>
+                  <ShoppingCartIcon className="text-black" />
+                </IconButton>
               </Tooltip>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar
-                    alt="Ashfaq Ahmad"
-                    // src="/static/images/avatar/1.jpg"
-                    src={avatar}
-                  />
+                  <Avatar alt="Ashfaq Ahmad" src={avatar} />
                 </IconButton>
               </Tooltip>
               <Menu
@@ -143,19 +103,51 @@ function UnAuthorized_Navigation() {
               >
                 {settings.map((setting) => (
                   <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">{setting}</Typography>
+                    {setting === "Logout" ? (
+                      <Link to="/signin">
+                        <Typography textAlign="center">{setting}</Typography>
+                      </Link>
+                    ) : (
+                      <Typography textAlign="center">{setting}</Typography>
+                    )}
                   </MenuItem>
                 ))}
               </Menu>
             </Box>
+
+            {/* Menu for mobile screens */}
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "left",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: "block", md: "none" }, // Show on mobile screens, hide on md and up
+              }}
+            >
+              {pages.map((page) => (
+                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">{page}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
           </Toolbar>
         </Container>
       </AppBar>
       {/* <main>
         <Outlet />
       </main> */}
-      
     </>
   );
 }
+
 export default UnAuthorized_Navigation;

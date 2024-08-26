@@ -11,7 +11,7 @@ const SignIn = () => {
         <img
           src={login}
           alt="login image"
-          className=" h-screen w-full object-contain p-2 rounded-2xl"
+          className=" h-screen w-full object-contain "
         />
       </div>
       <div className=" w-1/2 ">

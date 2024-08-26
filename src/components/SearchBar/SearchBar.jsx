@@ -1,6 +1,5 @@
 import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
-
 import { styled, alpha } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
 import { Box } from "@mui/material";
@@ -33,13 +32,12 @@ const SearchBar = () => {
   }));
 
   const StyledInputBase = styled(InputBase)(({ theme }) => ({
-    // color: "inherit",
     width: "100%",
     "& .MuiInputBase-input": {
       padding: theme.spacing(1, 1, 1, 0),
-      // vertical padding + font size from searchIcon
       paddingLeft: `calc(1em + ${theme.spacing(4)})`,
       transition: theme.transitions.create("width"),
+      width: "100%", // Full width on mobile
       [theme.breakpoints.up("sm")]: {
         width: "12ch",
         "&:focus": {
@@ -48,7 +46,14 @@ const SearchBar = () => {
       },
     },
     color: "black",
+    "& .MuiInputBase-input:focus": {
+      borderColor: "black !important", // Keep border black on focus
+    },
+    "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+      borderColor: "black !important", // Ensures the outline remains black
+    },
   }));
+
   return (
     <Box>
       <Search>
