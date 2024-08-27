@@ -33,11 +33,13 @@ const Featured = () => {
   ];
 
   return (
-    <div className="mt-16">
-      <h1 className="text-center text-4xl font-semibold">
-        The Featured Products
-        <hr className="w-[30%] mx-auto mt-2" />
-      </h1>
+    <div className="mt-4">
+      <div className="w-[95%] mx-auto p-4 lg:p-8">
+        <h1 className=" text-4xl font-semibold">
+          The Featured Products
+          <hr className="w-full mx-auto mt-2" />
+        </h1>
+      </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-[95%] mx-auto p-4 lg:p-8">
         {features.map((feature, index) => (
           <div
