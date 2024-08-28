@@ -1,15 +1,55 @@
 import React from "react";
 import man from "../../../assets/category/man.png";
+import women from "../../../assets/category/women.png";
+import kid from "../../../assets/category/kid.png";
+import accessories from "../../../assets/category/access.png";
 
 const Categories = () => {
-  return (
-    <div className="mt-4">
-      <div className="w-[95%] mx-auto p-4 lg:p-8">
-        <h1 className="text-4xl font-semibold">The Categories Products</h1>
-        <hr className="w-full mt-2" />
+  const category = [
+    {
+      img: man,
+      title: "Men's Fashion",
+    },
+    {
+      img: women,
+      title: "Women's Fashion",
+    },
+    {
+      img: kid,
+      title: "Kid's Fashion",
+    },
+    {
+      img: accessories,
+      title: "Accessories",
+    },
+  ];
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 p-4 lg:p-8 ">
-          <img src={man} alt="" className="w-1/2"/>
+  return (
+    <div className="mt-8">
+      <div className="w-[90%] mx-auto p-6 lg:p-12 bg-white ">
+        <h1 className="text-3xl lg:text-4xl font-semibold text-center mb-6">
+          Explore Our Categories
+        </h1>
+        <hr className="w-40 h-1 mx-auto bg-black rounded mb-8" />
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {category.map((cat, key) => (
+            <div
+              key={key}
+              className="relative overflow-hidden rounded-lg shadow-lg cursor-pointer group transform transition-transform duration-300 hover:scale-105"
+            >
+              <img
+                src={cat.img}
+                alt={cat.title}
+                className="w-full h-60 object-cover rounded-lg transition-transform duration-500 transform group-hover:scale-110"
+              />
+              <div className="absolute inset-0 flex items-center justify-center rounded-lg bg-black bg-opacity-60 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                <h2 className="text-xl lg:text-2xl font-bold text-white">
+                  {cat.title}
+                </h2>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>

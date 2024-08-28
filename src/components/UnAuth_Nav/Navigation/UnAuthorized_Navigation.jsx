@@ -41,48 +41,50 @@ function UnAuthorized_Navigation() {
 
   return (
     <>
-      <AppBar position="static" className="!bg-white shadow-none">
+      <AppBar position="static" className="!bg-white shadow-md">
         <Container maxWidth="xl">
-          <Toolbar disableGutters className="justify-between gap-10">
-            <Box className="flex items-center gap-2">
-              {/* Show IconButton on mobile views only */}
+          <Toolbar disableGutters className="justify-between gap-6">
+            <Box className="flex items-center gap-3">
+              {/* Logo and Menu Icon */}
               <IconButton
                 edge="start"
                 aria-label="menu"
                 onClick={handleOpenNavMenu}
-                sx={{ display: { xs: "flex", md: "none" } }} // Show on xs and sm, hide on md and up
+                sx={{ display: { xs: "flex", md: "none" } }}
+                className="text-black"
               >
                 <MenuIcon />
               </IconButton>
-              <img src={logo} alt="Logo" className="h-16 w-auto" />
+              <img src={logo} alt="Logo" className="h-14 w-auto" />
             </Box>
 
-            {/* Hide on small screens and show on larger screens */}
+            {/* Desktop Navigation Links */}
             <Box
               sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
-              className="gap-6"
+              className="gap-8"
             >
               {pages.map((page) => (
                 <Button
                   key={page}
                   onClick={handleCloseNavMenu}
-                  className="!text-black !text-[14px]"
+                  className="!text-black !font-medium hover:!text-red-600"
                 >
                   {page}
                 </Button>
               ))}
             </Box>
 
-            <Box className="flex items-center gap-4">
+            {/* Right-side Icons */}
+            <Box className="flex items-center gap-5">
               <SearchBar />
               <Tooltip title="Your Cart">
                 <IconButton>
-                  <ShoppingCartIcon className="text-black" />
+                  <ShoppingCartIcon className="text-black hover:text-red-600" />
                 </IconButton>
               </Tooltip>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Ashfaq Ahmad" src={avatar} />
+                  <Avatar alt="Ashfaq Ahmad" src={avatar} className="border border-gray-300" />
                 </IconButton>
               </Tooltip>
               <Menu
@@ -105,7 +107,9 @@ function UnAuthorized_Navigation() {
                   <MenuItem key={setting} onClick={handleCloseUserMenu}>
                     {setting === "Logout" ? (
                       <Link to="/signin">
-                        <Typography textAlign="center">{setting}</Typography>
+                        <Typography textAlign="center" className="hover:text-red-600">
+                          {setting}
+                        </Typography>
                       </Link>
                     ) : (
                       <Typography textAlign="center">{setting}</Typography>
@@ -115,7 +119,7 @@ function UnAuthorized_Navigation() {
               </Menu>
             </Box>
 
-            {/* Menu for mobile screens */}
+            {/* Mobile Navigation Menu */}
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -131,21 +135,20 @@ function UnAuthorized_Navigation() {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: "block", md: "none" }, // Show on mobile screens, hide on md and up
+                display: { xs: "block", md: "none" },
               }}
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography textAlign="center" className="text-black hover:text-red-600">
+                    {page}
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Toolbar>
         </Container>
       </AppBar>
-      {/* <main>
-        <Outlet />
-      </main> */}
     </>
   );
 }
