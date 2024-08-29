@@ -5,7 +5,7 @@ import kid from "../../../assets/category/kid.png";
 import accessories from "../../../assets/category/access.png";
 
 const Categories = () => {
-  const category = [
+  const categories = [
     {
       img: man,
       title: "Men's Fashion",
@@ -26,26 +26,26 @@ const Categories = () => {
 
   return (
     <div className="mt-8">
-      <div className="w-[90%] mx-auto p-6 lg:p-12 bg-white ">
+      <div className="w-[90%] mx-auto p-6 lg:p-12 bg-white">
         <h1 className="text-3xl lg:text-4xl font-semibold text-center mb-6">
           Explore Our Categories
         </h1>
-        <hr className="w-40 h-1 mx-auto bg-black rounded mb-8" />
+        <hr className="w-48 h-1 mx-auto bg-black rounded mb-8" />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {category.map((cat, key) => (
+          {categories.map((category, index) => (
             <div
-              key={key}
-              className="relative overflow-hidden rounded-lg shadow-lg cursor-pointer group transform transition-transform duration-300 hover:scale-105"
+              key={index}
+              className="relative overflow-hidden rounded-lg shadow-sm border-[1px] cursor-pointer group transform transition-transform duration-300 hover:scale-105"
             >
               <img
-                src={cat.img}
-                alt={cat.title}
+                src={category.img}
+                alt={category.title}
                 className="w-full h-60 object-cover rounded-lg transition-transform duration-500 transform group-hover:scale-110"
               />
               <div className="absolute inset-0 flex items-center justify-center rounded-lg bg-black bg-opacity-60 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                 <h2 className="text-xl lg:text-2xl font-bold text-white">
-                  {cat.title}
+                  {category.title}
                 </h2>
               </div>
             </div>
