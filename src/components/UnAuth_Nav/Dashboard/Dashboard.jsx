@@ -2,7 +2,7 @@ import React from "react";
 import dashboard_img from "../../../assets/landing_img.jpg";
 import dash5 from "../../../assets/landing_5.jpg";
 import dash6 from "../../../assets/category/women.png";
-import Featured from "./The_Featured_Products/Featured";
+import Featured from "../The_Featured_Products/Featured";
 import sale from "../../../assets/sale.png";
 import ChildSection from "../Child_Section/ChildSection";
 import Footer from "../Footer/Footer";
@@ -44,6 +44,28 @@ const Dashboard = () => {
         navButtonsAlwaysVisible={true}
         autoPlay={false}
         animation="fade"
+        navButtonsProps={{
+          style: {
+            backgroundColor: "#333",
+            borderRadius: "50%",
+            color: "#fff",
+            width: "30px",
+            height: "30px",
+            margin: "0 10px",
+            zIndex: 1,
+          },
+        }}
+        navButtonsWrapperProps={{
+          style: {
+            bottom: "10px",
+          },
+        }}
+        indicatorContainerProps={{
+          style: {
+            position: "absolute",
+            bottom: "10px",
+          },
+        }}
         // interval={5000}
       >
         {landingImg.map((item, index) => (

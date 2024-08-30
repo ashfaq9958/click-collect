@@ -17,7 +17,7 @@ import logo from "../../../assets/bg_logo.png";
 import avatar from "../../../assets/avatar_1.jpg";
 import { Link } from "react-router-dom";
 
-const pages = ["Discovery", "Products", "About Us", "Blog"];
+const pages = ["Men", "Women", "Kids", "Blog", "About Us"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function UnAuthorized_Navigation() {
@@ -84,7 +84,11 @@ function UnAuthorized_Navigation() {
               </Tooltip>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Ashfaq Ahmad" src={avatar} className="border border-gray-300" />
+                  <Avatar
+                    alt="Ashfaq Ahmad"
+                    src={avatar}
+                    className="border border-gray-300"
+                  />
                 </IconButton>
               </Tooltip>
               <Menu
@@ -107,7 +111,10 @@ function UnAuthorized_Navigation() {
                   <MenuItem key={setting} onClick={handleCloseUserMenu}>
                     {setting === "Logout" ? (
                       <Link to="/signin">
-                        <Typography textAlign="center" className="hover:text-red-600">
+                        <Typography
+                          textAlign="center"
+                          className="hover:text-red-600"
+                        >
                           {setting}
                         </Typography>
                       </Link>
@@ -140,7 +147,10 @@ function UnAuthorized_Navigation() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center" className="text-black hover:text-red-600">
+                  <Typography
+                    textAlign="center"
+                    className="text-black hover:text-red-600"
+                  >
                     {page}
                   </Typography>
                 </MenuItem>
