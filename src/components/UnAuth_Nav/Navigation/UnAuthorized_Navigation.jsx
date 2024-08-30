@@ -12,10 +12,12 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import SearchBar from "../../SearchBar/SearchBar";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import logo from "../../../assets/bg_logo.png";
 import avatar from "../../../assets/avatar_1.jpg";
 import { Link } from "react-router-dom";
+import { WidthFull } from "@mui/icons-material";
 
 const pages = ["Men", "Women", "Kids", "Blog", "About Us"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -43,43 +45,51 @@ function UnAuthorized_Navigation() {
     <>
       <AppBar position="static" className="!bg-white shadow-md">
         <Container maxWidth="xl">
-          <Toolbar disableGutters className="justify-between gap-6">
-            <Box className="flex items-center gap-3">
-              {/* Logo and Menu Icon */}
-              <IconButton
-                edge="start"
-                aria-label="menu"
-                onClick={handleOpenNavMenu}
-                sx={{ display: { xs: "flex", md: "none" } }}
-                className="text-black"
+          <Toolbar disableGutters className="flex justify-between gap-6">
+            <Box className='flex border-2'>
+              <Box className="flex items-center gap-3">
+                {/* Logo and Menu Icon */}
+                <IconButton
+                  edge="start"
+                  aria-label="menu"
+                  onClick={handleOpenNavMenu}
+                  sx={{ display: { xs: "flex", md: "none" } }}
+                  className="text-black"
+                >
+                  <MenuIcon />
+                </IconButton>
+                <img src={logo} alt="Logo" className="h-14 w-auto" />
+              </Box>
+
+              {/* Desktop Navigation Links */}
+              <Box
+                sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
+                className="gap-8"
               >
-                <MenuIcon />
-              </IconButton>
-              <img src={logo} alt="Logo" className="h-14 w-auto" />
+                {pages.map((page) => (
+                  <Button
+                    key={page}
+                    onClick={handleCloseNavMenu}
+                    className="!text-black !font-medium hover:!text-red-600"
+                  >
+                    {page}
+                  </Button>
+                ))}
+              </Box>
             </Box>
 
-            {/* Desktop Navigation Links */}
-            <Box
-              sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
-              className="gap-8"
-            >
-              {pages.map((page) => (
-                <Button
-                  key={page}
-                  onClick={handleCloseNavMenu}
-                  className="!text-black !font-medium hover:!text-red-600"
-                >
-                  {page}
-                </Button>
-              ))}
-            </Box>
+            <SearchBar sx={{Width:12}}/>
 
             {/* Right-side Icons */}
             <Box className="flex items-center gap-5">
-              <SearchBar />
+              <Tooltip title="Wishlist">
+                <IconButton>
+                  <FavoriteBorderOutlinedIcon className="text-black hover:text-red-600" />
+                </IconButton>
+              </Tooltip>
               <Tooltip title="Your Cart">
                 <IconButton>
-                  <ShoppingCartIcon className="text-black hover:text-red-600" />
+                  <ShoppingBagOutlinedIcon className="text-black hover:text-red-600" />
                 </IconButton>
               </Tooltip>
               <Tooltip title="Open settings">
