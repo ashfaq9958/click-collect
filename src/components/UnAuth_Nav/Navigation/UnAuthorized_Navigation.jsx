@@ -46,7 +46,7 @@ function UnAuthorized_Navigation() {
       <AppBar position="static" className="!bg-white shadow-md">
         <Container maxWidth="xl">
           <Toolbar disableGutters className="flex justify-between gap-6">
-            <Box className='flex border-2'>
+            <Box className='flex '>
               <Box className="flex items-center gap-3">
                 {/* Logo and Menu Icon */}
                 <IconButton
@@ -78,10 +78,11 @@ function UnAuthorized_Navigation() {
               </Box>
             </Box>
 
-            <SearchBar sx={{Width:12}}/>
+           
 
             {/* Right-side Icons */}
             <Box className="flex items-center gap-5">
+            <SearchBar className='w-32'/>
               <Tooltip title="Wishlist">
                 <IconButton>
                   <FavoriteBorderOutlinedIcon className="text-black hover:text-red-600" />

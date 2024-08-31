@@ -9,6 +9,8 @@ import Footer from "../Footer/Footer";
 import Carousel from "react-material-ui-carousel";
 import Categories from "../Categories/Categories";
 import Sofa from "../SofaBanner/Sofa";
+import Upcoming from "../Upcoming_Products/Upcoming";
+
 
 const Dashboard = () => {
   const landingImg = [
@@ -42,7 +44,7 @@ const Dashboard = () => {
       <Carousel
         indicators={false}
         navButtonsAlwaysVisible={true}
-        autoPlay={false}
+        // autoPlay={false}
         animation="fade"
         navButtonsProps={{
           style: {
@@ -97,8 +99,12 @@ const Dashboard = () => {
         <Sofa />
       </div>
 
-      {/* Footer Section */}
       <div className="mt-10">
+        <Upcoming />
+      </div>
+
+      {/* Footer Section */}
+      <div className="">
         <Footer />
       </div>
     </>

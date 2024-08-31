@@ -39,9 +39,9 @@ const SearchBar = () => {
       transition: theme.transitions.create("width"),
       width: "100%", // Full width on mobile
       [theme.breakpoints.up("sm")]: {
-        width: "12ch",
+        width: "19ch",
         "&:focus": {
-          width: "20ch",
+          width: "25ch",
         },
       },
     },
