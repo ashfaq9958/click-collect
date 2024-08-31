@@ -13,10 +13,10 @@ const Card = ({ feature: { img, title, desc, discount } }) => {
   ].includes(title);
 
   return (
-    <div className="relative overflow-hidden rounded-xl shadow-md border border-gray-200 cursor-pointer group transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+    <div className="relative overflow-hidden rounded-lg shadow-lg border border-gray-200 cursor-pointer group transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
       {/* Tag-Like Discount Badge */}
       {discount && (
-        <div className="absolute top-2 left-2 bg-red-600 text-white text-xs lg:text-sm font-medium px-2 py-1.5 rounded-tr-lg rounded-bl-lg shadow-lg z-10 transform">
+        <div className="absolute top-2 left-2 bg-gradient-to-r from-red-500 to-red-700 text-white text-xs lg:text-sm font-medium px-2 py-1.5 rounded-tr-lg rounded-bl-lg shadow-lg z-10 transform">
           <span>{discount}</span>
         </div>
       )}
@@ -25,14 +25,15 @@ const Card = ({ feature: { img, title, desc, discount } }) => {
         alt={title}
         className={`w-full h-64 ${
           isCategory ? "object-cover" : "object-contain"
-        } rounded-t-xl transition-transform duration-500 transform group-hover:scale-110`}
+        } rounded-t-lg transition-transform duration-500 transform group-hover:scale-110`}
       />
       <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-70 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-        <h2 className="text-xl lg:text-2xl font-bold text-white">{title}</h2>
+        <h2 className="text-2xl lg:text-3xl font-semibold text-white">
+          {title}
+        </h2>
         {desc && (
-          <p className="mt-2 text-sm lg:text-lg text-white text-center">
+          <p className="mt-2 text-sm lg:text-lg text-gray-300 text-center">
             {desc}
-
           </p>
         )}
       </div>

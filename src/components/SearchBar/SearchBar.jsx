@@ -12,13 +12,12 @@ const SearchBar = () => {
     "&:hover": {
       backgroundColor: alpha(theme.palette.common.white, 0.25),
     },
-    marginLeft: 0,
     width: "100%",
+    border: "1px solid #ddd", // Subtle border color for a clean look
     [theme.breakpoints.up("sm")]: {
       marginLeft: theme.spacing(1),
       width: "auto",
     },
-    border: "1px solid black",
   }));
 
   const SearchIconWrapper = styled("div")(({ theme }) => ({
@@ -32,25 +31,19 @@ const SearchBar = () => {
   }));
 
   const StyledInputBase = styled(InputBase)(({ theme }) => ({
+    color: "inherit",
     width: "100%",
     "& .MuiInputBase-input": {
       padding: theme.spacing(1, 1, 1, 0),
       paddingLeft: `calc(1em + ${theme.spacing(4)})`,
       transition: theme.transitions.create("width"),
-      width: "100%", // Full width on mobile
+      width: "100%",
       [theme.breakpoints.up("sm")]: {
-        width: "19ch",
+        width: "20ch",
         "&:focus": {
-          width: "25ch",
+          width: "28ch",
         },
       },
-    },
-    color: "black",
-    "& .MuiInputBase-input:focus": {
-      borderColor: "black !important", // Keep border black on focus
-    },
-    "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
-      borderColor: "black !important", // Ensures the outline remains black
     },
   }));
 
@@ -58,7 +51,7 @@ const SearchBar = () => {
     <Box>
       <Search>
         <SearchIconWrapper>
-          <SearchIcon className="text-black" />
+          <SearchIcon className="text-gray-600" />
         </SearchIconWrapper>
         <StyledInputBase
           placeholder="Search…"

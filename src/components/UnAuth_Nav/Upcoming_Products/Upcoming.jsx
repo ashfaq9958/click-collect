@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "../../Card/Card";
 import watch from "../../../assets/upcoming/watch.png";
-import perfume from "../../../assets/upcoming/perfumes.jpg";
+import perfume from "../../../assets/upcoming/perfume.jpg";
 import phone from "../../../assets/upcoming/phone.png";
 
 const upcoming = [
@@ -10,13 +10,14 @@ const upcoming = [
     img: watch,
   },
   {
-    title: "Perfume",
-    img: perfume,
-  },
-  {
     title: "Smart Phones",
     img: phone,
   },
+  {
+    title: "Perfume",
+    img: perfume,
+  },
+ 
 ];
 
 const Upcoming = () => {
@@ -28,7 +29,7 @@ const Upcoming = () => {
         </h1>
         <hr className="w-48 h-1 mx-auto bg-gradient-to-r from-gray-800 to-gray-400 rounded mb-8" />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {upcoming.map((item, index) => (
             <Card key={index} feature={item} />
           ))}
