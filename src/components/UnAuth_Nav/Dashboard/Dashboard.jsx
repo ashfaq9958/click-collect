@@ -10,7 +10,7 @@ import Carousel from "react-material-ui-carousel";
 import Categories from "../Categories/Categories";
 import Sofa from "../SofaBanner/Sofa";
 import Upcoming from "../Upcoming_Products/Upcoming";
-
+import Testimonials from "../Testimonials/Testimonials";
 
 const Dashboard = () => {
   const landingImg = [
@@ -72,11 +72,7 @@ const Dashboard = () => {
       >
         {landingImg.map((item, index) => (
           <div key={index} className="w-full h-full overflow-hidden">
-            <img
-              src={item.img}
-              alt={item.alt}
-              className="w-full h-full "
-            />
+            <img src={item.img} alt={item.alt} className="w-full h-full " />
           </div>
         ))}
       </Carousel>
@@ -101,6 +97,10 @@ const Dashboard = () => {
 
       <div className="mt-10">
         <Upcoming />
+      </div>
+
+      <div className="mt-10">
+        <Testimonials />
       </div>
 
       {/* Footer Section */}
