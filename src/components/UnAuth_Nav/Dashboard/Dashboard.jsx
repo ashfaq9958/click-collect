@@ -78,7 +78,7 @@ const Dashboard = () => {
       </Carousel>
 
       {/* Featured Section */}
-      <div className="mt-10">
+      <div className="">
         <Featured />
       </div>
 

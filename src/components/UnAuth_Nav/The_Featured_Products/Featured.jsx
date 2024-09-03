@@ -39,7 +39,7 @@ const Featured = () => {
   ];
 
   return (
-    <div className="mt-8 bg-gray-50">
+    <div className="bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200">
       <div className="w-[98%] mx-auto p-6 lg:p-12">
         <h1 className="text-3xl lg:text-4xl font-semibold text-center mb-6">
           Featured Products
