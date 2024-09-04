@@ -1,128 +1,180 @@
 import React from "react";
 import man from "../../../assets/Testimonials/man.png";
-import { Card, CardContent, Typography, Box, Button } from "@mui/material";
+import girl1 from "../../../assets/Testimonials/girl_1.png";
+import girl2 from "../../../assets/Testimonials/girld_2.png";
+import {
+  Card,
+  CardContent,
+  Typography,
+  Box,
+  Button,
+  Avatar,
+} from "@mui/material";
 import { Star } from "@mui/icons-material";
 
 const Testimonials = () => {
+  const test = [
+    {
+      author: "John Doe",
+      occup: "CEO, Example Corp.",
+      img: man,
+      rating: 5,
+      desc: '"Working with this team has been an absolute pleasure. Their professionalism, attention to detail, and commitment to delivering high-quality results are unparalleled. Highly recommended!"',
+    },
+    {
+      author: "John Doe",
+      occup: "CEO, Example Corp.",
+      img: girl1,
+      rating: 5,
+      desc: '"Working with this team has been an absolute pleasure. Their professionalism, attention to detail, and commitment to delivering high-quality results are unparalleled. Highly recommended!"',
+    },
+    {
+      author: "John Doe",
+      occup: "CEO, Example Corp.",
+      img: girl2,
+      rating: 5,
+      desc: '"Working with this team has been an absolute pleasure. Their professionalism, attention to detail, and commitment to delivering high-quality results are unparalleled. Highly recommended!"',
+    },
+    {
+      author: "John Doe",
+      occup: "CEO, Example Corp.",
+      img: girl2,
+      rating: 5,
+      desc: '"Working with this team has been an absolute pleasure. Their professionalism, attention to detail, and commitment to delivering high-quality results are unparalleled. Highly recommended!"',
+    },
+  ];
   return (
-    <div className="mt-8 bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200">
-      <div className="w-[98%] mx-auto p-6 lg:p-12">
+    <Box className="mt-8 bg-gray-50">
+      <Box className="w-[98%] mx-auto p-6 lg:p-12">
         <Typography
           variant="h3"
           align="center"
           gutterBottom
-          // sx={{ fontWeight: 'bold', color: '#333', letterSpacing: '0.5px' }}
-          className="text-3xl lg:text-4xl font-semibold text-center mb-6 text-gray-800"
+          className="text-3xl lg:text-4xl font-semibold text-center mb-6"
         >
           What People Say
         </Typography>
 
-        <hr className="w-48 h-1 mx-auto bg-gradient-to-r from-gray-800 to-gray-400 rounded mb-8" />
-
-        {/* <Box
+        <Box
           component="hr"
-          sx={{
-            width: '80px',
-            height: '4px',
-            background: 'linear-gradient(to right, #007FFF, #0059B2)',
-            borderRadius: '2px',
-            margin: '16px auto 32px',
-          }}
-        /> */}
+          className="w-48 h-1 mx-auto bg-gradient-to-r from-gray-800 to-gray-400 rounded mb-8"
+        />
 
         <Box
           sx={{
-            display: 'grid',
+            display: "grid",
             gridTemplateColumns: {
-              xs: '1fr',
-              sm: 'repeat(2, 1fr)',
-              lg: 'repeat(3, 1fr)',
+              xs: "1fr",
+              sm: "repeat(2, 1fr)",
+              lg: "repeat(3, 1fr)",
             },
             gap: 4,
           }}
         >
-          {[1, 2, 3].map((index) => (
+          {test.map((item, index) => (
             <Card
               key={index}
               sx={{
-                display: 'flex',
-                alignItems: 'center',
-                backgroundColor: 'white',
-                borderRadius: '16px',
-                boxShadow: '0 8px 24px rgba(0, 0, 0, 0.15)',
-                overflow: 'hidden',
-                position: 'relative',
-                padding: 3,
-                transition: 'transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out',
-                '&:hover': {
-                  transform: 'translateY(-12px)',
-                  boxShadow: '0 12px 36px rgba(0, 0, 0, 0.2)',
+                display: "flex",
+                alignItems: "center",
+                backgroundColor: "white",
+                borderRadius: "8px",
+                boxShadow: "0 4px 2px rgba(0, 0, 0, 0.2)",
+                overflow: "hidden",
+                position: "relative",
+                padding: 4, // Reduced padding for a more concise height
+                transition:
+                  "transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out",
+                "&:hover": {
+                  transform: "translateY(-10px)",
+                  boxShadow: "0 15px 40px rgba(0, 0, 0, 0.3)",
                 },
               }}
             >
-              <Box
-                component="img"
-                src={man}
+              <Avatar
+                src={item.img}
                 alt="Testimonial"
                 sx={{
-                  height: 130,
-                  width: 130,
-                  borderRadius: '50%',
-                  position: 'absolute',
-                  left: '-45px',
-                  top: '50%',
-                  transform: 'translateY(-50%)',
-                  boxShadow: '0 6px 18px rgba(0, 0, 0, 0.25)',
-                  border: '3px solid #fff',
+                  height: 70, // Reduced avatar size
+                  width: 70, // Reduced avatar size
+                  // borderRadius: "50%",
+                  position: "absolute",
+                  left: "50%",
+                  top: "20px",
+                  transform: "translateX(-50%)",
+                  boxShadow: "0 6px 18px rgba(0, 0, 0, 0.11)",
+                  border: "4px solid white",
                 }}
               />
 
-              <CardContent sx={{ ml: '100px', textAlign: 'center' }}>
+              <CardContent className="flex flex-col justify-center mt-10">
                 <Typography
                   variant="h6"
-                  sx={{ fontWeight: 'bold', color: '#333', mb: 1 }}
+                  sx={{
+                    fontWeight: "bold",
+                    color: "#333",
+                    mb: 1,
+                    mt: 1,
+                    textAlign: "center",
+                    fontSize: "1rem", // Reduced font size
+                  }}
                 >
-                  John Doe
-                </Typography>
-                <Typography variant="body2" sx={{ color: '#777', mb: 2 }}>
-                  CEO, Example Corp.
+                  {item.author}
                 </Typography>
                 <Typography
                   variant="body2"
-                  sx={{ color: '#555', mb: 3, lineHeight: 1.6 }}
+                  sx={{ color: "#777", mb: 0.5, textAlign: "center" }}
                 >
-                  "Working with this team has been an absolute pleasure. Their
-                  professionalism, attention to detail, and commitment to
-                  delivering high-quality results are unparalleled. Highly
-                  recommended!"
+                  {item.occup}
                 </Typography>
-                <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1, color: '#FFD700' }}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    gap: 0.5,
+                    color: "#FFD700",
+                    mb: 2,
+                  }}
+                >
                   {[...Array(5)].map((_, index) => (
                     <Star key={index} fontSize="small" />
                   ))}
                 </Box>
-                <Button
-                  variant="contained"
+                <Typography
+                  variant="body2"
                   sx={{
-                    mt: 2,
-                    backgroundColor: '#007FFF',
-                    color: '#fff',
-                    textTransform: 'none',
-                    borderRadius: '8px',
-                    fontWeight: 'bold',
-                    '&:hover': {
-                      backgroundColor: '#0059B2',
-                    },
+                    color: "#555",
+                    mb: 2, // Reduced margin bottom
+                    lineHeight: 1.4, // Reduced line height for more concise text
+                    textAlign: "center",
+                    fontStyle: "italic",
                   }}
                 >
-                  Read my story
-                </Button>
+                  {item.desc}
+                </Typography>
+                <Box className="flex justify-center">
+                  <Button
+                    variant="contained"
+                    sx={{
+                      backgroundColor: "#007FFF",
+                      color: "#fff",
+                      textTransform: "none",
+                      borderRadius: "8px",
+                      fontWeight: "bold",
+                      "&:hover": {
+                        backgroundColor: "#0059B2",
+                      },
+                    }}
+                  >
+                    Read my story
+                  </Button>
+                </Box>
               </CardContent>
             </Card>
           ))}
         </Box>
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
 
