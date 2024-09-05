@@ -7,7 +7,7 @@ import Input from "../Input/Input";
 
 const SignIn = () => {
   return (
-    <div className="flex justify-between reverse md:flex-row w-full h-screen bg-gradient-to-r from-gray-100 to-gray-200">
+    <div className="flex justify-between reverse md:flex-row w-full sm:min-h-screen h-screen bg-gradient-to-r from-gray-100 to-gray-200">
       <div className="hidden md:block w-1/2">
         <img src={login} alt="login" className="h-screen w-full object-cover" />
       </div>
