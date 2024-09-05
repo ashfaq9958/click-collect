@@ -1,7 +1,6 @@
 import React from "react";
 import dashboard_img from "../../../assets/landing_img.jpg";
 import dash5 from "../../../assets/landing_5.jpg";
-import dash6 from "../../../assets/category/women.png";
 import dash7 from "../../../assets/landing_7.jpg";
 import Featured from "../The_Featured_Products/Featured";
 import sale from "../../../assets/sale.png";
@@ -23,10 +22,6 @@ const Dashboard = () => {
       img: dash5,
       alt: "Landing Image 2",
     },
-    // {
-    //   img: dash6,
-    //   alt: "Landing Image 3",
-    // },
     {
       img: dash7,
       alt: "Landing Image 4",
@@ -35,15 +30,16 @@ const Dashboard = () => {
 
   return (
     <>
-      {/* Sale Banner */}
-      <div className="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 h-14 flex items-center justify-center">
-        <div className="flex items-center justify-center gap-4">
-          <h1 className="text-center text-black text-sm lg:text-base sm:text-sm sm:px-1 font-semibold">
-            Sale Up To 50% Biggest Discounts. Hurry! Limited Period Offer
-          </h1>
-          <img src={sale} alt="Sale Icon" className="w-8 animate-pulse" />
-        </div>
-      </div>
+     {/* Sale Banner */}
+<div className="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 h-14 flex items-center justify-center px-2 lg:px-0">
+  <div className="flex items-center justify-center gap-4">
+    <h1 className="text-center text-black text-xs sm:text-sm lg:text-base font-semibold whitespace-nowrap">
+      Sale Up To 50% Biggest Discounts. Hurry! Limited Period Offer
+    </h1>
+    <img src={sale} alt="Sale Icon" className="w-8 animate-pulse" />
+  </div>
+</div>
+
 
       {/* Carousel Section */}
       <Carousel
