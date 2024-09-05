@@ -38,7 +38,7 @@ const Dashboard = () => {
       {/* Sale Banner */}
       <div className="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 h-14 flex items-center justify-center">
         <div className="flex items-center justify-center gap-4">
-          <h1 className="text-center text-black text-sm lg:text-base font-semibold">
+          <h1 className="text-center text-black text-sm lg:text-base sm:text-sm sm:px-1 font-semibold">
             Sale Up To 50% Biggest Discounts. Hurry! Limited Period Offer
           </h1>
           <img src={sale} alt="Sale Icon" className="w-8 animate-pulse" />
