@@ -22,14 +22,14 @@ const Testimonials = () => {
       desc: '"Working with this team has been an absolute pleasure. Their professionalism, attention to detail, and commitment to delivering high-quality results are unparalleled. Highly recommended!"',
     },
     {
-      author: "John Doe",
-      occup: "CEO, Example Corp.",
+      author: "Amelia Scarlett",
+      occup: "Designer, Example Corp.",
       img: girl1,
       rating: 5,
       desc: '"Working with this team has been an absolute pleasure. Their professionalism, attention to detail, and commitment to delivering high-quality results are unparalleled. Highly recommended!"',
     },
     {
-      author: "John Doe",
+      author: "Emma Charlotte",
       occup: "CEO, Example Corp.",
       img: girl2,
       rating: 5,
