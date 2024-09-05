@@ -23,10 +23,10 @@ const Dashboard = () => {
       img: dash5,
       alt: "Landing Image 2",
     },
-    {
-      img: dash6,
-      alt: "Landing Image 3",
-    },
+    // {
+    //   img: dash6,
+    //   alt: "Landing Image 3",
+    // },
     {
       img: dash7,
       alt: "Landing Image 4",
