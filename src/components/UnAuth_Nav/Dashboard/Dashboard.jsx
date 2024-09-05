@@ -2,6 +2,7 @@ import React from "react";
 import dashboard_img from "../../../assets/landing_img.jpg";
 import dash5 from "../../../assets/landing_5.jpg";
 import dash6 from "../../../assets/category/women.png";
+import dash7 from "../../../assets/landing_7.jpg";
 import Featured from "../The_Featured_Products/Featured";
 import sale from "../../../assets/sale.png";
 import ChildSection from "../Child_Section/ChildSection";
@@ -25,6 +26,10 @@ const Dashboard = () => {
     {
       img: dash6,
       alt: "Landing Image 3",
+    },
+    {
+      img: dash7,
+      alt: "Landing Image 4",
     },
   ];
 

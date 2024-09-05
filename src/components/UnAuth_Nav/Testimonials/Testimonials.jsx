@@ -35,13 +35,13 @@ const Testimonials = () => {
       rating: 5,
       desc: '"Working with this team has been an absolute pleasure. Their professionalism, attention to detail, and commitment to delivering high-quality results are unparalleled. Highly recommended!"',
     },
-    {
-      author: "John Doe",
-      occup: "CEO, Example Corp.",
-      img: girl2,
-      rating: 5,
-      desc: '"Working with this team has been an absolute pleasure. Their professionalism, attention to detail, and commitment to delivering high-quality results are unparalleled. Highly recommended!"',
-    },
+    // {
+    //   author: "John Doe",
+    //   occup: "CEO, Example Corp.",
+    //   img: girl2,
+    //   rating: 5,
+    //   desc: '"Working with this team has been an absolute pleasure. Their professionalism, attention to detail, and commitment to delivering high-quality results are unparalleled. Highly recommended!"',
+    // },
   ];
   return (
     <Box className="mt-8 bg-gray-50">
@@ -82,7 +82,7 @@ const Testimonials = () => {
                 boxShadow: "0 4px 2px rgba(0, 0, 0, 0.2)",
                 overflow: "hidden",
                 position: "relative",
-                padding: 4, // Reduced padding for a more concise height
+                padding: "40px 20px", // Reduced padding for a more concise height
                 transition:
                   "transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out",
                 "&:hover": {
@@ -95,8 +95,8 @@ const Testimonials = () => {
                 src={item.img}
                 alt="Testimonial"
                 sx={{
-                  height: 70, // Reduced avatar size
-                  width: 70, // Reduced avatar size
+                  height: 75, // Reduced avatar size
+                  width: 75, // Reduced avatar size
                   // borderRadius: "50%",
                   position: "absolute",
                   left: "50%",

@@ -8,7 +8,9 @@ const Card = ({ feature: { img, title, desc, discount } }) => {
     "Women's Fashion",
     "Accessories",
     "Shoes",
-    "Smart watch",
+    // "Smart watch",
+    "Smart Phones",
+    "Wrist Watches",
     "Perfume"
   ].includes(title);
 

@@ -45,6 +45,10 @@ const SearchBar = () => {
         },
       },
     },
+    "& .MuiInputBase-input::placeholder": {
+      color: "#757575", // Set your desired placeholder color here
+      opacity: 1, // Ensure the opacity is fully visible
+    },
   }));
 
   return (
@@ -55,6 +59,7 @@ const SearchBar = () => {
         </SearchIconWrapper>
         <StyledInputBase
           placeholder="Search…"
+          
           inputProps={{ "aria-label": "search" }}
         />
       </Search>

@@ -2,17 +2,22 @@ import React from "react";
 import Card from "../../Card/Card";
 import watch from "../../../assets/upcoming/watch.png";
 import perfume from "../../../assets/upcoming/perfume.jpg";
-import phone from "../../../assets/upcoming/phone.png";
+import phone from "../../../assets/upcoming/phone2.jpg";
+import wrist from "../../../assets/upcoming/wrist_2.jpg"
 
 const upcoming = [
-  {
-    title: "Smart Watches",
-    img: watch,
-  },
   {
     title: "Smart Phones",
     img: phone,
   },
+  {
+    title: "Wrist Watches",
+    img: wrist,
+  },
+  // {
+  //   title: "Smart Watches",
+  //   img: watch,
+  // },
   {
     title: "Perfume",
     img: perfume,
