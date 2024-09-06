@@ -55,7 +55,7 @@ function UnAuthorized_Navigation() {
             >
               <MenuIcon />
             </IconButton>
-            <img src={logo} alt="Logo" className="md:h-14 h-12 -ml-3 md:ml-0" />
+            <img src={logo} alt="Logo" className="md:h-14 h-12 -ml-4 md:ml-0" />
 
             {/* Desktop Navigation Links */}
             <Box sx={{ display: { xs: "none", md: "flex" } }} className="gap-8">
@@ -80,7 +80,7 @@ function UnAuthorized_Navigation() {
               justifyContent: { xs: "flex-end", md: "flex-end" },
             }}
           >
-            <div className="md:ml-0 ml-10">
+            <div className="md:ml-0 ml-3">
               <SearchBar
                 sx={{
                   display: { xs: "none", md: "block" },
