@@ -18,7 +18,7 @@ import logo from "../../../assets/bg_logo.png";
 import avatar from "../../../assets/avatar_1.jpg";
 import { Link } from "react-router-dom";
 
-const pages = ["Men", "Women", "Kids", "Blog", "About Us"];
+const pages = ["Men", "Women", "Kids", "Blog", "About"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function UnAuthorized_Navigation() {
@@ -41,11 +41,11 @@ function UnAuthorized_Navigation() {
   };
 
   return (
-    <AppBar position="static" className="!bg-white shadow-md">
+    <AppBar position="sticky" className="!bg-white shadow-md top-0 z-50">
       <Container maxWidth="xl">
         <Toolbar disableGutters className="flex justify-between gap-4">
           {/* Logo and Menu Icon */}
-          <Box className="flex items-center gap-6">
+          <Box className="flex items-center gap-4">
             <IconButton
               edge="start"
               aria-label="menu"
@@ -55,8 +55,9 @@ function UnAuthorized_Navigation() {
             >
               <MenuIcon />
             </IconButton>
-            <img src={logo} alt="Logo" className="h-12 w-auto" />
+            <img src={logo} alt="Logo" className="md:h-14 h-12 -ml-3 md:ml-0" />
 
+            {/* Desktop Navigation Links */}
             <Box sx={{ display: { xs: "none", md: "flex" } }} className="gap-8">
               {pages.map((page) => (
                 <Button
@@ -70,11 +71,23 @@ function UnAuthorized_Navigation() {
             </Box>
           </Box>
 
-          {/* Desktop Navigation Links */}
-
-          {/* Right-side Icons */}
-          <Box className="flex items-center gap-3">
-            <SearchBar />
+          {/* Right-side Icons and Search Bar */}
+          <Box
+            className="flex items-center gap-3"
+            sx={{
+              flexDirection: { xs: "row", md: "row" },
+              width: "100%",
+              justifyContent: { xs: "flex-end", md: "flex-end" },
+            }}
+          >
+            <div className="md:ml-0 ml-10">
+              <SearchBar
+                sx={{
+                  display: { xs: "none", md: "block" },
+                }}
+                className=""
+              />
+            </div>
             <Tooltip title="Wishlist">
               <IconButton>
                 <FavoriteBorderOutlinedIcon className="text-black hover:text-red-600" />

@@ -25,7 +25,11 @@ export default {
     fontFamily: {
       eczar: ["Eczar"],
     },
-    extend: {},
+    extend: {
+      screens: {
+        xs: "300",
+      },
+    },
   },
   plugins: [require("flowbite/plugin")],
 };
