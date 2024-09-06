@@ -11,7 +11,7 @@ const SignIn = () => {
       <div className="hidden md:block w-1/2">
         <img src={login} alt="login" className="h-screen w-full object-cover" />
       </div>
-      <div className="w-full md:w-[30%] mx-auto flex flex-col md:justify-center sm:justify-around p-6 md:p-12">
+      <div className="w-full md:w-[30%] mx-auto flex flex-col md:justify-center sm:justify-center p-6 md:p-12">
         <div className="flex justify-center mb-6">
           <img
             src={companylogo}
