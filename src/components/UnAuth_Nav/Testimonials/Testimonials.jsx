@@ -46,19 +46,10 @@ const Testimonials = () => {
   return (
     <Box className="mt-8 bg-gray-50">
       <Box className="w-[98%] mx-auto p-6 lg:p-12">
-        <Typography
-          variant="h3"
-          align="center"
-          gutterBottom
-          className="text-3xl lg:text-4xl font-semibold text-center mb-6"
-        >
-          What People Say
-        </Typography>
-
-        <Box
-          component="hr"
-          className="w-48 h-1 mx-auto bg-gradient-to-r from-gray-800 to-gray-400 rounded mb-8"
-        />
+        <h1 className="text-3xl lg:text-4xl font-semibold text-center mb-6 text-gray-800">
+        Customer Testimonials
+        </h1>
+        <hr className="w-44 h-1 mx-auto bg-gradient-to-r from-gray-800 to-gray-400 rounded mb-8" />
 
         <Box
           sx={{

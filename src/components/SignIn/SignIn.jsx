@@ -4,8 +4,15 @@ import google from "../../assets/google.png";
 import facebook from "../../assets/facebook.png";
 import login from "../../assets/img_3.jpg";
 import Input from "../Input/Input";
+import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const SignIn = () => {
+  const navigate = useNavigate();
+  const handleNavigation = () => {
+    navigate("/");
+    toast.success("Login successful. Welcome back!", { duration: 3000 });
+  };
   return (
     <div className="flex justify-between reverse md:flex-row w-full sm:h-screen h-screen bg-gradient-to-r from-gray-100 to-gray-200">
       <div className="hidden md:block">
@@ -60,6 +67,7 @@ const SignIn = () => {
           </div>
           <div>
             <button
+              onClick={handleNavigation}
               type="submit"
               className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gradient-to-r from-[#FF5E38] to-[#ff7e60] hover:bg-black transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FF5E38]"
             >
