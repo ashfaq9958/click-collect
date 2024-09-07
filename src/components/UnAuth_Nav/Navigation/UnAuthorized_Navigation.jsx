@@ -16,12 +16,13 @@ import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import logo from "../../../assets/bg_logo.png";
 import avatar from "../../../assets/avatar_1.jpg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const pages = ["Men", "Women", "Kids", "Blog", "About"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function UnAuthorized_Navigation() {
+  const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -55,8 +56,12 @@ function UnAuthorized_Navigation() {
             >
               <MenuIcon />
             </IconButton>
-            <img src={logo} alt="Logo" className="md:h-14 h-12 -ml-4 md:ml-0" />
-
+            <img
+              src={logo}
+              alt="Logo"
+              className="md:h-14 h-12 -ml-4 md:ml-0 cursor-pointer"
+              onClick={() => navigate("/")}
+            />
             {/* Desktop Navigation Links */}
             <Box sx={{ display: { xs: "none", md: "flex" } }} className="gap-8">
               {pages.map((page) => (
@@ -126,7 +131,7 @@ function UnAuthorized_Navigation() {
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
                   {setting === "Logout" ? (
-                    <Link to="/signin">
+                    <Link to="signin">
                       <Typography
                         textAlign="center"
                         className="hover:text-red-600"

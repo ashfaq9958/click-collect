@@ -2,8 +2,8 @@ import React from "react";
 import SignIn from "./components/SignIn/SignIn";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Root from "./Root";
-
 import Dashboard from "./components/UnAuth_Nav/Dashboard/Dashboard";
+import ProductDetails from "./components/UnAuth_Nav/ProductDetails/ProductDetails";
 // import Products from "./components/Products/Products";
 
 const App = () => {
@@ -21,18 +21,20 @@ const App = () => {
         //   element: <Products />,
         // },
         {
-          path: "/signin",
+          path: "signin",
           element: <SignIn />,
         },
+        {
+          path: "product-details",
+          element: <ProductDetails />,
+        },
       ],
-      
     },
   ]);
 
   return (
     <div>
       <RouterProvider router={router} />
-      
     </div>
   );
 };

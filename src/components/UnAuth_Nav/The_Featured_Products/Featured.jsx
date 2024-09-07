@@ -4,6 +4,7 @@ import Feature_2 from "../../../assets/fea_1.png";
 import Feature_3 from "../../../assets/winter.png";
 import Feature_4 from "../../../assets/denim2.png";
 import Card from "../../Card/Card";
+import { Link } from "react-router-dom";
 
 const Featured = () => {
   const features = [
@@ -34,12 +35,11 @@ const Featured = () => {
       title: "Denim Jacket",
       desc: "Trending Denim",
       discount: "40% OFF",
-
     },
   ];
 
   return (
-    <div  className=" bg-gray-50">
+    <div className=" bg-gray-50">
       <div className="w-[98%] mx-auto p-6 lg:p-12">
         <h1 className="text-3xl lg:text-4xl font-semibold text-center mb-6">
           Featured Products
@@ -48,7 +48,9 @@ const Featured = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((item) => (
-            <Card key={item.key} feature={item} />
+            <Link to="product-details">
+              <Card key={item.key} feature={item} />
+            </Link>
           ))}
         </div>
       </div>

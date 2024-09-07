@@ -49,7 +49,7 @@ const Testimonials = () => {
         <h1 className="text-3xl lg:text-4xl font-semibold text-center mb-6 text-gray-800">
         Customer Testimonials
         </h1>
-        <hr className="w-44 h-1 mx-auto bg-gradient-to-r from-gray-800 to-gray-400 rounded mb-8" />
+        <hr className="w-48 h-1 mx-auto bg-gradient-to-r from-gray-800 to-gray-400 rounded mb-8" />
 
         <Box
           sx={{

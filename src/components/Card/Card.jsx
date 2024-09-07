@@ -11,11 +11,11 @@ const Card = ({ feature: { img, title, desc, discount } }) => {
     // "Smart watch",
     "Smart Phones",
     "Wrist Watches",
-    "Perfume"
+    "Perfume",
   ].includes(title);
 
   return (
-    <div className="relative overflow-hidden rounded-lg shadow-lg border border-gray-200 cursor-pointer group transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+    <div className="relative overflow-hidden rounded-lg shadow-lg border border-gray-200 cursor-pointer group transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl ">
       {/* Tag-Like Discount Badge */}
       {discount && (
         <div className="absolute top-2 left-2 bg-gradient-to-r from-red-500 to-red-700 text-white text-xs lg:text-sm font-medium px-2 py-1.5 rounded-tr-lg rounded-bl-lg shadow-lg z-10 transform">
