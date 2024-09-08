@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -11,20 +11,22 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import SearchBar from "../../SearchBar/SearchBar";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import logo from "../../../assets/bg_logo.png";
 import avatar from "../../../assets/avatar_1.jpg";
 import { Link, useNavigate } from "react-router-dom";
+import SearchIcon from "@mui/icons-material/Search";
+import SearchModal from "../../Modal/SearchModal";
 
 const pages = ["Men", "Women", "Kids", "Blog", "About"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function UnAuthorized_Navigation() {
   const navigate = useNavigate();
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [anchorElNav, setAnchorElNav] = useState(null);
+  const [anchorElUser, setAnchorElUser] = useState(null);
+  const [open, setOpen] = useState(false);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -85,14 +87,14 @@ function UnAuthorized_Navigation() {
               justifyContent: { xs: "flex-end", md: "flex-end" },
             }}
           >
-            <div className="md:ml-0 ml-3">
-              <SearchBar
-                sx={{
-                  display: { xs: "none", md: "block" },
-                }}
-                className=""
-              />
-            </div>
+            {/* Search Modal && Icon */}
+            <SearchModal open={open} handleClose={() => setOpen(false)} />
+            <Tooltip title="Search">
+              <IconButton onClick={() => setOpen(true)}>
+                <SearchIcon className="text-black" />
+              </IconButton>
+            </Tooltip>
+
             <Tooltip title="Wishlist">
               <IconButton>
                 <FavoriteBorderOutlinedIcon className="text-black hover:text-red-600" />
