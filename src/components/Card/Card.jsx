@@ -14,7 +14,7 @@ const Card = ({ feature: { img, title, desc, discount, icon } }) => {
   ].includes(title);
 
   return (
-    <div className="relative overflow-hidden rounded-xl shadow-md border border-gray-200 cursor-pointer group transform transition-all duration-300 hover:scale-105 hover:shadow-lg bg-white">
+    <div className="relative overflow-hidden rounded-md shadow-md border border-gray-200 cursor-pointer group transform transition-all duration-300 hover:scale-105 hover:shadow-lg bg-white">
       {/* Tag-Like Discount Badge */}
       {discount && (
         <div className="absolute top-2 left-2 bg-gradient-to-r from-red-500 to-red-600 text-white text-xs lg:text-sm font-medium px-2 py-1.5 rounded-tr-lg rounded-bl-lg shadow-md z-10">
