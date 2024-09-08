@@ -14,23 +14,23 @@ const SignIn = () => {
     toast.success("Login successful. Welcome back!", { duration: 3000 });
   };
   return (
-    <div className="flex justify-between reverse md:flex-row w-full sm:h-screen h-screen bg-gradient-to-r from-gray-100 to-gray-200">
-      <div className="hidden md:block">
+    <div className="flex justify-between md:flex-row w-full h-screen bg-gradient-to-r from-gray-100 to-gray-200">
+      <div className="hidden lg:block w-1/2">
         <img src={login} alt="login" className="h-screen w-full object-cover" />
       </div>
-      <div className="w-full md:w-[30%] mx-auto flex flex-col p-6 md:p-12 ">
+      <div className="w-full md:w-[50%] lg:w-[35%] mx-auto flex flex-col p-6 md:p-10 lg:p-12">
         <div className="flex justify-center mb-6">
           <img
             src={companylogo}
             alt="Company Logo"
-            className="h-16 md:h-20 rounded-full shadow-md"
+            className="h-16 md:h-20 rounded-full shadow-lg"
           />
         </div>
         <div className="text-center mb-6">
-          <h1 className="text-[32px] md:text-[40px] text-[#ff5e38] font-bold">
+          <h1 className="text-3xl md:text-4xl text-[#ff5e38] font-bold">
             Welcome Back!
           </h1>
-          <p className="text-[20px] md:text-[24px] text-gray-500">
+          <p className="text-lg md:text-xl text-gray-500">
             Sign in to continue
           </p>
         </div>
@@ -69,7 +69,7 @@ const SignIn = () => {
             <button
               onClick={handleNavigation}
               type="submit"
-              className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gradient-to-r from-[#FF5E38] to-[#ff7e60] hover:bg-black transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FF5E38]"
+              className="w-full py-2 px-4 border border-transparent rounded-md shadow-md text-sm font-medium text-white bg-gradient-to-r from-[#FF5E38] to-[#ff7e60] hover:bg-black transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FF5E38]"
             >
               Login
             </button>

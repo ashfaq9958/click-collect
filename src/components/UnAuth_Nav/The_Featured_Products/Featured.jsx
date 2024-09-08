@@ -4,6 +4,7 @@ import Feature_2 from "../../../assets/fea_1.png";
 import Feature_3 from "../../../assets/winter.png";
 import Feature_4 from "../../../assets/denim2.png";
 import Card from "../../Card/Card";
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import { Link } from "react-router-dom";
 
 const Featured = () => {
@@ -14,6 +15,7 @@ const Featured = () => {
       title: "Puma Hoodie",
       desc: "Finest Quality Hoodie",
       discount: "20% OFF",
+      icon: <FavoriteBorderOutlinedIcon />,
     },
     {
       key: 2,
@@ -21,6 +23,7 @@ const Featured = () => {
       title: "Nike T-Shirt",
       desc: "Finest Quality T-Shirt",
       discount: "20% OFF",
+      icon: <FavoriteBorderOutlinedIcon />,
     },
     {
       key: 3,
@@ -28,6 +31,7 @@ const Featured = () => {
       title: "Winter Clothes",
       desc: "Blue Denim Jacket",
       discount: "15% OFF",
+      icon: <FavoriteBorderOutlinedIcon />,
     },
     {
       key: 4,
@@ -35,6 +39,7 @@ const Featured = () => {
       title: "Denim Jacket",
       desc: "Trending Denim",
       discount: "40% OFF",
+      icon: <FavoriteBorderOutlinedIcon />,
     },
   ];
 
