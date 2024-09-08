@@ -21,16 +21,18 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col md:flex-row gap-4 items-center">
-        <TextField
+          <TextField
             label="Email address"
             variant="outlined"
             size="small"
             className="w-full md:w-80 bg-white"
+            sx={{ borderRadius: "4px", bgcolor: "#fff" }}
           />
           <Button
             variant="contained"
             color="error"
             className="mt-2 md:mt-0 md:ml-2 bg-red-600 hover:bg-red-700 text-white rounded-full px-6 py-2"
+            sx={{ fontWeight: "bold", textTransform: "none" }}
           >
             Subscribe
           </Button>
