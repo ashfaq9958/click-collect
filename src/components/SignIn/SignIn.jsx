@@ -14,7 +14,7 @@ const SignIn = () => {
     toast.success("Login successful. Welcome back!", { duration: 3000 });
   };
   return (
-    <div className="flex md:justify-between justify-center flex-col md:flex-row w-full h-screen bg-gradient-to-r from-gray-100 to-gray-200">
+    <div className="flex md:justify-between  md:flex-row w-full h-screen bg-gradient-to-r from-gray-100 to-gray-200">
       <div className="hidden lg:block w-1/2">
         <img src={login} alt="login" className="h-screen w-full object-cover" />
       </div>

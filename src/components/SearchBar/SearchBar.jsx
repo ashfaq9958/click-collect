@@ -39,7 +39,7 @@ const SearchBar = () => {
       transition: theme.transitions.create("width"),
       width: "100%",
       [theme.breakpoints.up("sm")]: {
-        width: "20ch",
+        width: "28ch",
         "&:focus": {
           width: "28ch",
         },

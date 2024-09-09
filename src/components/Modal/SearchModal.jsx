@@ -5,6 +5,7 @@ import Modal from "@mui/material/Modal";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import SearchBar from "../SearchBar/SearchBar";
+import { Button } from "@mui/material";
 
 const SearchModal = ({ open, handleClose }) => {
   const style = {
@@ -12,15 +13,11 @@ const SearchModal = ({ open, handleClose }) => {
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: { xs: "90%", sm: 500 }, 
-    bgcolor: "#fff",
-    border: "none",
-    boxShadow: 3, 
+    width: { xs: "90%", sm: 500 },
+    bgcolor: "#ffffff",
+    boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.12)",
     p: 4,
-    borderRadius: 2, 
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
+    borderRadius: "12px",
   };
 
   return (
@@ -29,11 +26,11 @@ const SearchModal = ({ open, handleClose }) => {
       onClose={handleClose}
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
-      sx={{ backdropFilter: 'blur(4px)' }}
+      sx={{ backdropFilter: "blur(6px)",  }}
     >
       <Box sx={style}>
-        <Box sx={{ position: "absolute", top: 10, right: 10 }}>
-          <IconButton onClick={handleClose} color="primary">
+        <Box sx={{ position: "absolute", top: 8, right: 8 }}>
+          <IconButton onClick={handleClose} color="inherit" size="small">
             <CloseIcon />
           </IconButton>
         </Box>
@@ -42,26 +39,47 @@ const SearchModal = ({ open, handleClose }) => {
           variant="h5"
           component="h2"
           gutterBottom
-          sx={{ fontWeight: "600", mb: 2, color: "#333", textAlign:'right' }}
+          sx={{ fontWeight: "600", mb: 1, color: "#333" }}
         >
           Search
         </Typography>
         <Typography
           id="modal-modal-description"
-          sx={{ mb: 3, textAlign: "center", color: "text.secondary" }}
+          sx={{ mb: 3, color: "#666", fontSize: "14px" }}
         >
-         Use the search bar below to find what you're looking for.
+          Find what you need using the search feature below.
         </Typography>
-        <SearchBar
-          sx={{
-            width: "100%",
-            maxWidth: 400,
-            mb: 2,
-            borderRadius: 1, 
-            boxShadow: 1, 
-            bgcolor: "#f9f9f9", 
-          }}
-        />
+        <Box sx={{ display: "flex", gap: 2 }}>
+          <SearchBar
+            sx={{
+              flexGrow: 1,
+              borderRadius: "10px",
+              boxShadow: "0px 1px 8px rgba(0, 0, 0, 0.1)",
+              bgcolor: "#f1f1f1",
+              px: 2,
+              border: "1px solid #ddd",
+              width: "800px", 
+            
+            }}
+           
+          />
+          <Button
+            variant="contained"
+            sx={{
+              bgcolor: "#1976d2",
+              textTransform: "none",
+              px: 4,
+              fontSize: "14px",
+              fontWeight: 500,
+              boxShadow: "none",
+              ":hover": {
+                bgcolor: "#1565c0",
+              },
+            }}
+          >
+            Search
+          </Button>
+        </Box>
       </Box>
     </Modal>
   );
