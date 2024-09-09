@@ -62,7 +62,7 @@ function UnAuthorized_Navigation() {
               src={logo}
               alt="Logo"
               className="md:h-14 h-12 -ml-4 md:ml-0 cursor-pointer"
-              onClick={() => navigate("/")}
+              onClick={() => navigate("/dashboard")}
             />
             {/* Desktop Navigation Links */}
             <Box sx={{ display: { xs: "none", md: "flex" } }} className="gap-8">
