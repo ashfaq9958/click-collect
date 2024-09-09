@@ -6,7 +6,7 @@ import login from "../../assets/img_3.jpg";
 import Input from "../Input/Input";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import { Formik } from "formik";
+import { Formik} from "formik";
 import * as Yup from "yup";
 
 // Validation schema using Yup
@@ -39,8 +39,15 @@ const SignIn = () => {
       onSubmit={handleSubmit}
     >
       {({ handleSubmit, getFieldProps, touched, errors, isSubmitting }) => (
-        <div className="flex flex-col-reverse md:flex-row justify-center w-full h-screen bg-gradient-to-r from-gray-100 to-gray-200">
-          <div className="w-full md:w-[50%] lg:w-[35%] mx-auto p-6 md:p-10 lg:p-12 flex flex-col">
+        <div className="flex md:justify-between flex-col justify-center md:flex-row w-full h-screen bg-gradient-to-r from-gray-100 to-gray-200">
+          <div className="hidden lg:block w-1/2">
+            <img
+              src={login}
+              alt="login"
+              className="h-screen w-full object-cover"
+            />
+          </div>
+          <div className="w-full md:w-[50%] lg:w-[35%] mx-auto flex flex-col p-6 md:p-10 lg:p-12">
             <div className="flex justify-center mb-6">
               <img
                 src={companylogo}
@@ -63,7 +70,7 @@ const SignIn = () => {
                   type="email"
                   name="email"
                   {...getFieldProps("email")}
-                  error={touched.email && errors.email}
+                  error={touched.email && errors.email} // Handle error display
                   className="rounded-md border-gray-300 shadow-sm focus:border-[#FF5E38] focus:ring-[#FF5E38]"
                 />
               </div>
@@ -73,7 +80,7 @@ const SignIn = () => {
                   type="password"
                   name="password"
                   {...getFieldProps("password")}
-                  error={touched.password && errors.password}
+                  error={touched.password && errors.password} // Handle error display
                   className="rounded-md border-gray-300 shadow-sm focus:border-[#FF5E38] focus:ring-[#FF5E38]"
                 />
               </div>
@@ -130,13 +137,6 @@ const SignIn = () => {
                 Facebook
               </a>
             </div>
-          </div>
-          <div className="hidden lg:block w-1/2">
-            <img
-              src={login}
-              alt="login"
-              className="h-screen w-full object-cover"
-            />
           </div>
         </div>
       )}
