@@ -1,10 +1,9 @@
 import React from "react";
 import SignIn from "./components/SignIn/SignIn";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { RouterProvider, createBrowserRouter, Navigate } from "react-router-dom";
 import Root from "./Root";
 import Dashboard from "./components/UnAuth_Nav/Dashboard/Dashboard";
 import ProductDetails from "./components/UnAuth_Nav/ProductDetails/ProductDetails";
-// import Products from "./components/Products/Products";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -13,19 +12,20 @@ const App = () => {
       element: <Root />,
       children: [
         {
+          // Redirect root path to "/signin"
           index: true,
-          element: <Dashboard />,
+          element: <Navigate to="/signin" />,
         },
-        // {
-        //   path: "/products",
-        //   element: <Products />,
-        // },
         {
-          path: "signin",
+          path: "/signin",
           element: <SignIn />,
         },
         {
-          path: "product-details",
+          path: "/dashboard",
+          element: <Dashboard />,
+        },
+        {
+          path: "/product-details",
           element: <ProductDetails />,
         },
       ],

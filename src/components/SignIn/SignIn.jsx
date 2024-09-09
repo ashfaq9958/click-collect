@@ -6,8 +6,8 @@ import login from "../../assets/img_3.jpg";
 import Input from "../Input/Input";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import { Formik, useFormik } from "formik";
-import * as Yup from "yup"; // For validation
+import { Formik} from "formik";
+import * as Yup from "yup";
 
 // Validation schema using Yup
 const validationSchema = Yup.object({
@@ -27,7 +27,7 @@ const SignIn = () => {
     setTimeout(() => {
       // Mock login logic
       toast.success("Login successful. Welcome back!", { duration: 3000 });
-      navigate("/");
+      navigate("/dashboard");
       setSubmitting(false);
     }, 1000); // Simulating a login request delay
   };
@@ -99,7 +99,7 @@ const SignIn = () => {
                 </a>
               </div>
               <div>
-              <button
+                <button
                   type="submit"
                   disabled={isSubmitting}
                   className="w-full py-2 px-4 border border-transparent rounded-md shadow-md text-sm font-medium text-white bg-gradient-to-r from-[#FF5E38] to-[#ff7e60] hover:bg-black transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FF5E38]"

@@ -133,7 +133,7 @@ function UnAuthorized_Navigation() {
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
                   {setting === "Logout" ? (
-                    <Link to="signin">
+                    <Link to="/signin">
                       <Typography
                         textAlign="center"
                         className="hover:text-red-600"
