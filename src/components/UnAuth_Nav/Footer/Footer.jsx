@@ -43,10 +43,12 @@ const Footer = () => {
             fontSize="large"
             className="text-blue-500 hover:text-blue-600 cursor-pointer transition-transform transform hover:scale-110"
           />
-          <InstagramIcon
-            fontSize="large"
-            className="text-pink-500 hover:text-pink-600 cursor-pointer transition-transform transform hover:scale-110"
-          />
+          <a href="https://www.instagram.com/yusufkhan.845/" target="_blank">
+            <InstagramIcon
+              fontSize="large"
+              className="text-pink-500 hover:text-pink-600 cursor-pointer transition-transform transform hover:scale-110"
+            />
+          </a>
           <YouTubeIcon
             fontSize="large"
             className="text-red-500 hover:text-red-600 cursor-pointer transition-transform transform hover:scale-110"
@@ -62,7 +64,11 @@ const Footer = () => {
       {/* Footer Links Section */}
       <div className="w-full mx-auto mt-10 flex flex-col md:flex-row justify-between items-start">
         <div className="flex justify-center md:justify-start">
-          <img src={logo} alt="Logo" className="w-40 object-contain filter drop-shadow-lg" />
+          <img
+            src={logo}
+            alt="Logo"
+            className="w-40 object-contain filter drop-shadow-lg"
+          />
         </div>
 
         <div className="flex flex-wrap gap-16 mt-8 md:mt-0 text-center md:text-left">
@@ -71,10 +77,18 @@ const Footer = () => {
             <p className="hover:text-white cursor-pointer transition-colors duration-200">
               Clothing Fashion
             </p>
-            <p className="hover:text-white cursor-pointer transition-colors duration-200">Winter</p>
-            <p className="hover:text-white cursor-pointer transition-colors duration-200">Summer</p>
-            <p className="hover:text-white cursor-pointer transition-colors duration-200">Formal</p>
-            <p className="hover:text-white cursor-pointer transition-colors duration-200">Casual</p>
+            <p className="hover:text-white cursor-pointer transition-colors duration-200">
+              Winter
+            </p>
+            <p className="hover:text-white cursor-pointer transition-colors duration-200">
+              Summer
+            </p>
+            <p className="hover:text-white cursor-pointer transition-colors duration-200">
+              Formal
+            </p>
+            <p className="hover:text-white cursor-pointer transition-colors duration-200">
+              Casual
+            </p>
           </div>
 
           <div className="leading-8">
@@ -82,10 +96,18 @@ const Footer = () => {
             <p className="hover:text-white cursor-pointer transition-colors duration-200">
               Clothing Fashion
             </p>
-            <p className="hover:text-white cursor-pointer transition-colors duration-200">Winter</p>
-            <p className="hover:text-white cursor-pointer transition-colors duration-200">Summer</p>
-            <p className="hover:text-white cursor-pointer transition-colors duration-200">Formal</p>
-            <p className="hover:text-white cursor-pointer transition-colors duration-200">Casual</p>
+            <p className="hover:text-white cursor-pointer transition-colors duration-200">
+              Winter
+            </p>
+            <p className="hover:text-white cursor-pointer transition-colors duration-200">
+              Summer
+            </p>
+            <p className="hover:text-white cursor-pointer transition-colors duration-200">
+              Formal
+            </p>
+            <p className="hover:text-white cursor-pointer transition-colors duration-200">
+              Casual
+            </p>
           </div>
 
           <div className="leading-8">
@@ -93,10 +115,18 @@ const Footer = () => {
             <p className="hover:text-white cursor-pointer transition-colors duration-200">
               Clothing Fashion
             </p>
-            <p className="hover:text-white cursor-pointer transition-colors duration-200">Winter</p>
-            <p className="hover:text-white cursor-pointer transition-colors duration-200">Summer</p>
-            <p className="hover:text-white cursor-pointer transition-colors duration-200">Formal</p>
-            <p className="hover:text-white cursor-pointer transition-colors duration-200">Casual</p>
+            <p className="hover:text-white cursor-pointer transition-colors duration-200">
+              Winter
+            </p>
+            <p className="hover:text-white cursor-pointer transition-colors duration-200">
+              Summer
+            </p>
+            <p className="hover:text-white cursor-pointer transition-colors duration-200">
+              Formal
+            </p>
+            <p className="hover:text-white cursor-pointer transition-colors duration-200">
+              Casual
+            </p>
           </div>
 
           <div className="leading-8">
@@ -104,11 +134,21 @@ const Footer = () => {
             <p className="hover:text-white cursor-pointer transition-colors duration-200">
               Track Your Order
             </p>
-            <p className="hover:text-white cursor-pointer transition-colors duration-200">Support</p>
-            <p className="hover:text-white cursor-pointer transition-colors duration-200">FAQ</p>
-            <p className="hover:text-white cursor-pointer transition-colors duration-200">Careers</p>
-            <p className="hover:text-white cursor-pointer transition-colors duration-200">About</p>
-            <p className="hover:text-white cursor-pointer transition-colors duration-200">Contact Us</p>
+            <p className="hover:text-white cursor-pointer transition-colors duration-200">
+              Support
+            </p>
+            <p className="hover:text-white cursor-pointer transition-colors duration-200">
+              FAQ
+            </p>
+            <p className="hover:text-white cursor-pointer transition-colors duration-200">
+              Careers
+            </p>
+            <p className="hover:text-white cursor-pointer transition-colors duration-200">
+              About
+            </p>
+            <p className="hover:text-white cursor-pointer transition-colors duration-200">
+              Contact Us
+            </p>
           </div>
         </div>
       </div>
