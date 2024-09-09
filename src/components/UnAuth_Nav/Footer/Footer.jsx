@@ -2,6 +2,7 @@ import { TextField, Button } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Divider from "@mui/material/Divider";
 import logo from "../../../assets/bg_logo.png";
 import React from "react";
@@ -39,16 +40,24 @@ const Footer = () => {
         </div>
 
         <div className="flex justify-center md:justify-end gap-6">
-          <FacebookIcon
+          <a href="https://www.linkedin.com/in/ashfaqahmad99/" target="_blank">
+          <LinkedInIcon
             fontSize="large"
-            className="text-blue-500 hover:text-blue-600 cursor-pointer transition-transform transform hover:scale-110"
+            className="text-blue-700 hover:text-blue-800 cursor-pointer transition-transform transform hover:scale-110"
           />
-          <a href="https://www.instagram.com/yusufkhan.845/" target="_blank">
+          </a>
+       
+           <a href="https://www.instagram.com/yusufkhan.845/" target="_blank">
             <InstagramIcon
               fontSize="large"
               className="text-pink-500 hover:text-pink-600 cursor-pointer transition-transform transform hover:scale-110"
             />
           </a>
+          <FacebookIcon
+            fontSize="large"
+            className="text-blue-500 hover:text-blue-600 cursor-pointer transition-transform transform hover:scale-110"
+          />
+         
           <YouTubeIcon
             fontSize="large"
             className="text-red-500 hover:text-red-600 cursor-pointer transition-transform transform hover:scale-110"
