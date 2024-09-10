@@ -1,8 +1,9 @@
-import React from "react";
-export const SignIn = React.lazy(() => import("../SignIn/SignIn"));
-export const Dashboard = React.lazy(() =>
-  import("../UnAuth_Nav/Dashboard/Dashboard")
+import { lazy } from "react";
+
+export const SignIn = lazy(() => import("../SignIn/SignIn.jsx"));
+export const Dashboard = lazy(() =>
+  import("../UnAuth_Nav/Dashboard/Dashboard.jsx")
 );
-export const ProductDetails = React.lazy(() =>
-  import("../UnAuth_Nav/ProductDetails/ProductDetails")
+export const ProductDetails = lazy(() =>
+  import("../UnAuth_Nav/ProductDetails/ProductDetails.jsx")
 );

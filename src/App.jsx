@@ -1,17 +1,14 @@
 import React from "react";
-import {
-  SignIn,
-  Dashboard,
-  ProductDetails,
-} from "./components/ReactLazyRoute/ReactLazy";
+import * as LazyRoute from "./components/ReactLazyRoute/ReactLazy";
 import {
   RouterProvider,
   createBrowserRouter,
   Navigate,
 } from "react-router-dom";
 import Root from "./Root";
-// import Dashboard from "./components/UnAuth_Nav/Dashboard/Dashboard";
-// import ProductDetails from "./components/UnAuth_Nav/ProductDetails/ProductDetails";
+import SignIn from "./components/SignIn/SignIn";
+import Dashboard from "./components/UnAuth_Nav/Dashboard/Dashboard";
+import ProductDetails from "./components/UnAuth_Nav/ProductDetails/ProductDetails";
 const App = () => {
   const router = createBrowserRouter([
     {
@@ -25,15 +22,15 @@ const App = () => {
         },
         {
           path: "/signin",
-          element: <SignIn />,
+          element: <LazyRoute.SignIn />,
         },
         {
           path: "/dashboard",
-          element: <Dashboard />,
+          element: <LazyRoute.Dashboard />,
         },
         {
           path: "/product-details",
-          element: <ProductDetails />,
+          element: <LazyRoute.ProductDetails />,
         },
       ],
     },
