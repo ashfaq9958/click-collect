@@ -7,3 +7,4 @@ export const Dashboard = lazy(() =>
 export const ProductDetails = lazy(() =>
   import("../UnAuth_Nav/ProductDetails/ProductDetails.jsx")
 );
+

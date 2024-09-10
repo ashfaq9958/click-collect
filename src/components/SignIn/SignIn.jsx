@@ -40,11 +40,11 @@ const SignIn = () => {
     >
       {({ handleSubmit, getFieldProps, touched, errors, isSubmitting }) => (
         <div className="flex md:justify-between md:flex-row w-full h-screen bg-gradient-to-r from-gray-100 to-gray-200">
-          <div className="hidden lg:block w-1/2">
+          <div className="hidden lg:block ">
             <img
               src={login}
               alt="login"
-              className="h-screen w-full object-cover"
+              className="h-screen w-full "
             />
           </div>
           <div className="w-full md:w-[50%] lg:w-[35%] mx-auto flex flex-col p-6 md:p-10 lg:p-12">
