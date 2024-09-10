@@ -65,15 +65,30 @@ const SearchModal = ({ open, handleClose }) => {
           />
           <Button
             variant="contained"
+            // sx={{
+            //   bgcolor: "#1976d2",
+            //   textTransform: "none",
+            //   px: 4,
+            //   fontSize: "14px",
+            //   fontWeight: 500,
+            //   boxShadow: "none",
+            //   ":hover": {
+            //     bgcolor: "#1565c0",
+            //   },
+            // }}
+
             sx={{
-              bgcolor: "#1976d2",
-              textTransform: "none",
-              px: 4,
-              fontSize: "14px",
+              backgroundImage: "linear-gradient(90deg, #ff6f61, #ff4081)", // Flat, crisp blue color
+              color: "#fff",
               fontWeight: 500,
-              boxShadow: "none",
-              ":hover": {
-                bgcolor: "#1565c0",
+              fontSize: "1rem",
+              // borderRadius: "8px", // Clean, subtle rounding
+              px: 4,
+              width: "100%",
+              textTransform: "none", // Keep button text casing natural
+              boxShadow: "0px 4px 10px rgba(255, 105, 135, 0.3)", // Removing shadows for a crisp look
+              "&:hover": {
+                backgroundImage: "linear-gradient(90deg, #ff4081, #ff6f61)", // Simple hover effect
               },
             }}
           >
