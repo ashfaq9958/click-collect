@@ -6,7 +6,7 @@ import login from "../../assets/img_3.jpg";
 import Input from "../Input/Input";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import { Formik} from "formik";
+import { Formik } from "formik";
 import * as Yup from "yup";
 
 // Validation schema using Yup

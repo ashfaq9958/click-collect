@@ -1,10 +1,17 @@
 import React from "react";
-import SignIn from "./components/SignIn/SignIn";
-import { RouterProvider, createBrowserRouter, Navigate } from "react-router-dom";
+import {
+  SignIn,
+  Dashboard,
+  ProductDetails,
+} from "./components/ReactLazyRoute/ReactLazy";
+import {
+  RouterProvider,
+  createBrowserRouter,
+  Navigate,
+} from "react-router-dom";
 import Root from "./Root";
-import Dashboard from "./components/UnAuth_Nav/Dashboard/Dashboard";
-import ProductDetails from "./components/UnAuth_Nav/ProductDetails/ProductDetails";
-
+// import Dashboard from "./components/UnAuth_Nav/Dashboard/Dashboard";
+// import ProductDetails from "./components/UnAuth_Nav/ProductDetails/ProductDetails";
 const App = () => {
   const router = createBrowserRouter([
     {

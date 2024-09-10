@@ -53,8 +53,8 @@ const Featured = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((item) => (
-            <Link to="/product-details">
-              <Card key={item.key} feature={item} />
+            <Link to="/product-details" key={item.key}>
+              <Card feature={item} />
             </Link>
           ))}
         </div>
