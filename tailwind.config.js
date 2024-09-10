@@ -24,6 +24,9 @@ export default {
     },
     fontFamily: {
       eczar: ["Eczar"],
+      cursive: ["Sevillana"],
+      dancing: ["Dancing"],
+      roboto: ['Roboto']
     },
     extend: {
       screens: {

@@ -47,10 +47,7 @@ function UnAuthorized_Navigation() {
 
   return (
     <>
-      <CartModal
-        open={modalDrawer}
-        handleClose={() => setModalDrawer(false)}
-      />
+      <CartModal open={modalDrawer} handleClose={() => setModalDrawer(false)} />
       <AppBar position="sticky" className="!bg-white shadow-lg top-0 z-50">
         <Container maxWidth="xl">
           <Toolbar disableGutters className="flex justify-between items-center">
@@ -80,7 +77,7 @@ function UnAuthorized_Navigation() {
                   <Button
                     key={page}
                     onClick={handleCloseNavMenu}
-                    className="!text-black !font-medium hover:!text-red-600 transition-all duration-300"
+                    className="!text-black !font-medium hover:!text-red-600 transition-all duration-300 font-roboto"
                   >
                     {page}
                   </Button>
