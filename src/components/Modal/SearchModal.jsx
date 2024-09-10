@@ -26,7 +26,7 @@ const SearchModal = ({ open, handleClose }) => {
       onClose={handleClose}
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
-      sx={{ backdropFilter: "blur(6px)",  }}
+      sx={{ backdropFilter: "blur(6px)" }}
     >
       <Box sx={style}>
         <Box sx={{ position: "absolute", top: 8, right: 8 }}>
@@ -58,37 +58,22 @@ const SearchModal = ({ open, handleClose }) => {
               bgcolor: "#f1f1f1",
               px: 2,
               border: "1px solid #ddd",
-              width: "800px", 
-            
+              width: "800px",
             }}
-           
           />
           <Button
             variant="contained"
-            // sx={{
-            //   bgcolor: "#1976d2",
-            //   textTransform: "none",
-            //   px: 4,
-            //   fontSize: "14px",
-            //   fontWeight: 500,
-            //   boxShadow: "none",
-            //   ":hover": {
-            //     bgcolor: "#1565c0",
-            //   },
-            // }}
-
             sx={{
-              backgroundImage: "linear-gradient(90deg, #ff6f61, #ff4081)", // Flat, crisp blue color
+              backgroundImage: "linear-gradient(90deg, #ff6f61, #ff4081)",
               color: "#fff",
               fontWeight: 500,
               fontSize: "1rem",
-              // borderRadius: "8px", // Clean, subtle rounding
               px: 4,
               width: "100%",
-              textTransform: "none", // Keep button text casing natural
-              boxShadow: "0px 4px 10px rgba(255, 105, 135, 0.3)", // Removing shadows for a crisp look
+              textTransform: "none",
+              boxShadow: "0px 4px 10px rgba(255, 105, 135, 0.3)",
               "&:hover": {
-                backgroundImage: "linear-gradient(90deg, #ff4081, #ff6f61)", // Simple hover effect
+                backgroundImage: "linear-gradient(90deg, #ff4081, #ff6f61)",
               },
             }}
           >

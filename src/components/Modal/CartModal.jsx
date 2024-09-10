@@ -27,7 +27,8 @@ const CartModal = ({ open, handleClose }) => {
       id: 2,
       name: "Nike Shoes",
       price: "$30.00",
-      image: "https://img.freepik.com/premium-photo/shoe-that-has-nike-logo-it_1313274-10357.jpg?w=740",
+      image:
+        "https://img.freepik.com/premium-photo/shoe-that-has-nike-logo-it_1313274-10357.jpg?w=740",
     },
   ];
 
@@ -35,14 +36,14 @@ const CartModal = ({ open, handleClose }) => {
     <Drawer anchor="right" open={open} onClose={handleClose}>
       <Box
         sx={{
-          width: 420, // Adjusted width for better spacing
-          p: 3,
-          backgroundColor: "#fff", // Keep the background clean
-          backgroundImage: "linear-gradient(135deg, #f5f7fa, #e2e2e2)", // Subtle gradient background
+          width: 420,
+          p: 2,
+          backgroundColor: "#fff",
+          backgroundImage: "linear-gradient(135deg, #f5f7fa, #e2e2e2)",
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.1)", // Soft shadow for premium feel
+          boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.1)",
         }}
       >
         {/* Header */}
@@ -58,9 +59,9 @@ const CartModal = ({ open, handleClose }) => {
               key={item.id}
               sx={{
                 mb: 2,
-                borderRadius: "8px", // Rounded edges for items
-                backgroundColor: "#f9f9f9", // Slight background for the product card
-                boxShadow: "0px 2px 10px rgba(0, 0, 0, 0.05)", // Soft shadow for depth
+                borderRadius: "8px",
+                backgroundColor: "#f9f9f9",
+                boxShadow: "0px 2px 10px rgba(0, 0, 0, 0.05)",
               }}
               secondaryAction={
                 <IconButton edge="end" aria-label="delete">
@@ -104,40 +105,20 @@ const CartModal = ({ open, handleClose }) => {
           >
             Total: $50.00
           </Typography>
-          {/* <Button
-            variant="contained"
-            sx={{
-              backgroundImage: "linear-gradient(90deg, #ff6f61, #ff4081)", // Gradient button
-              color: "#fff",
-              fontWeight: 600,
-              fontSize: "1rem",
-              borderRadius: "50px", // Rounded button for premium look
-              padding: "12px 24px",
-              width: "100%",
-              mt: 2,
-              boxShadow: "0px 4px 10px rgba(255, 105, 135, 0.3)", // Button shadow for 3D effect
-              "&:hover": {
-                backgroundImage: "linear-gradient(90deg, #ff4081, #ff6f61)",
-              },
-            }}
-          >
-            Proceed to Checkout
-          </Button> */}
-
           <Button
             variant="contained"
             sx={{
-              backgroundImage: "linear-gradient(90deg, #ff6f61, #ff4081)", // Flat, crisp blue color
+              backgroundImage: "linear-gradient(90deg, #ff6f61, #ff4081)",
               color: "#fff",
               fontWeight: 500,
               fontSize: "1rem",
-              borderRadius: "8px", // Clean, subtle rounding
+              borderRadius: "5px",
               padding: "10px 20px",
               width: "100%",
-              textTransform: "none", // Keep button text casing natural
-              boxShadow: "0px 4px 10px rgba(255, 105, 135, 0.3)", // Removing shadows for a crisp look
+              textTransform: "none",
+              boxShadow: "0px 4px 10px rgba(255, 105, 135, 0.3)",
               "&:hover": {
-                backgroundImage: "linear-gradient(90deg, #ff4081, #ff6f61)", // Simple hover effect
+                backgroundImage: "linear-gradient(90deg, #ff4081, #ff6f61)",
               },
             }}
           >
