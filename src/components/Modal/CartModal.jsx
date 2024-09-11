@@ -11,8 +11,10 @@ import {
   ListItemAvatar,
   Avatar,
   ListItemText,
+  Tooltip,
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
+import CloseIcon from "@mui/icons-material/Close";
 
 const CartModal = ({ open, handleClose }) => {
   const items = [
@@ -47,9 +49,20 @@ const CartModal = ({ open, handleClose }) => {
         }}
       >
         {/* Header */}
-        <Typography variant="h5" sx={{ fontWeight: 700, mb: 2, color: "#333" }}>
-          Your Shopping Cart
-        </Typography>
+        <div className="flex justify-between items-center">  {/* Fixed className */}
+          <Typography
+            variant="h5"
+            sx={{ fontWeight: 600, mb: 1, color: "#333" }}
+          >
+            Your Shopping Cart
+          </Typography>
+          <Tooltip title="Close">
+            <IconButton onClick={handleClose}>  {/* Added IconButton to handle clicks */}
+              <CloseIcon fontSize="meduim"  sx={{mb: 1,} }  onClick={handleClose}/>
+            </IconButton>
+          </Tooltip>
+        </div>
+
         <Divider sx={{ mb: 1 }} />
 
         {/* Cart Items */}
@@ -65,8 +78,7 @@ const CartModal = ({ open, handleClose }) => {
               }}
               secondaryAction={
                 <IconButton edge="end" aria-label="delete">
-                  <DeleteIcon sx={{ color: "#f44336" }} />{" "}
-                  {/* Red delete button */}
+                  <DeleteIcon sx={{ color: "#f44336" }} />
                 </IconButton>
               }
             >

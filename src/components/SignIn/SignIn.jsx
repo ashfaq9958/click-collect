@@ -80,7 +80,7 @@ const SignIn = () => {
                   label="Password"
                   type="password"
                   name="password"
-                  placeholder='******'
+                  placeholder='•••••••'
                   {...getFieldProps("password")}
                   error={touched.password && errors.password} 
                   className="rounded-md border-gray-300 shadow-sm focus:border-[#FF5E38] focus:ring-[#FF5E38]"
