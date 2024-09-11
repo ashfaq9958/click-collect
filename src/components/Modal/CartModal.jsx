@@ -49,7 +49,9 @@ const CartModal = ({ open, handleClose }) => {
         }}
       >
         {/* Header */}
-        <div className="flex justify-between items-center">  {/* Fixed className */}
+        <div className="flex justify-between items-center">
+          {" "}
+          {/* Fixed className */}
           <Typography
             variant="h5"
             sx={{ fontWeight: 600, mb: 1, color: "#333" }}
@@ -57,8 +59,8 @@ const CartModal = ({ open, handleClose }) => {
             Your Shopping Cart
           </Typography>
           <Tooltip title="Close">
-            <IconButton onClick={handleClose}>  {/* Added IconButton to handle clicks */}
-              <CloseIcon fontSize="meduim"  sx={{mb: 1,} }  onClick={handleClose}/>
+            <IconButton onClick={handleClose}>
+              <CloseIcon fontSize="meduim" sx={{ mb: 1 }} />
             </IconButton>
           </Tooltip>
         </div>
@@ -111,15 +113,11 @@ const CartModal = ({ open, handleClose }) => {
 
         {/* Total Price and Checkout Button */}
         <Box sx={{ mt: 2, textAlign: "center" }}>
-          <Typography
-            variant="h6"
-            sx={{ fontWeight: 600, mb: 1, color: "#333" }}
-          >
-            Total: $50.00
-          </Typography>
           <Button
             variant="contained"
             sx={{
+              display: "flex",
+              justifyContent: "space-between",
               backgroundImage: "linear-gradient(90deg, #ff6f61, #ff4081)",
               color: "#fff",
               fontWeight: 500,
@@ -134,7 +132,8 @@ const CartModal = ({ open, handleClose }) => {
               },
             }}
           >
-            Proceed to Checkout
+            <p> Proceed to Checkout</p>
+            <p>Total: $50.00</p>
           </Button>
         </Box>
       </Box>
