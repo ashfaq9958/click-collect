@@ -5,6 +5,7 @@ import Feature_3 from "../../../assets/winter.png";
 import Feature_4 from "../../../assets/denim2.png";
 import Card from "../../Card/Card";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import VisibilityIcon from "@mui/icons-material/Visibility";
 import { Link } from "react-router-dom";
 
 const Featured = () => {
@@ -16,6 +17,7 @@ const Featured = () => {
       desc: "Finest Quality Hoodie",
       discount: "20% OFF",
       icon: <FavoriteBorderOutlinedIcon />,
+      view: <VisibilityIcon />,
     },
     {
       key: 2,
@@ -24,6 +26,7 @@ const Featured = () => {
       desc: "Finest Quality T-Shirt",
       discount: "20% OFF",
       icon: <FavoriteBorderOutlinedIcon />,
+      view: <VisibilityIcon />,
     },
     {
       key: 3,
@@ -32,6 +35,7 @@ const Featured = () => {
       desc: "Blue Denim Jacket",
       discount: "15% OFF",
       icon: <FavoriteBorderOutlinedIcon />,
+      view: <VisibilityIcon />,
     },
     {
       key: 4,
@@ -40,6 +44,7 @@ const Featured = () => {
       desc: "Trending Denim",
       discount: "40% OFF",
       icon: <FavoriteBorderOutlinedIcon />,
+      view: <VisibilityIcon />,
     },
   ];
 

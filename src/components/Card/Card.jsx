@@ -1,6 +1,8 @@
+import { Button } from "@mui/material";
+import VisibilityIcon from "@mui/icons-material/Visibility";
 import React from "react";
 
-const Card = ({ feature: { img, title, desc, discount, icon } }) => {
+const Card = ({ feature: { img, title, desc, discount, icon, view } }) => {
   // Check if the title matches any of the categories
   const isCategory = [
     "Kid's Fashion",
@@ -38,7 +40,29 @@ const Card = ({ feature: { img, title, desc, discount, icon } }) => {
             {desc}
           </p>
         )}
+
+        {view && (
+          <Button
+            startIcon={<VisibilityIcon />}
+            size="small"
+            sx={{
+              color: "white",
+              backgroundColor: "rgba(0,0,0,0.7)",
+              padding: "5px 15px",
+              borderRadius: "5px",
+              textTransform: "none",
+              fontSize: "12px",
+              marginTop: 1,
+              "&:hover": {
+                backgroundColor: "rgba(0,0,0,0.9)",
+              },
+            }}
+          >
+            View
+          </Button>
+        )}
       </div>
+
       {icon && (
         <div className="absolute top-2 right-2 text-white text-2xl opacity-0 transition-opacity duration-500 transform group-hover:opacity-100 group-hover:scale-105 hover:text-red-500">
           <span>{icon}</span>
