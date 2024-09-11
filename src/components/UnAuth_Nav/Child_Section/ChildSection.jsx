@@ -20,7 +20,7 @@ const ChildSection = () => {
           <h2 className="text-3xl md:text-4xl font-semibold text-red-600">
             Children's Apparel
           </h2>
-          <p className="text-base md:text-lg text-gray-700 leading-relaxed">
+          <p className="text-sm md:text-base text-gray-700 leading-relaxed">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
             voluptatem molestias eum provident rerum quod numquam inventore sit
             non beatae Lorem ipsum dolor sit amet consectetur adipisicing elit.

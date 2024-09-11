@@ -52,7 +52,7 @@ function UnAuthorized_Navigation() {
         <Container maxWidth="xl">
           <Toolbar disableGutters className="flex justify-between items-center">
             {/* Logo and Menu Icon */}
-            <Box className="flex items-center gap-6">
+            <Box className="flex items-center md:gap-6 ">
               <IconButton
                 edge="start"
                 aria-label="menu"
