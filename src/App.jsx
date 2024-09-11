@@ -6,9 +6,6 @@ import {
   Navigate,
 } from "react-router-dom";
 import Root from "./Root";
-import SignIn from "./components/SignIn/SignIn";
-import Dashboard from "./components/UnAuth_Nav/Dashboard/Dashboard";
-import ProductDetails from "./components/UnAuth_Nav/ProductDetails/ProductDetails";
 const App = () => {
   const router = createBrowserRouter([
     {
@@ -37,9 +34,9 @@ const App = () => {
   ]);
 
   return (
-    <div>
+    <>
       <RouterProvider router={router} />
-    </div>
+    </>
   );
 };
 

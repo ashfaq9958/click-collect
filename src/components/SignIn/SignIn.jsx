@@ -69,8 +69,9 @@ const SignIn = () => {
                   label="Email address"
                   type="email"
                   name="email"
+                  placeholder = 'example@gmail.com'
                   {...getFieldProps("email")}
-                  error={touched.email && errors.email} // Handle error display
+                  error={touched.email && errors.email} 
                   className="rounded-md border-gray-300 shadow-sm focus:border-[#FF5E38] focus:ring-[#FF5E38]"
                 />
               </div>
@@ -79,8 +80,9 @@ const SignIn = () => {
                   label="Password"
                   type="password"
                   name="password"
+                  placeholder='******'
                   {...getFieldProps("password")}
-                  error={touched.password && errors.password} // Handle error display
+                  error={touched.password && errors.password} 
                   className="rounded-md border-gray-300 shadow-sm focus:border-[#FF5E38] focus:ring-[#FF5E38]"
                 />
               </div>

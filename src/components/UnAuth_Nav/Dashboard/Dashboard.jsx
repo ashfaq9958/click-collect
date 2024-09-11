@@ -11,6 +11,7 @@ import Categories from "../Categories/Categories";
 import Sofa from "../SofaBanner/Sofa";
 import Upcoming from "../Upcoming_Products/Upcoming";
 import Testimonials from "../Testimonials/Testimonials";
+import { Helmet } from "react-helmet";
 
 const Dashboard = () => {
   const landingImg = [
@@ -30,6 +31,7 @@ const Dashboard = () => {
 
   return (
     <>
+      
       {/* Sale Banner */}
       <div className="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 h-14 flex items-center justify-center px-2 lg:px-0">
         <div className="flex items-center justify-center gap-4">

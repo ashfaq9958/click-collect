@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 
-const Input = ({ label, type, name, error, ...props }) => {
+const Input = ({ label, type, name, error, placeholder, ...props }) => {
   const [isVisible, setVisible] = useState(false);
 
   const toggleVisibility = () => {
@@ -19,9 +19,11 @@ const Input = ({ label, type, name, error, ...props }) => {
         type={typeInput}
         id={name}
         name={name}
+        placeholder={placeholder}
         {...props}
-        className={`mt-1 w-full px-3 py-2 border ${error ? "border-red-500" : "border-gray-300"
-          } rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`}
+        className={`mt-1 w-full px-3 py-2 border ${
+          error ? "border-red-500" : "border-gray-300"
+        } rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`}
       />
       {type === "password" && (
         <span
@@ -41,4 +43,3 @@ const Input = ({ label, type, name, error, ...props }) => {
 };
 
 export default Input;
-  
