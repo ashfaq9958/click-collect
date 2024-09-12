@@ -11,7 +11,7 @@ const SignUp = () => {
       <div className="w-full lg:w-[60%] h-full bg-gradient-to-r from-[#ffecd2] to-[#fcb69f] p-6 flex flex-col justify-center">
         <div className="flex items-center gap-4 mb-6">
           <Link to="/signin">
-            <img src={logo} alt="logo" className="w-32 object-contain" />
+            <img src={logo} alt="logo" className="w-32 object-contain drop-shadow-lg" />
           </Link>
         </div>
 
