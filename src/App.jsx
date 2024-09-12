@@ -18,6 +18,10 @@ const App = () => {
           element: <Navigate to="/signin" />,
         },
         {
+          path: "/signup",
+          element: <LazyRoute.Signup />,
+        },
+        {
           path: "/signin",
           element: <LazyRoute.SignIn />,
         },

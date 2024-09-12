@@ -4,11 +4,13 @@ import UnAuthorized_Navigation from "./components/UnAuth_Nav/Navigation/UnAuthor
 import { Outlet, useLocation } from "react-router-dom";
 
 const Root = () => {
-  const location = useLocation();
+  const { pathname } = useLocation();
+
+  const hideNavigation = pathname === "/signin" || pathname === "/signup";
+
   return (
     <div>
-      {/* <MainNavigation /> */}
-      {location.pathname !== "/signin" && <UnAuthorized_Navigation />}
+      {!hideNavigation && <UnAuthorized_Navigation />}
       <main>
         <Outlet />
       </main>

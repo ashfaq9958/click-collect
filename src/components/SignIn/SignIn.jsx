@@ -4,7 +4,7 @@ import google from "../../assets/google.png";
 import facebook from "../../assets/facebook.png";
 import login from "../../assets/img_3.jpg";
 import Input from "../Input/Input";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { Formik } from "formik";
 import * as Yup from "yup";
@@ -41,11 +41,7 @@ const SignIn = () => {
       {({ handleSubmit, getFieldProps, touched, errors, isSubmitting }) => (
         <div className="flex md:justify-between md:flex-row w-full h-screen bg-gradient-to-r from-gray-100 to-gray-200">
           <div className="hidden lg:block ">
-            <img
-              src={login}
-              alt="login"
-              className="h-screen w-full "
-            />
+            <img src={login} alt="login" className="h-screen w-full " />
           </div>
           <div className="w-full md:w-[50%] lg:w-[35%] mx-auto flex flex-col p-6 md:p-10 lg:p-12">
             <div className="flex justify-center mb-6">
@@ -69,9 +65,9 @@ const SignIn = () => {
                   label="Email address"
                   type="email"
                   name="email"
-                  placeholder = 'example@gmail.com'
+                  placeholder="example@gmail.com"
                   {...getFieldProps("email")}
-                  error={touched.email && errors.email} 
+                  error={touched.email && errors.email}
                   className="rounded-md border-gray-300 shadow-sm focus:border-[#FF5E38] focus:ring-[#FF5E38]"
                 />
               </div>
@@ -80,9 +76,9 @@ const SignIn = () => {
                   label="Password"
                   type="password"
                   name="password"
-                  placeholder='•••••••'
+                  placeholder="•••••••"
                   {...getFieldProps("password")}
-                  error={touched.password && errors.password} 
+                  error={touched.password && errors.password}
                   className="rounded-md border-gray-300 shadow-sm focus:border-[#FF5E38] focus:ring-[#FF5E38]"
                 />
               </div>
@@ -112,9 +108,9 @@ const SignIn = () => {
             </form>
             <p className="mt-4 text-center text-sm text-gray-500">
               Don't have an account?{" "}
-              <a href="#" className="text-blue-600 hover:underline">
+              <Link to="/signup" className="text-blue-600 hover:underline">
                 Sign up
-              </a>
+              </Link>
             </p>
             <div className="flex items-center my-6">
               <div className="flex-grow border-t border-gray-300"></div>
