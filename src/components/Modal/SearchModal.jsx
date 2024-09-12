@@ -62,6 +62,7 @@ const SearchModal = ({ open, handleClose }) => {
             }}
           />
           <Button
+          className="md:w-full w-24"
             variant="contained"
             sx={{
               backgroundImage: "linear-gradient(90deg, #ff6f61, #ff4081)",
@@ -69,12 +70,13 @@ const SearchModal = ({ open, handleClose }) => {
               fontWeight: 500,
               fontSize: "1rem",
               px: 4,
-              width: "100%",
+              // width: "100%",
               textTransform: "none",
               boxShadow: "0px 4px 10px rgba(255, 105, 135, 0.3)",
               "&:hover": {
                 backgroundImage: "linear-gradient(90deg, #ff4081, #ff6f61)",
               },
+              
             }}
           >
             Search
