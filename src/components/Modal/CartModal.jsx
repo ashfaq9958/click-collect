@@ -109,7 +109,7 @@ const CartModal = ({ open, handleClose }) => {
           ))}
         </List>
 
-        <Divider sx={{ mt: 2 }} />
+        {/* <Divider sx={{ mt: 2 }} /> */}
 
         {/* Total Price and Checkout Button */}
         <Box sx={{ mt: 2, textAlign: "center" }}>

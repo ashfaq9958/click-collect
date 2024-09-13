@@ -1,5 +1,5 @@
 import React from "react";
-import companylogo from "../../assets/elogo2.jpg";
+import companylogo from "../../assets/bg_logo.png";
 import google from "../../assets/google.png";
 import facebook from "../../assets/facebook.png";
 import login from "../../assets/img_3.jpg";
@@ -7,17 +7,7 @@ import Input from "../Input/Input";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { Formik } from "formik";
-import * as Yup from "yup";
-
-// Validation schema using Yup
-const validationSchema = Yup.object({
-  email: Yup.string()
-    .email("Invalid email address")
-    .required("Email is required"),
-  password: Yup.string()
-    .min(6, "Password must be at least 6 characters")
-    .required("Password is required"),
-});
+import validationSchema from "../Schema/SignIn/Signin";
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -25,11 +15,13 @@ const SignIn = () => {
   // Submit handler
   const handleSubmit = (values, { setSubmitting }) => {
     setTimeout(() => {
-      // Mock login logic
+      const { email, password } = values;
+      console.log(email, password);
+      // const  {, password }=localStorage.getItem('userDetails')
       toast.success("Login successful. Welcome back!", { duration: 3000 });
       navigate("/dashboard");
       setSubmitting(false);
-    }, 1000); // Simulating a login request delay
+    }, 1000);
   };
 
   return (
@@ -44,11 +36,11 @@ const SignIn = () => {
             <img src={login} alt="login" className="h-screen w-full " />
           </div>
           <div className="w-full md:w-[50%] lg:w-[35%] mx-auto flex flex-col p-6 md:p-10 lg:p-12">
-            <div className="flex justify-center mb-6">
+            <div className="flex justify-center mb-1">
               <img
                 src={companylogo}
                 alt="Company Logo"
-                className="h-16 md:h-20 rounded-full shadow-lg"
+                className="h-16 md:h-24  drop-shadow-lg"
               />
             </div>
             <div className="text-center mb-6">
