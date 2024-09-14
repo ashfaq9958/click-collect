@@ -1,8 +1,11 @@
 import React from "react";
 import comingsoon from "../../../assets/coming soon/coming_1.jpg";
 import { Typography, Box } from "@mui/material";
+import { useLocation } from "react-router-dom";
 
 const ProductDetails = () => {
+  const pathname = useLocation()
+  console.log(pathname.pathname)
   return (
     <div className="h-screen w-full flex flex-col items-center justify-center bg-gray-100 p-8">
       <Box className="text-center mb-6">

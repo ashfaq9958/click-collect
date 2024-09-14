@@ -71,7 +71,7 @@ const Dashboard = () => {
             bottom: "10px",
           },
         }}
-        // interval={5000}
+        interval={2500}
       >
         {landingImg.map((item, index) => (
           <div key={index} className="w-full h-full overflow-hidden">
