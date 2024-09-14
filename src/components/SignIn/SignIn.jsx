@@ -15,11 +15,15 @@ const SignIn = () => {
   // Submit handler
   const handleSubmit = (values, { setSubmitting }) => {
     const { email, password } = values;
+    const userDetails = JSON.parse(localStorage.getItem("userDetails"));
 
-    // Retrieve userDetails from localStorage and parse it safely
-    const userDetails = JSON.parse(localStorage.getItem("userDetails") || "{}");
-
-    // Use setTimeout for simulating delay (optional, can remove if not needed)
+    if (!userDetails) {
+      toast.error("Account not found. Please sign up.", {
+        duration: 3000,
+      });
+      setSubmitting(false);
+      return;
+    }
     setTimeout(() => {
       if (email === userDetails.email && password === userDetails.password) {
         toast.success("Login successful. Welcome back!", {
@@ -30,8 +34,6 @@ const SignIn = () => {
       } else {
         toast.error("Check your credentials", { duration: 3000 });
       }
-
-      // Stop the form from being submitted after the process
       setSubmitting(false);
     }, 1000);
   };
