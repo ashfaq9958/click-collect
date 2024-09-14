@@ -21,7 +21,7 @@ const SignUp = () => {
     setTimeout(() => {
       localStorage.setItem("userDetails", JSON.stringify(values));
       if (localStorage.getItem("userDetails")) {
-        toast.success("Account has been successfully created.", { duration: 3000 });
+        toast.success("Account has been successfully created.", { duration: 3000, position: 'top-right' });
         navigate("/signin");
       }
       setSubmitting(false);

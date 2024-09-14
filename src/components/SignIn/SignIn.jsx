@@ -20,6 +20,7 @@ const SignIn = () => {
     if (!userDetails) {
       toast.error("Account not found. Please sign up.", {
         duration: 3000,
+        position: "top-right",
       });
       setSubmitting(false);
       return;
@@ -28,11 +29,14 @@ const SignIn = () => {
       if (email === userDetails.email && password === userDetails.password) {
         toast.success("Login successful. Welcome back!", {
           duration: 3000,
-          position: "top-right",
+          position: "top-center",
         });
         navigate("/dashboard");
       } else {
-        toast.error("Check your credentials", { duration: 3000 });
+        toast.error("Check your credentials", {
+          duration: 3000,
+          position: "top-right",
+        });
       }
       setSubmitting(false);
     }, 1000);
