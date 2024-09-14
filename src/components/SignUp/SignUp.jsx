@@ -56,7 +56,7 @@ const SignUp = () => {
                 Join us for a seamless shopping experience!
               </p>
 
-              <form className="space-y-6" onSubmit={handleSubmit}>
+              <form className="space-y-6 md:p-0 p-5" onSubmit={handleSubmit} >
                 <div className="flex flex-col gap-4 lg:flex-row lg:gap-6">
                   <div className="w-full lg:w-1/2">
                     <Input
