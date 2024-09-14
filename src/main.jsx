@@ -6,7 +6,7 @@ import { Toaster } from "react-hot-toast";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Toaster position="top-center" reverseOrder={false} duration />
+    <Toaster position="top-right" reverseOrder={false} duration />
     <Suspense fallback="loading.....">
       <App />
     </Suspense>

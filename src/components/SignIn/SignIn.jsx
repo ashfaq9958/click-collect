@@ -14,12 +14,24 @@ const SignIn = () => {
 
   // Submit handler
   const handleSubmit = (values, { setSubmitting }) => {
+    const { email, password } = values;
+
+    // Retrieve userDetails from localStorage and parse it safely
+    const userDetails = JSON.parse(localStorage.getItem("userDetails") || "{}");
+
+    // Use setTimeout for simulating delay (optional, can remove if not needed)
     setTimeout(() => {
-      const { email, password } = values;
-      console.log(email, password);
-      // const  {, password }=localStorage.getItem('userDetails')
-      toast.success("Login successful. Welcome back!", { duration: 3000 });
-      navigate("/dashboard");
+      if (email === userDetails.email && password === userDetails.password) {
+        toast.success("Login successful. Welcome back!", {
+          duration: 3000,
+          position: "top-right",
+        });
+        navigate("/dashboard");
+      } else {
+        toast.error("Check your credentials", { duration: 3000 });
+      }
+
+      // Stop the form from being submitted after the process
       setSubmitting(false);
     }, 1000);
   };
