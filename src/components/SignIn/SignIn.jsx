@@ -16,6 +16,7 @@ const SignIn = () => {
   const handleSubmit = (values, { setSubmitting }) => {
     const { email, password } = values;
     const userDetails = JSON.parse(localStorage.getItem("userDetails"));
+    console.log(userDetails)
 
     if (!userDetails) {
       toast.error("Account not found. Please sign up.", {
