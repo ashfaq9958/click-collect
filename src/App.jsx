@@ -12,11 +12,11 @@ const App = () => {
       path: "/",
       element: <Root />,
       children: [
-        // {
-        //   // Redirect root path to "/signin"
-        //   index: true,
-        //   element: <Navigate to="/signin" />,
-        // },
+        {
+          // Redirect root path to "/signin"
+          index: true,
+          element: <Navigate to="/signin" />,
+        },
         {
           path: "/signup",
           element: <LazyRoute.Signup />,
