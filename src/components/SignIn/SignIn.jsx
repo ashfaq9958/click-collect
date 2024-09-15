@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import companylogo from "../../assets/bg_logo.png";
 import google from "../../assets/google.png";
 import facebook from "../../assets/facebook.png";
@@ -10,13 +10,20 @@ import { Formik } from "formik";
 import validationSchema from "../Schema/SignIn/Signin";
 
 const SignIn = () => {
+  const [isExist, setIsExist] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    {
+      isExist ? navigate("/") : navigate("/signin");
+    }
+  }, []);
 
   // Submit handler
   const handleSubmit = (values, { setSubmitting }) => {
     const { email, password } = values;
     const userDetails = JSON.parse(localStorage.getItem("userDetails"));
-    console.log(userDetails)
+    console.log(userDetails);
 
     if (!userDetails) {
       toast.error("Account not found. Please sign up.", {
@@ -28,11 +35,12 @@ const SignIn = () => {
     }
     setTimeout(() => {
       if (email === userDetails.email && password === userDetails.password) {
-        toast.success("Login successful. Welcome back!", {
+        toast.success("Successfully logged in.", {
           duration: 3000,
           position: "top-center",
         });
-        navigate("/dashboard");
+        setIsExist(true);
+        navigate("/");
       } else {
         toast.error("Check your credentials", {
           duration: 3000,
