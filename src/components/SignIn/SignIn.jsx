@@ -15,7 +15,7 @@ const SignIn = () => {
 
   useEffect(() => {
     {
-      isExist ? navigate("/") : navigate("/signin");
+      isExist ? navigate("/dashboard") : navigate("/signin");
     }
   }, []);
 
@@ -40,7 +40,7 @@ const SignIn = () => {
           position: "top-center",
         });
         setIsExist(true);
-        navigate("/");
+        navigate("/dashboard");
       } else {
         toast.error("Check your credentials", {
           duration: 3000,
