@@ -10,14 +10,14 @@ import { Formik } from "formik";
 import validationSchema from "../Schema/SignIn/Signin";
 
 const SignIn = () => {
-  const [isExist, setIsExist] = useState(false);
+  // const [isExist, setIsExist] = useState(false);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    {
-      isExist ? navigate("/dashboard") : navigate("/signin");
-    }
-  }, []);
+  // useEffect(() => {
+  //   {
+  //     isExist ? navigate("/dashboard") : navigate("/signin");
+  //   }
+  // }, []);
 
   // Submit handler
   const handleSubmit = (values, { setSubmitting }) => {
@@ -39,7 +39,7 @@ const SignIn = () => {
           duration: 3000,
           position: "top-center",
         });
-        setIsExist(true);
+        // setIsExist(true);
         navigate("/dashboard");
       } else {
         toast.error("Check your credentials", {
