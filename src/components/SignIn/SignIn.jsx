@@ -13,15 +13,25 @@ const SignIn = () => {
   // const [isExist, setIsExist] = useState(false);
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   {
-  //     isExist ? navigate("/dashboard") : navigate("/signin");
-  //   }
-  // }, []);
+  useEffect(() => {
+    // {
+    //   localStorage.getItem("userDetails")
+    //     ? navigate("/dashboard")
+    //     : navigate("/signin");
+    // }
+
+    const checker = JSON.parse(localStorage.getItem("userExist"));
+    // console.log(checker);
+
+    {
+      checker === true ? navigate("/dashboard") : navigate("/signin");
+    }
+  }, []);
 
   // Submit handler
   const handleSubmit = (values, { setSubmitting }) => {
-    const { email, password } = values;
+    const { email, password, rememberMe } = values;
+    localStorage.setItem("userExist", rememberMe);
     const userDetails = JSON.parse(localStorage.getItem("userDetails"));
     console.log(userDetails);
 
@@ -53,11 +63,19 @@ const SignIn = () => {
 
   return (
     <Formik
-      initialValues={{ email: "", password: "" }}
+      initialValues={{ email: "", password: "", rememberMe: false }}
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
     >
-      {({ handleSubmit, getFieldProps, touched, errors, isSubmitting }) => (
+      {({
+        handleSubmit,
+        getFieldProps,
+        touched,
+        errors,
+        isSubmitting,
+        setFieldValue,
+        values,
+      }) => (
         <div className="flex md:justify-between md:flex-row w-full h-screen bg-gradient-to-r from-gray-100 to-gray-200">
           <div className="hidden lg:block">
             <img src={login} alt="login" className="h-screen w-full " />
@@ -107,6 +125,10 @@ const SignIn = () => {
                     id="remember_me"
                     name="remember_me"
                     type="checkbox"
+                    checked={values.rememberMe}
+                    onChange={() =>
+                      setFieldValue("rememberMe", !values.rememberMe)
+                    }
                     className="h-4 w-4 text-[#FF5E38] focus:ring-[#FF5E38] border-gray-300 rounded"
                   />
                   <span>Remember me</span>

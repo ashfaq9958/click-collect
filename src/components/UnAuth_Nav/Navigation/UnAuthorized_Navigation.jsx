@@ -45,6 +45,11 @@ function UnAuthorized_Navigation() {
     setAnchorElUser(null);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("userExist");
+    navigate("/signin");
+  };
+
   return (
     <>
       <CartModal open={modalDrawer} handleClose={() => setModalDrawer(false)} />
@@ -169,14 +174,14 @@ function UnAuthorized_Navigation() {
                 {settings.map((setting) => (
                   <MenuItem key={setting} onClick={handleCloseUserMenu}>
                     {setting === "Logout" ? (
-                      <Link to="/signin">
+                      <div onClick={handleLogout}>
                         <Typography
                           textAlign="center"
                           className="hover:text-red-600 transition-all duration-300"
                         >
                           {setting}
                         </Typography>
-                      </Link>
+                      </div>
                     ) : (
                       <Typography
                         textAlign="center"
