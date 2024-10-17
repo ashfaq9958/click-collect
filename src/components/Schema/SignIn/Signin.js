@@ -7,6 +7,7 @@ const validationSchema = Yup.object({
   password: Yup.string()
     .min(6, "Password must be at least 6 characters")
     .required("Password is required"),
+  rememberMe: Yup.boolean().required("Please remember me"),
 });
 
 export default validationSchema;

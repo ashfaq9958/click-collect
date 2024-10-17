@@ -10,19 +10,10 @@ import { Formik } from "formik";
 import validationSchema from "../Schema/SignIn/Signin";
 
 const SignIn = () => {
-  // const [isExist, setIsExist] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
-    // {
-    //   localStorage.getItem("userDetails")
-    //     ? navigate("/dashboard")
-    //     : navigate("/signin");
-    // }
-
     const checker = JSON.parse(localStorage.getItem("userExist"));
-    // console.log(checker);
-
     {
       checker === true ? navigate("/dashboard") : navigate("/signin");
     }
@@ -31,9 +22,19 @@ const SignIn = () => {
   // Submit handler
   const handleSubmit = (values, { setSubmitting }) => {
     const { email, password, rememberMe } = values;
+
+    // Check if 'Remember me' is checked
+    if (!rememberMe) {
+      toast.error("Check 'Remember me' to continue.", {
+        duration: 3000,
+        position: "top-right",
+      });
+      setSubmitting(false);
+      return;
+    }
+
     localStorage.setItem("userExist", rememberMe);
     const userDetails = JSON.parse(localStorage.getItem("userDetails"));
-    console.log(userDetails);
 
     if (!userDetails) {
       toast.error("Account not found. Please sign up.", {
@@ -43,13 +44,14 @@ const SignIn = () => {
       setSubmitting(false);
       return;
     }
+
     setTimeout(() => {
       if (email === userDetails.email && password === userDetails.password) {
         toast.success("Successfully logged in.", {
           duration: 3000,
           position: "top-center",
         });
-        // setIsExist(true);
+
         navigate("/dashboard");
       } else {
         toast.error("Check your credentials", {
@@ -130,6 +132,7 @@ const SignIn = () => {
                       setFieldValue("rememberMe", !values.rememberMe)
                     }
                     className="h-4 w-4 text-[#FF5E38] focus:ring-[#FF5E38] border-gray-300 rounded"
+                    error={touched.rememberMe && errors.rememberMe}
                   />
                   <span>Remember me</span>
                 </label>
