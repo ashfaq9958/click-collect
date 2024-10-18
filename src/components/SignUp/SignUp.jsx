@@ -20,8 +20,12 @@ const SignUp = () => {
   const handleSubmit = (values, { setSubmitting }) => {
     setTimeout(() => {
       localStorage.setItem("userDetails", JSON.stringify(values));
+      localStorage.removeItem("userExist");
       if (localStorage.getItem("userDetails")) {
-        toast.success("Account has been successfully created.", { duration: 3000, position: 'top-right' });
+        toast.success("Account has been successfully created.", {
+          duration: 3000,
+          position: "top-right",
+        });
         navigate("/signin");
       }
       setSubmitting(false);
@@ -56,7 +60,7 @@ const SignUp = () => {
                 Join us for a seamless shopping experience!
               </p>
 
-              <form className="space-y-6 md:p-0 p-5" onSubmit={handleSubmit} >
+              <form className="space-y-6 md:p-0 p-5" onSubmit={handleSubmit}>
                 <div className="flex flex-col gap-4 lg:flex-row lg:gap-6">
                   <div className="w-full lg:w-1/2">
                     <Input
@@ -110,7 +114,10 @@ const SignUp = () => {
 
               <p className="text-sm text-gray-500 mt-4 text-center">
                 Already have an account?{" "}
-                <Link to="/signin" className="text-[#ff5e38] font-medium hover:underline">
+                <Link
+                  to="/signin"
+                  className="text-[#ff5e38] font-medium hover:underline"
+                >
                   Sign In
                 </Link>
               </p>

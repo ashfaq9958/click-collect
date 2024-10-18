@@ -13,9 +13,9 @@ const SignIn = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const checker = JSON.parse(localStorage.getItem("userExist"));
+    const isUser = JSON.parse(localStorage.getItem("userExist"));
     {
-      checker === true ? navigate("/dashboard") : navigate("/signin");
+      isUser === true ? navigate("/dashboard") : navigate("/signin");
     }
   }, []);
 
