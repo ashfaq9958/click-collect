@@ -87,7 +87,7 @@ const ProductDetails = () => {
 
       {/* Product Details */}
       <Box className="w-full md:w-[52%] p-3 md:p-8 sm:mt-8">
-        <p className="text-2xl font-bold mb-2 font-roboto text-gray-800">
+        <p className="sm:text-2xl text-xl font-bold mb-2 font-roboto text-gray-800">
           {filterData[0].title}
         </p>
 
@@ -185,7 +185,7 @@ const ProductDetails = () => {
                   boxShadow: "0px 6px 15px rgba(0, 0, 0, 0.25)",
                   transform: "scale(1.1)",
                 },
-              }}  
+              }}
             >
               Wishlist
             </Button>
@@ -197,59 +197,49 @@ const ProductDetails = () => {
             Product Details
           </p>
         </div>
-        <div className="grid grid-cols-2 gap-y-2 gap-x-4  p-4 bg-gray-50 rounded-lg shadow-sm mb-4 font-roboto">
+        <div className="grid grid-cols-2 gap-y-3 sm:gap-x-4  p-4 bg-gray-50 rounded-lg shadow-sm mb-4 font-roboto">
           <p className="text-sm font-medium text-gray-600">
             Material composition
           </p>
-          <p className="text-sm text-gray-800 font-semibold">Cotton</p>
+          <p className="text-sm text-gray-800 font-semibold sm:ml-0 ml-10">
+            Cotton
+          </p>
 
           <p className="text-sm font-medium text-gray-600">Fit type</p>
-          <p className="text-sm text-gray-800 font-semibold">Regular Fit</p>
+          <p className="text-sm text-gray-800 font-semibold sm:ml-0 ml-10">
+            Regular Fit
+          </p>
 
           <p className="text-sm font-medium text-gray-600">Sleeve type</p>
-          <p className="text-sm text-gray-800 font-semibold">Full Sleeve</p>
+          <p className="text-sm text-gray-800 font-semibold  sm:ml-0 ml-10">
+            Full Sleeve
+          </p>
 
           <p className="text-sm font-medium text-gray-600">Style</p>
-          <p className="text-sm text-gray-800 font-semibold">Modern</p>
+          <p className="text-sm text-gray-800 font-semibold sm:ml-0 ml-10">
+            Modern
+          </p>
 
           <p className="text-sm font-medium text-gray-600">Neck Style</p>
-          <p className="text-sm text-gray-800 font-semibold">Dom</p>
+          <p className="text-sm text-gray-800 font-semibold sm:ml-0 ml-10">
+            Dom
+          </p>
         </div>
 
         <hr className="border-gray-300 my-2" />
-        <div className="flex justify-between items-center sm:gap-0 gap-3">
-          <div>
-            <div className="flex justify-center">
-              <img src={returnpackage} alt="" className="w-10" />
+        <div className="flex flex-wrap gap-8 items-center">
+          {[
+            { icon: returnpackage, label: "10 Days Returnable" },
+            { icon: cod, label: "Pay on Delivery" },
+            { icon: free, label: "Free Delivery" },
+            { icon: top, label: "Top Brand" },
+            { icon: secure, label: "Secure Transaction" },
+          ].map((item, index) => (
+            <div key={index} className="flex flex-col items-center">
+              <img src={item.icon} alt="" className="w-10" />
+              <p className="text-center text-sm">{item.label}</p>
             </div>
-            <p className="text-center text-sm">10 Days Returnable</p>
-          </div>
-          <div>
-            <div className="flex justify-center">
-              <img src={cod} alt="" className="w-10" />
-            </div>
-            <p className="text-center text-sm">Pay on Delivery</p>
-          </div>
-          <div>
-            <div className="flex justify-center">
-              <img src={free} alt="" className="w-10" />
-            </div>
-            <p className="text-center text-sm">Free Delivery</p>
-          </div>
-
-          <div>
-            <div className="flex justify-center">
-              <img src={top} alt="" className="w-10" />
-            </div>
-            <p className="text-center text-sm">Top Brand</p>
-          </div>
-
-          <div>
-            <div className="flex justify-center">
-              <img src={secure} alt="" className="w-10" />
-            </div>
-            <p className="text-center text-sm">Secure Transaction</p>
-          </div>
+          ))}
         </div>
       </Box>
     </div>
