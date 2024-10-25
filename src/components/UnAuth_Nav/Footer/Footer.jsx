@@ -71,7 +71,7 @@ const Footer = () => {
       </div>
 
       {/* Footer Links Section */}
-      <div className="w-full mt-10 flex flex-col md:flex-row justify-between items-start">
+      <div className="w-full mt-6 flex flex-col md:flex-row justify-between items-start">
         <div className="flex justify-center md:justify-start w-1/2 mx-auto">
           <img
             src={logo}
