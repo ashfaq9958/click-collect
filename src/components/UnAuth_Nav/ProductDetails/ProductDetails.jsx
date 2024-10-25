@@ -91,11 +91,11 @@ const ProductDetails = () => {
           {filterData[0].title}
         </p>
 
-        <div className="flex gap-x-14 items-center">
-          <p className="text-sm font-medium text-gray-500 font-roboto mb-2  w-40">
+        <div className="flex sm:gap-x-14 gap-x-1 items-center mb-3">
+          <p className="text-sm font-medium text-gray-500 font-roboto w-40">
             <span className="text-gray-600">Brand:</span> {filterData[0].brand}
           </p>
-          <div className="flex items-center gap-2 mb-3 w-40 ">
+          <div className="flex items-center gap-2 w-40 ">
             <p className="text-sm font-medium text-gray-500 font-roboto">
               Rating:
             </p>
