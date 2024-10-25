@@ -86,7 +86,7 @@ const ProductDetails = () => {
       </Box>
 
       {/* Product Details */}
-      <Box className="w-full md:w-[52%] p-3 md:p-8 mt-12">
+      <Box className="w-full md:w-[52%] p-3 md:p-8 sm:mt-8">
         <p className="text-2xl font-bold mb-2 font-roboto text-gray-800">
           {filterData[0].title}
         </p>
@@ -157,7 +157,7 @@ const ProductDetails = () => {
                 color: "white",
                 fontWeight: "bold",
                 letterSpacing: "0.05em",
-                padding: "10px 10px",
+                // padding: "5px 5px",
                 width: 190,
                 "&:hover": {
                   background: "linear-gradient(to right, #f43f5e, #f59e0b)",
@@ -178,7 +178,7 @@ const ProductDetails = () => {
                 color: "white",
                 fontWeight: "bold",
                 letterSpacing: "0.05em",
-                padding: "10px 10px",
+                // padding: "5px 5px",
                 width: 190,
                 "&:hover": {
                   background: "linear-gradient(to right, #f43f5e, #f59e0b)",
