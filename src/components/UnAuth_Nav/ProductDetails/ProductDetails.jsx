@@ -86,16 +86,16 @@ const ProductDetails = () => {
       </Box>
 
       {/* Product Details */}
-      <Box className="w-full md:w-[52%] p-3 md:p-8 sm:mt-8">
+      <Box className="w-full md:w-[52%] p-3 md:p-8 sm:mt-8 -mt-5">
         <p className="sm:text-2xl text-xl font-bold mb-2 font-roboto text-gray-800">
           {filterData[0].title}
         </p>
 
-        <div className="flex sm:gap-x-14 gap-x-1 items-center mb-3">
-          <p className="text-sm font-medium text-gray-500 font-roboto w-40">
+        <div className="flex gap-x-14 items-center mb-3">
+          <p className="text-sm font-medium text-gray-500 font-roboto sm:w-40">
             <span className="text-gray-600">Brand:</span> {filterData[0].brand}
           </p>
-          <div className="flex items-center gap-2 w-40 ">
+          <div className="flex items-center gap-2 sm:w-40 ">
             <p className="text-sm font-medium text-gray-500 font-roboto">
               Rating:
             </p>
