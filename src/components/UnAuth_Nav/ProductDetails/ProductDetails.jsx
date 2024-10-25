@@ -75,7 +75,7 @@ const ProductDetails = () => {
   const color = ["Red", "Blue", "Black", "Yellow"];
 
   return (
-    <div className="md:h-screen w-full flex flex-col md:flex-row  justify-between items-center bg-gray-100 ">
+    <div className="md:h-screen w-full flex flex-col md:flex-row justify-between items-center bg-gray-100 ">
       {/* Image Section */}
       <Box className="h-[50%] md:h-[100%] w-full md:w-[46%] mb-6 md:mb-0 bg-white flex justify-center items-center  ">
         <img
@@ -86,7 +86,7 @@ const ProductDetails = () => {
       </Box>
 
       {/* Product Details */}
-      <Box className="w-full md:w-[52%] p-3 md:p-8 sm:mt-8 -mt-5">
+      <Box className="w-full md:w-[52%] p-3 md:p-8 sm:mt-6 -mt-5">
         <p className="sm:text-2xl text-xl font-bold mb-2 font-roboto text-gray-800">
           {filterData[0].title}
         </p>
@@ -155,15 +155,8 @@ const ProductDetails = () => {
                 background:
                   "linear-gradient(to right, #f59e0b, #f43f5e, #e11d48)",
                 color: "white",
-                fontWeight: "bold",
                 letterSpacing: "0.05em",
-                // padding: "5px 5px",
                 width: 190,
-                "&:hover": {
-                  background: "linear-gradient(to right, #f43f5e, #f59e0b)",
-                  boxShadow: "0px 6px 15px rgba(0, 0, 0, 0.25)",
-                  transform: "scale(1.1)",
-                },
               }}
             >
               Add To Cart
@@ -176,15 +169,8 @@ const ProductDetails = () => {
                 background:
                   "linear-gradient(to right, #f59e0b, #f43f5e, #e11d48)",
                 color: "white",
-                fontWeight: "bold",
                 letterSpacing: "0.05em",
-                // padding: "5px 5px",
                 width: 190,
-                "&:hover": {
-                  background: "linear-gradient(to right, #f43f5e, #f59e0b)",
-                  boxShadow: "0px 6px 15px rgba(0, 0, 0, 0.25)",
-                  transform: "scale(1.1)",
-                },
               }}
             >
               Wishlist
@@ -229,11 +215,11 @@ const ProductDetails = () => {
         <hr className="border-gray-300 my-2" />
         <div className="flex justify-between items-center">
           {[
-            { icon: returnpackage, label: "10-Day Return  " },
+            { icon: returnpackage, label: "10-Days Return  " },
             { icon: cod, label: "Pay on Delivery" },
             { icon: free, label: "Free Delivery" },
             { icon: top, label: "Top Brand" },
-            { icon: secure, label: "Secure Transaction" },
+            { icon: secure, label: "Secure Payment" },
           ].map((item, index) => (
             <div key={index} className="flex flex-col items-center">
               <img src={item.icon} alt="" className="sm:w-10 w-8" />
