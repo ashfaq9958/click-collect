@@ -75,7 +75,7 @@ const ProductDetails = () => {
   const color = ["Red", "Blue", "Black", "Yellow"];
 
   return (
-    <div className="md:h-screen w-full flex flex-col md:flex-row justify-between items-center bg-gray-100 ">
+    <div className="md:h-screen w-full flex flex-col md:flex-row  justify-between items-center bg-gray-100 ">
       {/* Image Section */}
       <Box className="h-[50%] md:h-[100%] w-full md:w-[46%] mb-6 md:mb-0 bg-white flex justify-center items-center  ">
         <img
@@ -86,15 +86,16 @@ const ProductDetails = () => {
       </Box>
 
       {/* Product Details */}
-      <Box className="w-full md:w-[52%] p-3 md:p-8 mt-12 ">
+      <Box className="w-full md:w-[52%] p-3 md:p-8 mt-12">
         <p className="text-2xl font-bold mb-2 font-roboto text-gray-800">
           {filterData[0].title}
         </p>
-        <div className="flex gap-x-24 items-center">
-          <p className="text-sm font-medium text-gray-500 font-roboto mb-2">
+
+        <div className="flex gap-x-14 items-center">
+          <p className="text-sm font-medium text-gray-500 font-roboto mb-2  w-40">
             <span className="text-gray-600">Brand:</span> {filterData[0].brand}
           </p>
-          <div className="flex items-center gap-2 mb-3">
+          <div className="flex items-center gap-2 mb-3 w-40 ">
             <p className="text-sm font-medium text-gray-500 font-roboto">
               Rating:
             </p>
@@ -131,7 +132,6 @@ const ProductDetails = () => {
             className="dropdown-select"
           />
         </Box>
-
         <hr className="border-gray-300 my-3" />
         <p className="mb-1 font-roboto flex items-center gap-3">
           <span className="text-gray-400 text-lg font-semibold line-through">
@@ -141,57 +141,56 @@ const ProductDetails = () => {
             $49.00
           </span>
         </p>
-
         <p className="leading-relaxed mb-5 text-gray-500 font-roboto">
           {filterData[0].desc}
         </p>
 
-        <Box className="flex gap-6 items-center mb-4">
-          <Button
-            variant="contained"
-            startIcon={<ShoppingBagIcon />}
-            className="!uppercase rounded-full shadow-xl transform transition-all duration-300 ease-in-out hover:scale-105"
-            sx={{
-              background:
-                "linear-gradient(to right, #f59e0b, #f43f5e, #e11d48)",
-              color: "white",
-              fontWeight: "bold",
-              letterSpacing: "0.05em",
-              padding: "10px 20px",
-              width: 200,
-              "&:hover": {
-                background: "linear-gradient(to right, #f43f5e, #f59e0b)",
-                boxShadow: "0px 6px 15px rgba(0, 0, 0, 0.25)",
-                transform: "scale(1.1)",
-              },
-            }}
-          >
-            Add To Cart
-          </Button>
-
-          <Button
-            variant="contained"
-            startIcon={<FavoriteBorderIcon />}
-            className="!uppercase rounded-full shadow-xl transform transition-all duration-300 ease-in-out hover:scale-105"
-            sx={{
-              background:
-                "linear-gradient(to right, #f59e0b, #f43f5e, #e11d48)",
-              color: "white",
-              fontWeight: "bold",
-              letterSpacing: "0.05em",
-              padding: "10px 20px",
-              width: 200,
-              "&:hover": {
-                background: "linear-gradient(to right, #f43f5e, #f59e0b)",
-                boxShadow: "0px 6px 15px rgba(0, 0, 0, 0.25)",
-                transform: "scale(1.1)",
-              },
-            }}
-          >
-            Wishlist
-          </Button>
-        </Box>
-
+        <>
+          <Box className="flex gap-8 items-center mb-2">
+            <Button
+              variant="contained"
+              startIcon={<ShoppingBagIcon />}
+              className="!capitalize "
+              sx={{
+                background:
+                  "linear-gradient(to right, #f59e0b, #f43f5e, #e11d48)",
+                color: "white",
+                fontWeight: "bold",
+                letterSpacing: "0.05em",
+                padding: "10px 10px",
+                width: 190,
+                "&:hover": {
+                  background: "linear-gradient(to right, #f43f5e, #f59e0b)",
+                  boxShadow: "0px 6px 15px rgba(0, 0, 0, 0.25)",
+                  transform: "scale(1.1)",
+                },
+              }}
+            >
+              Add To Cart
+            </Button>
+            <Button
+              variant="contained"
+              startIcon={<FavoriteBorderIcon />}
+              className="!capitalize text-white"
+              sx={{
+                background:
+                  "linear-gradient(to right, #f59e0b, #f43f5e, #e11d48)",
+                color: "white",
+                fontWeight: "bold",
+                letterSpacing: "0.05em",
+                padding: "10px 10px",
+                width: 190,
+                "&:hover": {
+                  background: "linear-gradient(to right, #f43f5e, #f59e0b)",
+                  boxShadow: "0px 6px 15px rgba(0, 0, 0, 0.25)",
+                  transform: "scale(1.1)",
+                },
+              }}  
+            >
+              Wishlist
+            </Button>
+          </Box>
+        </>
         <hr className="border-gray-300 my-3" />
         <div className="flex items-center gap-10 mb-1 pb-2">
           <p className="text-xl font-semibold font-roboto text-gray-800">
@@ -218,30 +217,39 @@ const ProductDetails = () => {
         </div>
 
         <hr className="border-gray-300 my-2" />
-        <div className="flex justify-between items-center sm:gap-0 gap-4">
-          {[
-            { img: returnpackage, text: "10 Days Returnable" },
-            { img: cod, text: "Pay on Delivery" },
-            { img: free, text: "Free Delivery" },
-            { img: top, text: "Top Brand" },
-            { img: secure, text: "Secure Transaction" },
-          ].map((item, index) => (
-            <div
-              key={index}
-              className="group flex flex-col items-center p-2 rounded-lg transition-all duration-300 ease-in-out hover:shadow-lg hover:bg-gray-100"
-            >
-              <div className="flex justify-center">
-                <img
-                  src={item.img}
-                  alt=""
-                  className="w-10 transition-transform duration-300 ease-in-out transform group-hover:scale-110"
-                />
-              </div>
-              <p className="text-center text-sm group-hover:text-orange-600 transition-colors duration-300 ease-in-out">
-                {item.text}
-              </p>
+        <div className="flex justify-between items-center sm:gap-0 gap-3">
+          <div>
+            <div className="flex justify-center">
+              <img src={returnpackage} alt="" className="w-10" />
             </div>
-          ))}
+            <p className="text-center text-sm">10 Days Returnable</p>
+          </div>
+          <div>
+            <div className="flex justify-center">
+              <img src={cod} alt="" className="w-10" />
+            </div>
+            <p className="text-center text-sm">Pay on Delivery</p>
+          </div>
+          <div>
+            <div className="flex justify-center">
+              <img src={free} alt="" className="w-10" />
+            </div>
+            <p className="text-center text-sm">Free Delivery</p>
+          </div>
+
+          <div>
+            <div className="flex justify-center">
+              <img src={top} alt="" className="w-10" />
+            </div>
+            <p className="text-center text-sm">Top Brand</p>
+          </div>
+
+          <div>
+            <div className="flex justify-center">
+              <img src={secure} alt="" className="w-10" />
+            </div>
+            <p className="text-center text-sm">Secure Transaction</p>
+          </div>
         </div>
       </Box>
     </div>
