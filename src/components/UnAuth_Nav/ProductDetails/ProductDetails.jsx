@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import winter from "../../../assets/winter Jacket/win_1.png";
 import { Box, Button } from "@mui/material";
 import DropDown from "../../DropDown/DropDown";
 import Rating from "@mui/material/Rating";
@@ -10,6 +8,11 @@ import Feature_1 from "../../../assets/red.png";
 import Feature_2 from "../../../assets/fea_1.png";
 import Feature_3 from "../../../assets/winter.png";
 import Feature_4 from "../../../assets/denim2.png";
+import returnpackage from "../../../assets/icons/return.png";
+import cod from "../../../assets/icons/cod.png";
+import free from "../../../assets/icons/free.png";
+import top from "../../../assets/icons/top.png";
+import secure from "../../../assets/icons/secure.png";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { useParams } from "react-router-dom";
@@ -124,9 +127,7 @@ const ProductDetails = () => {
           </span>
         </p>
 
-        <p className=" leading-relaxed text-md font-roboto mb-3">
-          {filterData[0].desc}
-        </p>
+        <p className="leading-relaxed font-roboto mb-3">{filterData[0].desc}</p>
 
         <>
           <Box className="flex gap-4 items-center mb-2">
@@ -161,10 +162,10 @@ const ProductDetails = () => {
           </Box>
         </>
         <hr className="border-gray-300 my-3" />
-        <div className="flex items-center gap-20 mb-3">
+        <div className="flex items-center gap-20 mb-1">
           <p className="text-lg font-medium font-roboto">Product Details</p>
         </div>
-        <div className="grid grid-cols-2 gap-y-3 mb-3">
+        <div className="grid grid-cols-2 gap-y-1 ">
           <p className="text-sm font-medium">Material composition</p>
           <p>Cotton</p>
 
@@ -176,6 +177,41 @@ const ProductDetails = () => {
 
           <p className="text-sm font-medium">Neck Style</p>
           <p>Dom</p>
+        </div>
+        <hr className="border-gray-300 my-2" />
+        <div className="flex justify-between items-center sm:gap-0 gap-4">
+          <div>
+            <div className="flex justify-center">
+              <img src={returnpackage} alt="" className="w-10" />
+            </div>
+            <p className="text-center text-sm">10 Days Returnable</p>
+          </div>
+          <div>
+            <div className="flex justify-center">
+              <img src={cod} alt="" className="w-10" />
+            </div>
+            <p className="text-center text-sm">Pay on Delivery</p>
+          </div>
+          <div>
+            <div className="flex justify-center">
+              <img src={free} alt="" className="w-10" />
+            </div>
+            <p className="text-center text-sm">Free Delivery</p>
+          </div>
+
+          <div>
+            <div className="flex justify-center">
+              <img src={top} alt="" className="w-10" />
+            </div>
+            <p className="text-center text-sm">Top Brand</p>
+          </div>
+
+          <div>
+            <div className="flex justify-center">
+              <img src={secure} alt="" className="w-10" />
+            </div>
+            <p className="text-center text-sm">Secure Transaction</p>
+          </div>
         </div>
       </Box>
     </div>

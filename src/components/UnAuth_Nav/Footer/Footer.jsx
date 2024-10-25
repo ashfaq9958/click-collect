@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <div className="p-8 bg-gradient-to-r from-gray-900 via-gray-800 to-black text-gray-400 w-full mx-auto ">
       {/* Newsletter Subscription Section */}
-      <div className="w-[96%] mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 items-center justify-between mt-10">
+      <div className="w-[96%] mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 items-center  mt-10">
         <div className="text-center md:text-left">
           <h4 className="text-2xl font-bold text-white">
             Subscribe to Our Newsletter
@@ -21,7 +21,7 @@ const Footer = () => {
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-4 items-center">
+        <div className="flex flex-col md:flex-row md:gap-4 gap-6 items-center ">
           <TextField
             label="Email address"
             variant="outlined"
@@ -39,15 +39,15 @@ const Footer = () => {
           </Button>
         </div>
 
-        <div className="flex justify-center md:justify-end gap-6">
+        <div className="flex justify-center md:justify-end gap-6 items-center mt-6">
           <a href="https://www.linkedin.com/in/ashfaqahmad99/" target="_blank">
-          <LinkedInIcon
-            fontSize="large"
-            className="text-blue-700 hover:text-blue-800 cursor-pointer transition-transform transform hover:scale-110"
-          />
+            <LinkedInIcon
+              fontSize="large"
+              className="text-blue-700 hover:text-blue-800 cursor-pointer transition-transform transform hover:scale-110"
+            />
           </a>
-       
-           <a href="https://www.instagram.com/yusufkhan.845/" target="_blank">
+
+          <a href="https://www.instagram.com/yusufkhan.845/" target="_blank">
             <InstagramIcon
               fontSize="large"
               className="text-pink-500 hover:text-pink-600 cursor-pointer transition-transform transform hover:scale-110"
@@ -57,7 +57,7 @@ const Footer = () => {
             fontSize="large"
             className="text-blue-500 hover:text-blue-600 cursor-pointer transition-transform transform hover:scale-110"
           />
-         
+
           <YouTubeIcon
             fontSize="large"
             className="text-red-500 hover:text-red-600 cursor-pointer transition-transform transform hover:scale-110"
@@ -80,7 +80,7 @@ const Footer = () => {
           />
         </div>
 
-        <div className="grid sm:grid-cols-3 grid-cols-2 gap-16 mt-8 md:mt-0 text-center md:text-left  ">
+        <div className="grid sm:grid-cols-3 md:grid-cols-4 grid-cols-2 gap-16 mt-8 md:mt-0 text-center md:text-left  ">
           <div className="leading-8">
             <p className="text-white text-lg font-semibold">Shop Men</p>
             <p className="hover:text-white cursor-pointer transition-colors duration-200">

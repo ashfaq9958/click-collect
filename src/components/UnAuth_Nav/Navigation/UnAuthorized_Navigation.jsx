@@ -102,7 +102,7 @@ function UnAuthorized_Navigation() {
                 className="gap-6"
               >
                 {pages.map((page) => (
-                  <Link to={page.link}>
+                  <Link to={page.link} key={page.name}>
                     <Button
                       key={page.name}
                       onClick={handleCloseNavMenu}
