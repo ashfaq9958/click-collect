@@ -18,11 +18,32 @@ import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import logo from "../../../assets/bg_logo.png";
 import avatar from "../../../assets/avatar_1.jpg";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, NavLink } from "react-router-dom";
 import SearchModal from "../../Modal/SearchModal";
 import CartModal from "../../Modal/CartModal";
 
-const pages = ["Men", "Women", "Kids", "Blog", "About"];
+const pages = [
+  {
+    name: "Men",
+    link: "/mens-category",
+  },
+  {
+    name: "Women",
+    link: "/womens-category",
+  },
+  {
+    name: "Kids",
+    link: "",
+  },
+  {
+    name: "Blog",
+    link: "",
+  },
+  {
+    name: "About",
+    link: "",
+  },
+];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function UnAuthorized_Navigation() {
@@ -46,8 +67,10 @@ function UnAuthorized_Navigation() {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("userExist");
-    navigate("/signin");
+    if (localStorage.getItem("userExist")) {
+      localStorage.removeItem("userExist");
+      navigate("/signin");
+    }
   };
 
   return (
@@ -79,19 +102,21 @@ function UnAuthorized_Navigation() {
                 className="gap-6"
               >
                 {pages.map((page) => (
-                  <Button
-                    key={page}
-                    onClick={handleCloseNavMenu}
-                    className="!text-black !font-medium hover:!text-red-600 transition-all duration-300 font-roboto"
-                  >
-                    {page}
-                  </Button>
+                  <Link to={page.link}>
+                    <Button
+                      key={page.name}
+                      onClick={handleCloseNavMenu}
+                      className="!text-black !font-medium hover:!text-red-600 transition-all duration-300 font-roboto"
+                    >
+                      {page.name}
+                    </Button>
+                  </Link>
                 ))}
               </Box>
             </Box>
 
             {/* Right-side Icons and Search Bar */}
-            <Box className="flex items-center gap-6">
+            <Box className="flex items-center md:gap-6 gap-3">
               {/* Search Modal && Icon */}
               <SearchModal open={open} handleClose={() => setOpen(false)} />
               <Tooltip title="Search">
@@ -215,13 +240,15 @@ function UnAuthorized_Navigation() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography
-                    textAlign="center"
-                    className="text-black hover:text-red-600 transition-all duration-300"
-                  >
-                    {page}
-                  </Typography>
+                <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                  <Link to={page.link}>
+                    <Typography
+                      textAlign="center"
+                      className="text-black hover:text-red-600 transition-all duration-300"
+                    >
+                      {page.name}
+                    </Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>

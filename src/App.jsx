@@ -11,11 +11,11 @@ const App = () => {
     {
       path: "/",
       element: <Root />,
+      // errorElement:<LazyRoute.NotFound/>,
       children: [
         {
-          // Redirect root path to "/signin"
           index: true,
-          element: <Navigate to="/signin" />,
+          element: <LazyRoute.SignIn />,
         },
         {
           path: "/signup",
@@ -30,8 +30,16 @@ const App = () => {
           element: <LazyRoute.Dashboard />,
         },
         {
-          path: "/product-details",
+          path: "/product-details/:id",
           element: <LazyRoute.ProductDetails />,
+        },
+        {
+          path: "/mens-category",
+          element: <LazyRoute.MensCategory />,
+        },
+        {
+          path: "/womens-category",
+          element: <LazyRoute.WomensCategory />,
         },
       ],
     },

@@ -5,13 +5,12 @@ import dash7 from "../../../assets/landing_7.jpg";
 import Featured from "../The_Featured_Products/Featured";
 import sale from "../../../assets/sale.png";
 import ChildSection from "../Child_Section/ChildSection";
-import Footer from "../Footer/Footer";
 import Carousel from "react-material-ui-carousel";
 import Categories from "../Categories/Categories";
 import Sofa from "../SofaBanner/Sofa";
 import Upcoming from "../Upcoming_Products/Upcoming";
 import Testimonials from "../Testimonials/Testimonials";
-import { Helmet } from "react-helmet";
+
 
 const Dashboard = () => {
   const landingImg = [
@@ -28,6 +27,7 @@ const Dashboard = () => {
       alt: "Landing Image 4",
     },
   ];
+  
 
   return (
     <>
@@ -107,9 +107,9 @@ const Dashboard = () => {
       </div>
 
       {/* Footer Section */}
-      <div className="">
+      {/* <div className="">
         <Footer />
-      </div>
+      </div> */}
     </>
   );
 };

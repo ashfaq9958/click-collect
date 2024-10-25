@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.dropdown .MuiFormControl-root {
+  width: 190px !important;
+}
+
+.dropdownHeight .MuiOutlinedInput-input {
+  padding: 9px 9px !important;
+}
+
+.dropdownPlaceholder .MuiInputLabel-root {
+  line-height: 0.7em !important;
+}
+
+@media screen and (min-width: 300px) and (max-width: 410px) {
+  .dropdown .MuiFormControl-root {
+    width: 150px !important;
+  }
+
+  @media (min-width: 355px) {
+    .dropdown .MuiFormControl-root {
+      width: 160px !important;
+    }
+  }
+
+  @media (min-width: 370px) {
+    .dropdown .MuiFormControl-root {
+      width: 170px !important;
+    }
+  }
+}

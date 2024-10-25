@@ -9,7 +9,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="p-8 bg-gradient-to-r from-gray-900 via-gray-800 to-black text-gray-400 w-full mx-auto">
+    <div className="p-8 bg-gradient-to-r from-gray-900 via-gray-800 to-black text-gray-400 w-full mx-auto ">
       {/* Newsletter Subscription Section */}
       <div className="w-[96%] mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 items-center justify-between mt-10">
         <div className="text-center md:text-left">

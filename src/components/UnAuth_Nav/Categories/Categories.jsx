@@ -29,7 +29,7 @@ const Categories = () => {
     <div className="mt-8 bg-gray-50">
       <div className="w-[98%] mx-auto p-6 lg:p-12">
         <h1 className="text-3xl lg:text-4xl font-semibold text-center mb-2 text-gray-800 font-roboto">
-          Explore Our Categories
+          Explore Categories
         </h1>
         <hr className="w-52 h-1 mx-auto bg-gradient-to-r from-gray-800 to-gray-400 rounded mb-8" />
 

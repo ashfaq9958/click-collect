@@ -8,3 +8,11 @@ export const Dashboard = lazy(() =>
 export const ProductDetails = lazy(() =>
   import("../UnAuth_Nav/ProductDetails/ProductDetails.jsx")
 );
+
+export const MensCategory = lazy(() =>
+  import("../UnAuth_Nav/Categories/Mens/Mens.jsx")
+);
+export const WomensCategory = lazy(() =>
+  import("../UnAuth_Nav/Categories/Womens/Womens.jsx")
+);
+export const NotFound = lazy(() => import("../PageNotFound/NotFound.jsx"));

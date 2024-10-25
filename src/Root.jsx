@@ -1,7 +1,7 @@
 import React from "react";
-import MainNavigation from "./components/Main_Navigation/MainNavigation";
 import UnAuthorized_Navigation from "./components/UnAuth_Nav/Navigation/UnAuthorized_Navigation";
 import { Outlet, useLocation } from "react-router-dom";
+import Footer from "./components/UnAuth_Nav/Footer/Footer";
 
 const Root = () => {
   const { pathname } = useLocation();
@@ -14,6 +14,7 @@ const Root = () => {
       <main>
         <Outlet />
       </main>
+      {!hideNavigation && <Footer />}
     </div>
   );
 };

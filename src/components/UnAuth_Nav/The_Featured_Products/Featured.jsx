@@ -13,7 +13,7 @@ const Featured = () => {
     {
       key: 1,
       img: Feature_1,
-      title: "Puma Hoodie",
+      title: "HighLander Hoodie",
       desc: "Finest Quality Hoodie",
       discount: "20% OFF",
       icon: <FavoriteBorderOutlinedIcon />,
@@ -58,7 +58,7 @@ const Featured = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((item) => (
-            <Link to="/product-details" key={item.key}>
+            <Link to={`/product-details/${item.key}`} key={item.key}>
               <Card feature={item} />
             </Link>
           ))}
