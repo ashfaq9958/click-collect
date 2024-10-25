@@ -80,7 +80,7 @@ const Footer = () => {
           />
         </div>
 
-        <div className="flex flex-wrap gap-16 mt-8 md:mt-0 text-center md:text-left">
+        <div className="grid sm:grid-cols-3 grid-cols-2 gap-16 mt-8 md:mt-0 text-center md:text-left  ">
           <div className="leading-8">
             <p className="text-white text-lg font-semibold">Shop Men</p>
             <p className="hover:text-white cursor-pointer transition-colors duration-200">
