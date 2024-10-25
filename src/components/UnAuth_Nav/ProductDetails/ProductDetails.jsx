@@ -165,8 +165,8 @@ const ProductDetails = () => {
         <div className="flex items-center gap-20 mb-1">
           <p className="text-lg font-medium font-roboto">Product Details</p>
         </div>
-        <div className="grid grid-cols-2 gap-y-1 ">
-          <p className="text-sm font-medium">Material composition</p>
+        <div className="grid grid-cols-2 gap-y-1  max-w-md items-center">
+          <p className="text-sm font-medium ">Material composition</p>
           <p>Cotton</p>
 
           <p className="text-sm font-medium">Fit type</p>
@@ -174,6 +174,9 @@ const ProductDetails = () => {
 
           <p className="text-sm font-medium">Sleeve type</p>
           <p>Full Sleeve</p>
+
+          <p className="text-sm font-medium">Style</p>
+          <p>Modern</p>
 
           <p className="text-sm font-medium">Neck Style</p>
           <p>Dom</p>
