@@ -227,17 +227,17 @@ const ProductDetails = () => {
         </div>
 
         <hr className="border-gray-300 my-2" />
-        <div className="flex flex-wrap gap-8 items-center">
+        <div className="flex justify-between items-center">
           {[
-            { icon: returnpackage, label: "10 Days Returnable" },
+            { icon: returnpackage, label: "10-Day Return  " },
             { icon: cod, label: "Pay on Delivery" },
             { icon: free, label: "Free Delivery" },
             { icon: top, label: "Top Brand" },
             { icon: secure, label: "Secure Transaction" },
           ].map((item, index) => (
             <div key={index} className="flex flex-col items-center">
-              <img src={item.icon} alt="" className="w-10" />
-              <p className="text-center text-sm">{item.label}</p>
+              <img src={item.icon} alt="" className="sm:w-10 w-8" />
+              <p className="text-center sm:text-sm text-xs">{item.label}</p>
             </div>
           ))}
         </div>
