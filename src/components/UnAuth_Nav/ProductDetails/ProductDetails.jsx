@@ -75,7 +75,7 @@ const ProductDetails = () => {
   const color = ["Red", "Blue", "Black", "Yellow"];
 
   return (
-    <div className="sm:h-screen w-full flex flex-col md:flex-row justify-between items-center bg-gray-100 ">
+    <div className="md:h-screen w-full flex flex-col md:flex-row  justify-between items-center bg-gray-100 ">
       {/* Image Section */}
       <Box className="h-[50%] md:h-[100%] w-full md:w-[46%] mb-6 md:mb-0 bg-white flex justify-center items-center  ">
         <img
@@ -86,7 +86,7 @@ const ProductDetails = () => {
       </Box>
 
       {/* Product Details */}
-      <Box className="w-full md:w-[52%] p-3 md:p-8 ">
+      <Box className="w-full md:w-[52%] p-3 md:p-8 md:-mt-6 ">
         <p className="sm:text-2xl font-bold mb-1 font-roboto text-gray-800">
           {filterData[0].title}
         </p>
