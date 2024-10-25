@@ -58,7 +58,7 @@ const ProductDetails = () => {
       title: "Classic Denim Jacket",
       subTiitle: "Trending Denim",
       brand: "H&M",
-      desc: "Elevate your wardrobe with the timeless appeal of the Classic Denim Jacket. Crafted from high-quality, durable denim, this jacket combines rugged style with modern versatility. Featuring a classic button-up front, chest pockets, and a comfortable fit",
+      desc: "Elevate your wardrobe with the timeless appeal of the Classic Denim Jacket. Crafted from high-quality, durable denim, this jacket combines rugged style with modern versatility. Featuring a classic button-up front, chest pockets, and a comfortable fit.",
       discount: "40% OFF",
       icon: <FavoriteBorderOutlinedIcon />,
       view: <VisibilityIcon />,
@@ -86,7 +86,7 @@ const ProductDetails = () => {
       </Box>
 
       {/* Product Details */}
-      <Box className="w-full md:w-[52%] p-3 md:p-8 md:-mt-6 ">
+      <Box className="w-full md:w-[52%] p-3 md:p-8 ">
         <p className="sm:text-2xl font-bold mb-1 font-roboto text-gray-800">
           {filterData[0].title}
         </p>
@@ -127,7 +127,7 @@ const ProductDetails = () => {
           </span>
         </p>
 
-        <p className="leading-relaxed font-roboto mb-3">{filterData[0].desc}</p>
+        <p className="leading-relaxed font-roboto mb-3 ">{filterData[0].desc}</p>
 
         <>
           <Box className="flex gap-4 items-center mb-2">
