@@ -15,11 +15,11 @@ const ChildSection = () => {
 
       {/* Text Section */}
       <div className="w-full md:w-1/2 bg-[#f9f9f9] p-8 md:p-12 flex flex-col justify-center space-y-2">
-        <div className="space-y-3 p-2 ">
-          <h1 className="sm:text-4xl text-3xl font-bold text-gray-900 font-roboto">
+        <div className="space-y-3 p-2 -mt-4 sm:mt-0 ">
+          <h1 className="sm:text-3xl text-2xl font-bold text-gray-900 font-roboto">
             FAVOURITE BRANDS
           </h1>
-          <h2 className="sm:text-3xl text-2xl font-semibold text-red-600 font-roboto">
+          <h2 className="sm:text-3xl text-xl font-semibold text-red-600 font-roboto">
             Children's Apparel Collection
           </h2>
           <p className="sm:text-base text-sm text-gray-700 leading-relaxed font-roboto">

@@ -262,11 +262,11 @@ const ProductDetails = () => {
               <Close />
             </IconButton>
           </DialogTitle>
-          <DialogContent className="space-y-4">
+          <DialogContent className="space-y-4 font-roboto">
             {/* Example Review */}
             <div className="border-b border-gray-200 py-4">
               <div className="flex items-center justify-between">
-                <p className="font-semibold text-gray-800">Alice Johnson</p>
+                <p className="font-semibold text-gray-800 font-roboto">Alice Johnson</p>
                 <Rating
                   value={5}
                   readOnly
@@ -291,7 +291,7 @@ const ProductDetails = () => {
             </div>
             <div className="border-b border-gray-200 py-4">
               <div className="flex items-center justify-between">
-                <p className="font-semibold text-gray-800">John Smith</p>
+                <p className="font-semibold text-gray-800 font-roboto">John Smith</p>
                 <Rating
                   value={4}
                   readOnly
