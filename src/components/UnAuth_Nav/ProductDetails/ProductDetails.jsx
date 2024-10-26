@@ -31,7 +31,9 @@ const ProductDetails = () => {
       subTitle: "Finest Quality Hoodie",
       brand: "HighLander Collection",
       desc: "Stay cozy and stylish with the Comfort Fit Hoodie, your go-to for laid-back days and cool-weather outings. Made from ultra-soft, high-quality cotton blend fabric, this hoodie delivers warmth without sacrificing comfort.",
-      discount: "20% OFF",
+      price: 799,
+      deletedPrice: 1299,
+      discount: 12,
       icon: <FavoriteBorderOutlinedIcon />,
       view: <VisibilityIcon />,
     },
@@ -42,7 +44,9 @@ const ProductDetails = () => {
       subtitle: "Finest Quality T-Shirt",
       brand: "The Nike Brand",
       desc: "Stay stylish and comfortable with the Nike Essential T-shirt, perfect for casual wear or an active lifestyle. Made from premium, soft cotton fabric, this T-shirt offers a lightweight and breathable feel, ensuring all-day comfort.",
-      discount: "20% OFF",
+      price: 999,
+      deletedPrice: 1599,
+      discount: 20,
       icon: <FavoriteBorderOutlinedIcon />,
       view: <VisibilityIcon />,
     },
@@ -52,8 +56,10 @@ const ProductDetails = () => {
       title: "Stylish Winter Apparel",
       subtitle: "Blue Denim Jacket",
       brand: "H&M - A Fashion Brand",
-      desc: "Stay warm and stylish with the Puma Essential Jacket, perfect for layering during winter. Crafted from premium, soft cotton fabric, it provides a cozy and breathable feel, ensuring comfort in colder weather.",
-      discount: "15% OFF",
+      desc: "Experience ultimate comfort and style with the Puma Essential Jacket, designed to keep you warm and chic all season. Stay warm and stylish with the Puma Essential Jacket, perfect for layering during winter. Crafted from premium, soft cotton fabric, it provides a cozy and breathable feel, ensuring comfort in colder weather.",
+      price: 1499,
+      deletedPrice: 2150,
+      discount: 20,
       icon: <FavoriteBorderOutlinedIcon />,
       view: <VisibilityIcon />,
     },
@@ -64,7 +70,9 @@ const ProductDetails = () => {
       subTiitle: "Trending Denim",
       brand: "H&M - A Fashion Brand",
       desc: "Elevate your wardrobe with the timeless appeal of the Classic Denim Jacket. Crafted from high-quality, durable denim, this jacket combines rugged style with modern versatility. Featuring a classic button-up front, chest pockets, and a comfortable fit.",
-      discount: "40% OFF",
+      price: 1399,
+      deletedPrice: 1700,
+      discount: 17,
       icon: <FavoriteBorderOutlinedIcon />,
       view: <VisibilityIcon />,
     },
@@ -80,13 +88,13 @@ const ProductDetails = () => {
   const color = ["Red", "Blue", "Black", "Yellow"];
 
   const [openReviewModal, setOpenReviewModal] = useState(false);
-  const [selectedSize, setSelectedSize] = useState("");
-  const [selectedColor, setSelectedColor] = useState("");
+  // const [selectedSize, setSelectedSize] = useState("");
+  // const [selectedColor, setSelectedColor] = useState("");
 
   const handleOpenModal = () => setOpenReviewModal(true);
   const handleCloseModal = () => setOpenReviewModal(false);
-  const handleSizeChange = (event) => setSelectedSize(event.target.value);
-  const handleColorChange = (event) => setSelectedColor(event.target.value);
+  // const handleSizeChange = (event) => setSelectedSize(event.target.value);
+  // const handleColorChange = (event) => setSelectedColor(event.target.value);
 
   return (
     <div className="md:h-screen w-full flex flex-col md:flex-row justify-between items-center bg-gray-100 ">
@@ -155,15 +163,16 @@ const ProductDetails = () => {
         </Box>
         <hr className="border-gray-300 my-3" />
 
-        <div className="flex items-center space-x-4">
-          <p className="text-2xl font-semibold bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 bg-clip-text text-transparent ">
-            $99.99
+        <div className="flex items-center space-x-4 font-roboto">
+          <p className="text-2xl font-bold bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 bg-clip-text text-transparent shadow-pink-500/50 tracking-wide">
+            ₹{filterData[0].price}
           </p>
+
           <p className="text-lg font-semibold text-gray-400 line-through">
-            $124.99
+            ₹{filterData[0].deletedPrice}
           </p>
           <span className="text-sm text-white font-bold bg-gradient-to-r from-red-500 to-red-600 px-2 py-1 rounded-lg">
-            20% OFF
+            {filterData[0].discount}% OFF
           </span>
         </div>
 
