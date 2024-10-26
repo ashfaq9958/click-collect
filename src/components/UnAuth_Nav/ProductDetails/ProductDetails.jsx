@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
+import ShoppingCart from "@mui/icons-material/ShoppingCart";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { Box, Button } from "@mui/material";
 import DropDown from "../../DropDown/DropDown";
@@ -22,9 +22,9 @@ const ProductDetails = () => {
     {
       key: 1,
       img: Feature_1,
-      title: "Men's Quilted Hooded Winter Jacket",
+      title: "Men's Quilted Hooded Jacket",
       subTitle: "Finest Quality Hoodie",
-      brand: "HighLander",
+      brand: "HighLander Collection",
       desc: "Stay cozy and stylish with the Comfort Fit Hoodie, your go-to for laid-back days and cool-weather outings. Made from ultra-soft, high-quality cotton blend fabric, this hoodie delivers warmth without sacrificing comfort.",
       discount: "20% OFF",
       icon: <FavoriteBorderOutlinedIcon />,
@@ -35,7 +35,7 @@ const ProductDetails = () => {
       img: Feature_2,
       title: "Exclusive Nike T-Shirt",
       subtitle: "Finest Quality T-Shirt",
-      brand: "Nike",
+      brand: "The Nike Brand",
       desc: "Stay stylish and comfortable with the Nike Essential T-shirt, perfect for casual wear or an active lifestyle. Made from premium, soft cotton fabric, this T-shirt offers a lightweight and breathable feel, ensuring all-day comfort.",
       discount: "20% OFF",
       icon: <FavoriteBorderOutlinedIcon />,
@@ -46,7 +46,7 @@ const ProductDetails = () => {
       img: Feature_3,
       title: "Stylish Winter Apparel",
       subtitle: "Blue Denim Jacket",
-      brand: "H&M",
+      brand: "H&M - A Fashion Brand",
       desc: "Stay warm and stylish with the Puma Essential Jacket, perfect for layering during winter. Crafted from premium, soft cotton fabric, it provides a cozy and breathable feel, ensuring comfort in colder weather.",
       discount: "15% OFF",
       icon: <FavoriteBorderOutlinedIcon />,
@@ -57,7 +57,7 @@ const ProductDetails = () => {
       img: Feature_4,
       title: "Classic Denim Jacket",
       subTiitle: "Trending Denim",
-      brand: "H&M",
+      brand: "H&M - A Fashion Brand",
       desc: "Elevate your wardrobe with the timeless appeal of the Classic Denim Jacket. Crafted from high-quality, durable denim, this jacket combines rugged style with modern versatility. Featuring a classic button-up front, chest pockets, and a comfortable fit.",
       discount: "40% OFF",
       icon: <FavoriteBorderOutlinedIcon />,
@@ -86,38 +86,37 @@ const ProductDetails = () => {
       </Box>
 
       {/* Product Details */}
-      <Box className="w-full md:w-[52%] p-3 md:p-8 sm:mt-6 -mt-5">
+      <Box className="w-full md:w-[52%] p-3 md:p-8 space-y-2 ">
+        <div className="flex sm:gap-x-14 gap-x-3 items-center">
+          <p className="text-sm font-medium text-gray-600 font-roboto w-40">
+            {filterData[0].brand}
+          </p>
+        </div>
         <p className="sm:text-2xl text-xl font-bold mb-2 font-roboto text-gray-800">
           {filterData[0].title}
         </p>
 
-        <div className="flex sm:gap-x-14 gap-x-3  items-center mb-3">
-          <p className="text-sm font-medium text-gray-500 font-roboto w-40">
-            <span className="text-gray-600">Brand:</span> {filterData[0].brand}
-          </p>
-          <div className="flex items-center gap-2 w-40 ">
-            <p className="text-sm font-medium text-gray-500 font-roboto">
-              Rating:
-            </p>
-            <Rating
-              name="read-only"
-              value={4}
-              readOnly
-              size="small"
-              sx={{
-                "& .MuiRating-iconFilled": {
-                  color: "rgb(255 90 31)",
-                },
-                "& .MuiRating-iconHover": {
-                  color: "#FFA500",
-                },
-                "& .MuiRating-iconEmpty": {
-                  color: "#ddd",
-                },
-              }}
-              className=""
-            />
-          </div>
+        <div className="flex items-center space-x-2 mb-2 ">
+          <Rating
+            name="read-only"
+            precision={0.5}
+            value={4.5}
+            readOnly
+            size="small"
+            sx={{
+              "& .MuiRating-iconFilled": {
+                color: "rgb(255 90 31)",
+              },
+              "& .MuiRating-iconHover": {
+                color: "#FFA500",
+              },
+              "& .MuiRating-iconEmpty": {
+                color: "#ddd",
+              },
+            }}
+            className=""
+          />
+          <span className="text-gray-600">(125 Reviews)</span>
         </div>
 
         <Box className="flex md:gap-6 gap-3 items-center dropdown dropdownHeight dropdownPlaceholder">
@@ -133,23 +132,29 @@ const ProductDetails = () => {
           />
         </Box>
         <hr className="border-gray-300 my-3" />
-        <p className="mb-1 font-roboto flex items-center gap-3">
-          <span className="text-gray-400 text-lg font-semibold line-through">
-            $65.00
+
+        <div className="flex items-center space-x-4">
+          <p className="text-2xl font-semibold bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 bg-clip-text text-transparent ">
+            $99.99
+          </p>
+          <p className="text-lg font-semibold text-gray-400 line-through">
+            $124.99
+          </p>
+          <span className="text-sm text-green-600 font-bold bg-green-100 px-2 py-1 rounded-lg">
+            20% OFF
           </span>
-          <span className="text-3xl font-extrabold bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 bg-clip-text text-transparent">
-            $49.00
-          </span>
-        </p>
-        <p className="leading-relaxed mb-5 text-gray-500 font-roboto">
+        </div>
+
+        <p className=" mb-5 font-roboto text-gray-700 mt-4 leading-relaxed text-base">
           {filterData[0].desc}
         </p>
 
         <>
-          <Box className="flex gap-8 items-center mb-2">
+          <Box className="mt-6 flex sm:space-x-8 space-x-3  items-center mb-2">
             <Button
               variant="contained"
-              startIcon={<ShoppingBagIcon />}
+              // color="primary"
+              startIcon={<ShoppingCart />}
               className="!capitalize "
               sx={{
                 background:
@@ -162,13 +167,10 @@ const ProductDetails = () => {
               Add To Cart
             </Button>
             <Button
-              variant="contained"
+              variant="outlined"
               startIcon={<FavoriteBorderIcon />}
-              className="!capitalize text-white"
+              className="!capitalize !text-orange-600  !border-orange-600 hover:bg-orange-50"
               sx={{
-                background:
-                  "linear-gradient(to right, #f59e0b, #f43f5e, #e11d48)",
-                color: "white",
                 letterSpacing: "0.05em",
                 width: 190,
               }}
@@ -212,7 +214,7 @@ const ProductDetails = () => {
           </p>
         </div>
 
-        <hr className="border-gray-300 my-2" />
+        <hr className="border-gray-300 my-4" />
         <div className="flex justify-between items-center">
           {[
             { icon: returnpackage, label: "10-Days Return  " },
