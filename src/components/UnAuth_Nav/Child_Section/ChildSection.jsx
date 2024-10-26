@@ -22,7 +22,7 @@ const ChildSection = () => {
           <h2 className="sm:text-3xl text-xl font-semibold text-red-600 font-roboto">
             Children's Apparel Collection
           </h2>
-          <p className="sm:text-base text-sm text-gray-700 leading-relaxed font-roboto">
+          <p className="sm:text-base text-sm text-gray-600 leading-relaxed font-roboto">
             Explore our wide range of children's apparel featuring comfortable
             styles and vibrant colors that kids love. Dress them in their
             favorite outfits and let their personalities shine!

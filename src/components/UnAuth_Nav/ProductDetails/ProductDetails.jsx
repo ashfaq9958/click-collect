@@ -91,17 +91,20 @@ const ProductDetails = () => {
   return (
     <div className="md:h-screen w-full flex flex-col md:flex-row justify-between items-center bg-gray-100 ">
       {/* Image Section */}
-      <Box className="h-[50%] md:h-[100%] w-full md:w-[46%] mb-6 md:mb-0 bg-white flex justify-center items-center  ">
+      <Box className="h-[50%] md:h-[100%] w-full md:w-[46%] mb-6 md:mb-0 bg-white shadow-md p-4 flex justify-center items-center">
         <img
           src={filterData[0]?.img}
           alt="Coming Soon"
           className="h-full w-[70%] object-contain"
         />
+        {/* <span className="text-xs sm:text-lg text-white font-semibold bg-gradient-to-r from-red-500 to-red-600 px-3 py-1 sm:top-10 sm:right-10 right-4 top-6 absolute rounded-full flex justify-center items-center shadow-md">
+          20% OFF
+        </span> */}
       </Box>
 
       {/* Product Details */}
-      <Box className="w-full md:w-[52%] p-3 md:p-8 space-y-3 ">
-        <div className="flex gap-x-4 items-center">
+      <Box className="w-full md:w-[52%] p-3 md:p-8 space-y-3 sm:-mt-4 -mt-5 ">
+        <div className="flex justify-between items-center">
           <p className="text-sm font-medium text-gray-600 font-roboto w-40">
             {filterData[0].brand}
           </p>
@@ -110,7 +113,7 @@ const ProductDetails = () => {
           {filterData[0].title}
         </p>
 
-        <div className="flex items-center space-x-2 mb-2 ">
+        <div className="flex items-center space-x-4">
           <Rating
             name="read-only"
             precision={0.5}
@@ -130,7 +133,12 @@ const ProductDetails = () => {
             }}
             className=""
           />
-          <span className="text-gray-600">(125 Reviews)</span>
+          <span
+            onClick={() => setOpenReviewModal(true)}
+            className="text-gray-600 cursor-pointer hover:underline "
+          >
+            02 Reviews
+          </span>
         </div>
 
         <Box className="flex md:gap-6 gap-3 items-center dropdown dropdownHeight dropdownPlaceholder">
@@ -154,7 +162,7 @@ const ProductDetails = () => {
           <p className="text-lg font-semibold text-gray-400 line-through">
             $124.99
           </p>
-          <span className="text-sm text-green-600 font-bold bg-green-100 px-2 py-1 rounded-lg">
+          <span className="text-sm text-white font-bold bg-gradient-to-r from-red-500 to-red-600 px-2 py-1 rounded-lg">
             20% OFF
           </span>
         </div>
@@ -190,11 +198,12 @@ const ProductDetails = () => {
           </Box>
         </>
         <hr className="border-gray-300 my-3" />
-        <div className="flex items-center gap-x-6 mb-1 pb-2">
+        <div className="flex items-center gap-x-[5.5rem] pb-2">
           <p className="text-xl font-semibold font-roboto text-gray-800">
             Product Details
           </p>
-          <Tooltip
+
+          {/* <Tooltip
             title="Reviews"
             onClick={handleOpenModal}
             className="!capitalize !text-orange-600  !border-orange-600 hover:bg-orange-50"
@@ -202,7 +211,7 @@ const ProductDetails = () => {
             <IconButton>
               <RemoveRedEyeIcon className="!w-5" />
             </IconButton>
-          </Tooltip>
+          </Tooltip> */}
         </div>
         <div className="grid grid-cols-2 gap-y-3 sm:gap-x-4  p-4 bg-gray-50 rounded-lg shadow-sm mb-4 font-roboto">
           <p className="text-sm font-medium text-gray-600">
@@ -266,7 +275,9 @@ const ProductDetails = () => {
             {/* Example Review */}
             <div className="border-b border-gray-200 py-4">
               <div className="flex items-center justify-between">
-                <p className="font-semibold text-gray-800 font-roboto">Alice Johnson</p>
+                <p className="font-semibold text-gray-800 font-roboto">
+                  Alice Johnson
+                </p>
                 <Rating
                   value={5}
                   readOnly
@@ -291,7 +302,9 @@ const ProductDetails = () => {
             </div>
             <div className="border-b border-gray-200 py-4">
               <div className="flex items-center justify-between">
-                <p className="font-semibold text-gray-800 font-roboto">John Smith</p>
+                <p className="font-semibold text-gray-800 font-roboto">
+                  John Smith
+                </p>
                 <Rating
                   value={4}
                   readOnly
