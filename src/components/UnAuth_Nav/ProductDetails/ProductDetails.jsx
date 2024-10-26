@@ -1,21 +1,26 @@
 import React, { useEffect, useState } from "react";
-import ShoppingCart from "@mui/icons-material/ShoppingCart";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import { Box, Button } from "@mui/material";
+import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
+import { Box } from "@mui/material";
 import DropDown from "../../DropDown/DropDown";
-import Rating from "@mui/material/Rating";
 import Feature_1 from "../../../assets/red.png";
 import Feature_2 from "../../../assets/fea_1.png";
 import Feature_3 from "../../../assets/winter.png";
 import Feature_4 from "../../../assets/denim2.png";
-import returnpackage from "../../../assets/icons/return.png";
-import cod from "../../../assets/icons/cod.png";
-import free from "../../../assets/icons/free.png";
-import top from "../../../assets/icons/top.png";
-import secure from "../../../assets/icons/secure.png";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { useParams } from "react-router-dom";
+import { ShoppingCart, Close } from "@mui/icons-material";
+import Tooltip from "@mui/material/Tooltip";
+import {
+  Button,
+  Rating,
+  TextField,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  IconButton,
+} from "@mui/material";
 
 const ProductDetails = () => {
   const [filterData, setFilterData] = useState([
@@ -74,6 +79,15 @@ const ProductDetails = () => {
   const size = ["Small", "Medium", "Large", "XL", "2XL", "3XL", "4XL"];
   const color = ["Red", "Blue", "Black", "Yellow"];
 
+  const [openReviewModal, setOpenReviewModal] = useState(false);
+  const [selectedSize, setSelectedSize] = useState("");
+  const [selectedColor, setSelectedColor] = useState("");
+
+  const handleOpenModal = () => setOpenReviewModal(true);
+  const handleCloseModal = () => setOpenReviewModal(false);
+  const handleSizeChange = (event) => setSelectedSize(event.target.value);
+  const handleColorChange = (event) => setSelectedColor(event.target.value);
+
   return (
     <div className="md:h-screen w-full flex flex-col md:flex-row justify-between items-center bg-gray-100 ">
       {/* Image Section */}
@@ -86,8 +100,8 @@ const ProductDetails = () => {
       </Box>
 
       {/* Product Details */}
-      <Box className="w-full md:w-[52%] p-3 md:p-8 space-y-2 ">
-        <div className="flex sm:gap-x-14 gap-x-3 items-center">
+      <Box className="w-full md:w-[52%] p-3 md:p-8 space-y-3 ">
+        <div className="flex gap-x-4 items-center">
           <p className="text-sm font-medium text-gray-600 font-roboto w-40">
             {filterData[0].brand}
           </p>
@@ -153,13 +167,9 @@ const ProductDetails = () => {
           <Box className="mt-6 flex sm:space-x-8 space-x-3  items-center mb-2">
             <Button
               variant="contained"
-              // color="primary"
               startIcon={<ShoppingCart />}
-              className="!capitalize "
+              className="!capitalize bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 text-white"
               sx={{
-                background:
-                  "linear-gradient(to right, #f59e0b, #f43f5e, #e11d48)",
-                color: "white",
                 letterSpacing: "0.05em",
                 width: 190,
               }}
@@ -180,10 +190,19 @@ const ProductDetails = () => {
           </Box>
         </>
         <hr className="border-gray-300 my-3" />
-        <div className="flex items-center gap-10 mb-1 pb-2">
+        <div className="flex items-center gap-x-6 mb-1 pb-2">
           <p className="text-xl font-semibold font-roboto text-gray-800">
             Product Details
           </p>
+          <Tooltip
+            title="Reviews"
+            onClick={handleOpenModal}
+            className="!capitalize !text-orange-600  !border-orange-600 hover:bg-orange-50"
+          >
+            <IconButton>
+              <RemoveRedEyeIcon className="!w-5" />
+            </IconButton>
+          </Tooltip>
         </div>
         <div className="grid grid-cols-2 gap-y-3 sm:gap-x-4  p-4 bg-gray-50 rounded-lg shadow-sm mb-4 font-roboto">
           <p className="text-sm font-medium text-gray-600">
@@ -214,7 +233,7 @@ const ProductDetails = () => {
           </p>
         </div>
 
-        <hr className="border-gray-300 my-4" />
+        {/* <hr className="border-gray-300 my-4" />
         <div className="flex justify-between items-center">
           {[
             { icon: returnpackage, label: "10-Days Return  " },
@@ -228,7 +247,123 @@ const ProductDetails = () => {
               <p className="text-center sm:text-sm text-xs">{item.label}</p>
             </div>
           ))}
-        </div>
+        </div> */}
+
+        {/* Review Modal */}
+        <Dialog
+          open={openReviewModal}
+          onClose={handleCloseModal}
+          maxWidth="md"
+          fullWidth
+        >
+          <DialogTitle className="flex items-center justify-between">
+            Customer Reviews
+            <IconButton onClick={handleCloseModal}>
+              <Close />
+            </IconButton>
+          </DialogTitle>
+          <DialogContent className="space-y-4">
+            {/* Example Review */}
+            <div className="border-b border-gray-200 py-4">
+              <div className="flex items-center justify-between">
+                <p className="font-semibold text-gray-800">Alice Johnson</p>
+                <Rating
+                  value={5}
+                  readOnly
+                  size="small"
+                  sx={{
+                    "& .MuiRating-iconFilled": {
+                      color: "rgb(255 90 31)",
+                    },
+                    "& .MuiRating-iconHover": {
+                      color: "#FFA500",
+                    },
+                    "& .MuiRating-iconEmpty": {
+                      color: "#ddd",
+                    },
+                  }}
+                />
+              </div>
+              <p className="text-gray-600 mt-2">
+                "Amazing product! The quality is great, and it fits perfectly.
+                Highly recommend!"
+              </p>
+            </div>
+            <div className="border-b border-gray-200 py-4">
+              <div className="flex items-center justify-between">
+                <p className="font-semibold text-gray-800">John Smith</p>
+                <Rating
+                  value={4}
+                  readOnly
+                  size="small"
+                  sx={{
+                    "& .MuiRating-iconFilled": {
+                      color: "rgb(255 90 31)",
+                    },
+                    "& .MuiRating-iconHover": {
+                      color: "#FFA500",
+                    },
+                    "& .MuiRating-iconEmpty": {
+                      color: "#ddd",
+                    },
+                  }}
+                />
+              </div>
+              <p className="text-gray-600 mt-2">
+                "Good product, but could improve in packaging."
+              </p>
+            </div>
+
+            {/* Submit a Review Form */}
+            <h3 className="text-lg font-semibold mt-6">Write a Review</h3>
+            <form className="space-y-4">
+              <TextField
+                label="Your Name"
+                variant="outlined"
+                fullWidth
+                required
+              />
+              <TextField
+                label="Review"
+                variant="outlined"
+                fullWidth
+                multiline
+                rows={4}
+                required
+              />
+              <div className="sm:flex sm:items-center sm:justify-between">
+                <div className="flex items-center space-x-2 mb-2 sm:mb-0">
+                  <span className="text-gray-700">Rating:</span>
+                  <Rating
+                    size="small"
+                    name="rating"
+                    value={4}
+                    precision={1}
+                    sx={{
+                      "& .MuiRating-iconFilled": {
+                        color: "rgb(255 90 31)",
+                      },
+                      "& .MuiRating-iconHover": {
+                        color: "#FFA500",
+                      },
+                      "& .MuiRating-iconEmpty": {
+                        color: "#ddd",
+                      },
+                    }}
+                  />
+                </div>
+
+                <Button
+                  variant="contained"
+                  color="primary"
+                  className="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 text-white hover:bg-gradient-to-l"
+                >
+                  Submit Review
+                </Button>
+              </div>
+            </form>
+          </DialogContent>
+        </Dialog>
       </Box>
     </div>
   );
