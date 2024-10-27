@@ -88,13 +88,8 @@ const ProductDetails = () => {
   const color = ["Red", "Blue", "Black", "Yellow"];
 
   const [openReviewModal, setOpenReviewModal] = useState(false);
-  // const [selectedSize, setSelectedSize] = useState("");
-  // const [selectedColor, setSelectedColor] = useState("");
 
-  const handleOpenModal = () => setOpenReviewModal(true);
   const handleCloseModal = () => setOpenReviewModal(false);
-  // const handleSizeChange = (event) => setSelectedSize(event.target.value);
-  // const handleColorChange = (event) => setSelectedColor(event.target.value);
 
   return (
     <div className="md:h-screen w-full flex flex-col md:flex-row justify-between items-center bg-gray-100 ">
@@ -167,11 +162,10 @@ const ProductDetails = () => {
           <p className="text-2xl font-bold bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 bg-clip-text text-transparent shadow-pink-500/50 tracking-wide">
             ₹{filterData[0].price}
           </p>
-
           <p className="text-lg font-semibold text-gray-400 line-through">
             ₹{filterData[0].deletedPrice}
           </p>
-          <span className="text-sm text-white font-bold bg-gradient-to-r from-red-500 to-red-600 px-2 py-1 rounded-lg">
+          <span className="text-xs text-white font-bold bg-gradient-to-r from-red-500 to-red-600 px-2 py-1 rounded-tr-lg rounded-bl-lg">
             {filterData[0].discount}% OFF
           </span>
         </div>
@@ -211,16 +205,6 @@ const ProductDetails = () => {
           <p className="text-xl font-semibold font-roboto text-gray-800">
             Product Details
           </p>
-
-          {/* <Tooltip
-            title="Reviews"
-            onClick={handleOpenModal}
-            className="!capitalize !text-orange-600  !border-orange-600 hover:bg-orange-50"
-          >
-            <IconButton>
-              <RemoveRedEyeIcon className="!w-5" />
-            </IconButton>
-          </Tooltip> */}
         </div>
         <div className="grid grid-cols-2 gap-y-3 sm:gap-x-4  p-4 bg-gray-50 rounded-lg shadow-sm mb-4 font-roboto">
           <p className="text-sm font-medium text-gray-600">
@@ -250,22 +234,6 @@ const ProductDetails = () => {
             Dom
           </p>
         </div>
-
-        {/* <hr className="border-gray-300 my-4" />
-        <div className="flex justify-between items-center">
-          {[
-            { icon: returnpackage, label: "10-Days Return  " },
-            { icon: cod, label: "Pay on Delivery" },
-            { icon: free, label: "Free Delivery" },
-            { icon: top, label: "Top Brand" },
-            { icon: secure, label: "Secure Payment" },
-          ].map((item, index) => (
-            <div key={index} className="flex flex-col items-center">
-              <img src={item.icon} alt="" className="sm:w-10 w-8" />
-              <p className="text-center sm:text-sm text-xs">{item.label}</p>
-            </div>
-          ))}
-        </div> */}
 
         {/* Review Modal */}
         <Dialog
