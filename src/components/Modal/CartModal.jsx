@@ -52,12 +52,9 @@ const CartModal = ({ open, handleClose }) => {
         <div className="flex justify-between items-center">
           {" "}
           {/* Fixed className */}
-          <Typography
-            variant="h5"
-            sx={{ fontWeight: 600, mb: 1, color: "#333" }}
-          >
+          <div className="font-medium sm:text-2xl text-lg font-roboto">
             Your Shopping Cart
-          </Typography>
+          </div>
           <Tooltip title="Close">
             <IconButton onClick={handleClose}>
               <CloseIcon fontSize="meduim" sx={{ mb: 1 }} />
