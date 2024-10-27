@@ -159,8 +159,9 @@ const ProductDetails = () => {
         <hr className="border-gray-300 my-3" />
 
         <div className="flex items-center space-x-4 font-roboto">
-          <p className="text-2xl font-bold bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 bg-clip-text text-transparent shadow-pink-500/50 tracking-wide">
-            ₹{filterData[0].price}
+          <p className="text-2xl font-bold  shadow-pink-500/50 tracking-wide font-roboto">
+            <sup className="text-sm font-normal">₹</sup>
+            {filterData[0].price}
           </p>
           <p className="text-lg font-semibold text-gray-400 line-through">
             ₹{filterData[0].deletedPrice}
@@ -206,33 +207,92 @@ const ProductDetails = () => {
             Product Details
           </p>
         </div>
-        <div className="grid grid-cols-2 gap-y-3 sm:gap-x-4  p-4 bg-gray-50 rounded-lg shadow-sm mb-4 font-roboto">
-          <p className="text-sm font-medium text-gray-600">
-            Material composition
-          </p>
-          <p className="text-sm text-gray-800 font-semibold sm:ml-0 ml-10">
-            Cotton
-          </p>
-
-          <p className="text-sm font-medium text-gray-600">Fit type</p>
-          <p className="text-sm text-gray-800 font-semibold sm:ml-0 ml-10">
-            Regular Fit
-          </p>
-
-          <p className="text-sm font-medium text-gray-600">Sleeve type</p>
-          <p className="text-sm text-gray-800 font-semibold  sm:ml-0 ml-10">
-            Full Sleeve
-          </p>
-
-          <p className="text-sm font-medium text-gray-600">Style</p>
-          <p className="text-sm text-gray-800 font-semibold sm:ml-0 ml-10">
-            Modern
+        <div className="grid grid-cols-2 gap-y-4 sm:gap-x-8 p-4 bg-white rounded-md items-center font-roboto">
+          {/* Material Composition */}
+          <div className="flex items-center gap-3">
+            <span className="text-orange-500">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H8v-2h3v-2H8v-2h3V8h2v2h3v2h-3v2h3v2h-3v2h-2v-2z" />
+              </svg>
+            </span>
+            <p className="text-base  text-gray-600">Fabric Composition</p>
+          </div>
+          <p className="text-sm text-gray-800 font-medium">
+            100% Organic Cotton
           </p>
 
-          <p className="text-sm font-medium text-gray-600">Neck Style</p>
-          <p className="text-sm text-gray-800 font-semibold sm:ml-0 ml-10">
-            Dom
+          {/* Fit Type */}
+          <div className="flex items-center gap-3">
+            <span className="text-orange-500">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm2 12.5l-2-2-2 2V16h4v-1.5z" />
+              </svg>
+            </span>
+            <p className="text-base text-gray-600">Fit Type</p>
+          </div>
+          <p className="text-sm text-gray-800 font-medium">Slim Fit</p>
+
+          {/* Sleeve Type */}
+          <div className="flex items-center gap-3">
+            <span className="text-orange-500">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 13h-2v-2h2v2zm0-4h-2V7h2v4z" />
+              </svg>
+            </span>
+            <p className="text-base text-gray-600">Sleeve Type</p>
+          </div>
+          <p className="text-sm text-gray-800 font-medium">
+            Full-Length Sleeves
           </p>
+
+          {/* Style */}
+          <div className="flex items-center gap-3">
+            <span className="text-orange-500">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M10 4V2h4v2h5v2h-2.05c-.83 1.2-1.57 2.63-2.16 4.22-.49 1.31-1.08 2.59-1.74 3.78-.65-1.19-1.26-2.47-1.74-3.78C11.61 8.63 10.87 7.2 10.05 6H8V4h2zm0 9c1.32 0 2.66-.53 3.87-1.49 1.22-.96 2.33-2.16 3.05-3.46H10V13zm6.88 7.39c1.06-.63 2.04-1.51 2.88-2.52v2.52h-2.88z" />
+              </svg>
+            </span>
+            <p className="text-base  text-gray-600">Style</p>
+          </div>
+          <p className="text-sm text-gray-800 font-medium">
+            Contemporary Casual
+          </p>
+
+          {/* Neck Style */}
+          <div className="flex items-center gap-3">
+            <span className="text-orange-500">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M12 2C8.69 2 6 4.69 6 8v10c0 3.31 2.69 6 6 6s6-2.69 6-6V8c0-3.31-2.69-6-6-6zm-4 8c0-1.96 1.56-3.5 3.5-3.5S15 8.04 15 10h-2c0-1.38-1.12-2.5-2.5-2.5S8 8.62 8 10h-2z" />
+              </svg>
+            </span>
+            <p className="text-base  text-gray-600">Neck Style</p>
+          </div>
+          <p className="text-sm text-gray-800 font-medium">Round Neck</p>
         </div>
 
         {/* Review Modal */}
