@@ -220,7 +220,7 @@ const ProductDetails = () => {
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H8v-2h3v-2H8v-2h3V8h2v2h3v2h-3v2h3v2h-3v2h-2v-2z" />
               </svg>
             </span>
-            <p className="text-base  text-gray-600">Fabric Composition</p>
+            <p className="text-base  text-gray-600">Fabric</p>
           </div>
           <p className="text-sm text-gray-800 font-medium">
             100% Organic Cotton
