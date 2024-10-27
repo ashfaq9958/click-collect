@@ -38,7 +38,7 @@ const CartModal = ({ open, handleClose }) => {
     <Drawer anchor="right" open={open} onClose={handleClose}>
       <Box
         sx={{
-          width: 420,
+          width: { sm: 400 },
           p: 2,
           backgroundColor: "#fff",
           backgroundImage: "linear-gradient(135deg, #f5f7fa, #e2e2e2)",
@@ -120,10 +120,9 @@ const CartModal = ({ open, handleClose }) => {
               justifyContent: "space-between",
               backgroundImage: "linear-gradient(90deg, #ff6f61, #ff4081)",
               color: "#fff",
-              fontWeight: 500,
-              fontSize: "1rem",
+              fontWeight: { sm: 500 },
               borderRadius: "5px",
-              padding: "10px 20px",
+              padding: { sm: "10px 20px" },
               width: "100%",
               textTransform: "none",
               boxShadow: "0px 4px 10px rgba(255, 105, 135, 0.3)",
@@ -132,8 +131,8 @@ const CartModal = ({ open, handleClose }) => {
               },
             }}
           >
-            <p> Proceed to Checkout</p>
-            <p>Total: $50.00</p>
+            <p className="sm:text-base text-xs"> Proceed to Checkout</p>
+            <p className="sm:text-base text-xs">Total: $50.00</p>
           </Button>
         </Box>
       </Box>
