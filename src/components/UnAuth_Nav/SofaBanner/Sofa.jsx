@@ -1,5 +1,6 @@
 import React from "react";
 import jeans from "../../../assets/jeans2.jpg";
+import { Button } from "@mui/material";
 
 const ChildSection = () => {
   return (
@@ -14,7 +15,7 @@ const ChildSection = () => {
       </div>
 
       {/* Text Section */}
-      <div className="w-full md:w-1/2 bg-[#f9f9f9] p-8 md:p-12 flex flex-col justify-center sm:space-y-2 " >
+      <div className="w-full md:w-1/2 bg-[#f9f9f9] p-8 md:p-12 flex flex-col justify-center sm:space-y-2 ">
         <div className="space-y-2 p-2 -mt-4 sm:mt-0">
           <h1 className="sm:text-3xl text-2xl font-bold text-gray-900 font-roboto">
             FAVOURITE BRANDS
@@ -41,9 +42,16 @@ const ChildSection = () => {
           </p>
         </div>
 
-        <button className="self-start px-6 py-2 text-lg font-semibold text-white bg-red-600 rounded-lg shadow-md hover:bg-red-700 transition-colors duration-300">
+        <Button
+          variant="contained"
+          className="!capitalize !bg-red-600  text-white sm:self-start self-center "
+          sx={{
+            letterSpacing: "0.05em",
+            width: 170,
+          }}
+        >
           Shop Now
-        </button>
+        </Button>
       </div>
     </div>
   );

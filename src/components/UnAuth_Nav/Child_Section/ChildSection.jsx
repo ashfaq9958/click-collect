@@ -1,5 +1,6 @@
 import React from "react";
 import child from "../../../assets/child.jpg";
+import { Button } from "@mui/material";
 
 const ChildSection = () => {
   return (
@@ -36,13 +37,19 @@ const ChildSection = () => {
             With a variety of sizes and designs, you can easily mix and match to
             create unique looks that express your child's individuality. From
             playful prints to classic styles, our apparel is designed to inspire
-            creativity and confidence in every child. 
+            creativity and confidence in every child.
           </p>
         </div>
-
-        <button className="self-start px-6 py-2 text-lg font-semibold text-white bg-red-600 rounded-lg shadow-md hover:bg-red-700 transition-colors duration-300">
+        <Button
+          variant="contained"
+          className="!capitalize !bg-red-600  text-white sm:self-start self-center "
+          sx={{
+            letterSpacing: "0.05em",
+            width: 170,
+          }}
+        >
           Shop Now
-        </button>
+        </Button>
       </div>
     </div>
   );
