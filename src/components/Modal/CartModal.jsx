@@ -57,12 +57,12 @@ const CartModal = ({ open, handleClose }) => {
           </div>
           <Tooltip title="Close">
             <IconButton onClick={handleClose}>
-              <CloseIcon fontSize="meduim" sx={{ mb: 1 }} />
+              <CloseIcon fontSize="meduim"  />
             </IconButton>
           </Tooltip>
         </div>
 
-        <Divider sx={{ mb: 1 }} />
+        <Divider sx={{ mb: 1 }} />  
 
         {/* Cart Items */}
         <List sx={{ flexGrow: 1, mt: 1 }}>

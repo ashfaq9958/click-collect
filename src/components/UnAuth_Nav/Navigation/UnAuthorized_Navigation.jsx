@@ -128,7 +128,7 @@ function UnAuthorized_Navigation() {
               {/* Wishlist and Cart Badges */}
               <Box display="flex" gap={2} alignItems="center">
                 <Badge
-                  badgeContent={3}
+                  badgeContent={0}
                   color="error"
                   sx={{
                     "& .MuiBadge-badge": {
