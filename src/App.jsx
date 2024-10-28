@@ -41,6 +41,18 @@ const App = () => {
           path: "/womens-category",
           element: <LazyRoute.WomensCategory />,
         },
+        {
+          path: "/blog",
+          element: <LazyRoute.Blog />,
+        },
+        {
+          path: "/about-us",
+          element: <LazyRoute.About />,
+        },
+        {
+          path: "/kids-category",
+          element: <LazyRoute.KidsCategory />,
+        },
       ],
     },
   ]);

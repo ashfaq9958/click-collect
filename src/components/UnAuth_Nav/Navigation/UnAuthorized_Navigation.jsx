@@ -33,15 +33,15 @@ const pages = [
   },
   {
     name: "Kids",
-    link: "",
+    link: "/kids-category",
   },
   {
     name: "Blog",
-    link: "",
+    link: "/blog",
   },
   {
     name: "About",
-    link: "",
+    link: "/about-us",
   },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];

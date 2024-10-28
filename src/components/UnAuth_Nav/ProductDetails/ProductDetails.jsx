@@ -159,12 +159,12 @@ const ProductDetails = () => {
         <hr className="border-gray-300 my-3" />
 
         <div className="flex items-center space-x-4 font-roboto">
-          <p className="text-2xl font-bold  shadow-pink-500/50 tracking-wide font-roboto">
-            <sup className="text-sm font-normal">₹</sup>
-            {filterData[0].price}
-          </p>
           <p className="text-lg font-semibold text-gray-400 line-through">
             ₹{filterData[0].deletedPrice}
+          </p>
+          <p className="text-2xl font-bold tracking-wide font-roboto">
+            <sup className="text-sm font-normal">₹</sup>
+            {filterData[0].price}
           </p>
           <span className="text-xs text-white font-bold bg-gradient-to-r from-red-500 to-red-600 px-2 py-1 rounded-tr-lg rounded-bl-lg">
             {filterData[0].discount}% OFF
