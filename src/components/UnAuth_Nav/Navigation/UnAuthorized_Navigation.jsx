@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   AppBar,
   Box,
@@ -18,9 +18,10 @@ import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import logo from "../../../assets/bg_logo.png";
 import avatar from "../../../assets/avatar_1.jpg";
-import { Link, useNavigate, NavLink } from "react-router-dom";
+import { Link, useNavigate, NavLink, json } from "react-router-dom";
 import SearchModal from "../../Modal/SearchModal";
 import CartModal from "../../Modal/CartModal";
+import { useDispatch, useSelector } from "react-redux";
 
 const pages = [
   {
@@ -47,6 +48,7 @@ const pages = [
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function UnAuthorized_Navigation() {
+  const { cart } = useSelector((state) => state.cart);
   const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
@@ -72,6 +74,8 @@ function UnAuthorized_Navigation() {
       navigate("/signin");
     }
   };
+
+  let cartcount = localStorage.getItem("cart") && cart.length;
 
   return (
     <>
@@ -116,7 +120,7 @@ function UnAuthorized_Navigation() {
             </Box>
 
             {/* Right-side Icons and Search Bar */}
-            <Box className="flex items-center md:gap-6 gap-3">
+            <Box className="flex items-center md:gap-x-4 gap-x-2">
               {/* Search Modal && Icon */}
               <SearchModal open={open} handleClose={() => setOpen(false)} />
               <Tooltip title="Search">
@@ -126,7 +130,7 @@ function UnAuthorized_Navigation() {
               </Tooltip>
 
               {/* Wishlist and Cart Badges */}
-              <Box display="flex" gap={2} alignItems="center">
+              <Box display="flex" gap={1} alignItems="center">
                 <Badge
                   badgeContent={0}
                   color="error"
@@ -149,7 +153,7 @@ function UnAuthorized_Navigation() {
                 </Badge>
 
                 <Badge
-                  badgeContent={2}
+                  badgeContent={cartcount}
                   color="error"
                   sx={{
                     "& .MuiBadge-badge": {

@@ -19,6 +19,9 @@ const KidsCategory = lazy(() =>
 // export const NotFound = lazy(() => import("../PageNotFound/NotFound.jsx"));
 const Blog = lazy(() => import("../UnAuth_Nav/Categories/Blog/Blog.jsx"));
 const About = lazy(() => import("../UnAuth_Nav/Categories/AboutUs/About.jsx"));
+const CartCheckOut = lazy(() =>
+  import("../UnAuth_Nav/CartCheckout/CartCheckout.jsx")
+);
 
 export {
   About,
@@ -30,4 +33,5 @@ export {
   Dashboard,
   Signup,
   SignIn,
+  CartCheckOut,
 };

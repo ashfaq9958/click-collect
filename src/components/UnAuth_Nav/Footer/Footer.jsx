@@ -11,8 +11,8 @@ const Footer = () => {
   return (
     <div className="p-8 bg-gradient-to-r from-gray-900 via-gray-800 to-black text-gray-400 w-full mx-auto ">
       {/* Newsletter Subscription Section */}
-      <div className="w-[96%] mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 items-center  mt-10">
-        <div className="text-center md:text-left">
+      <div className="w-[96%] mx-auto sm:flex sm:justify-between items-center sm:mt-10 flex-wrap gap-y-4">
+        <div className="text-center md:text-left sm:mb-0 mb-6">
           <h4 className="text-2xl font-bold text-white">
             Subscribe to Our Newsletter
           </h4>
@@ -21,25 +21,25 @@ const Footer = () => {
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row md:gap-4 gap-6 items-center ">
+        <div className="sm:relative sm:mb-0 mb-6 ">
           <TextField
             label="Email address"
             variant="outlined"
             size="small"
-            className="w-full md:w-80 bg-white"
+            className="w-full sm:w-96 bg-white"
             sx={{ borderRadius: "4px", bgcolor: "#fff" }}
           />
           <Button
             variant="contained"
             color="error"
-            className="mt-2 md:mt-0 md:ml-2 bg-red-600 hover:bg-red-700 text-white rounded-full px-6 py-2"
+            className="!mt-[5.5px]  bg-red-600 hover:bg-red-700 text-white !text-xs rounded-full px-6 py-2 sm:absolute sm:right-[98px] !h-7"
             sx={{ fontWeight: "bold", textTransform: "none" }}
           >
             Subscribe
           </Button>
         </div>
 
-        <div className="flex justify-center md:justify-end gap-6 items-center mt-6">
+        <div className="flex justify-center md:justify-end gap-6 items-center ">
           <a href="https://www.linkedin.com/in/ashfaqahmad99/" target="_blank">
             <LinkedInIcon
               fontSize="large"

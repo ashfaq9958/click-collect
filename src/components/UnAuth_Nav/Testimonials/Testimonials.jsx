@@ -147,15 +147,16 @@ const Testimonials = () => {
                   <Button
                     variant="contained"
                     sx={{
-                      backgroundColor: "#007FFF",
+                      // backgroundColor: "red",
                       color: "#fff",
                       textTransform: "none",
                       borderRadius: "8px",
                       fontWeight: "bold",
                       "&:hover": {
-                        backgroundColor: "#0059B2",
+                        backgroundColor: "red",
                       },
                     }}
+                    className="!bg-gradient-to-r from-orange-400 to-orange-600"
                   >
                     Read my story
                   </Button>

@@ -6,7 +6,7 @@ const Kids = () => {
     <div className="h-screen w-full flex flex-col items-center justify-center bg-gray-100 p-8">
       <Box className="text-center mb-6">
         <Typography variant="h3" className="text-[#FF5E38] font-semibold mb-4">
-          Coming Soon: Blog Page
+          Coming Soon: Kid's Products
         </Typography>
         <Typography variant="body1" className="text-gray-700">
           We're working on this page, stay tuned!

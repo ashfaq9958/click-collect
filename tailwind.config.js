@@ -3,7 +3,7 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-    "node_modules/flowbite-react/lib/esm/**/*.js",
+    // "node_modules/flowbite-react/lib/esm/**/*.js",
   ],
   theme: {
     screens: {
@@ -26,7 +26,7 @@ export default {
       eczar: ["Eczar"],
       cursive: ["Sevillana"],
       dancing: ["Dancing"],
-      roboto: ['Roboto']
+      roboto: ["Roboto"],
     },
     extend: {
       screens: {
@@ -34,5 +34,5 @@ export default {
       },
     },
   },
-  plugins: [require("flowbite/plugin")],
+  // plugins: [require("flowbite/plugin")],
 };

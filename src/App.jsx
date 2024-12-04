@@ -1,10 +1,6 @@
 import React from "react";
 import * as LazyRoute from "./components/ReactLazyRoute/ReactLazy";
-import {
-  RouterProvider,
-  createBrowserRouter,
-  Navigate,
-} from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Root from "./Root";
 const App = () => {
   const router = createBrowserRouter([
@@ -52,6 +48,10 @@ const App = () => {
         {
           path: "/kids-category",
           element: <LazyRoute.KidsCategory />,
+        },
+        {
+          path: "/cart-checkout",
+          element: <LazyRoute.CartCheckOut />,
         },
       ],
     },
