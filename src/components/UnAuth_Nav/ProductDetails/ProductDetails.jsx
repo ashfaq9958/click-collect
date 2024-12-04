@@ -51,7 +51,7 @@ let filterData = [
     title: "Stylish Winter Apparel",
     subtitle: "Blue Denim Jacket",
     brand: "H&M - A Fashion Brand",
-    desc: "Experience ultimate comfort and style with the Puma Essential Jacket, designed to keep you warm and chic all season. Stay warm and stylish with the Puma Essential Jacket, perfect for layering during winter. Crafted from premium, soft cotton fabric, it provides a cozy and breathable feel, ensuring comfort in colder weather.",
+    desc: "Experience ultimate comfort and style with the Puma Essential Jacket, designed to keep you warm and chic all season. Stay warm and stylish with the Puma Essential Jacket, perfect for layering during winter. Crafted from premium, soft cotton fabric, it provides a cozy and breathable feel.",
     price: 1499,
     deletedPrice: 2150,
     discount: 20,
@@ -166,7 +166,7 @@ const ProductDetails = () => {
               {selectedProduct?.discount}% OFF
             </span>
           </div>
-          <p className=" mb-5 font-roboto text-gray-700 mt-4 leading-relaxed text-base">
+          <p className=" mb-5 font-roboto text-gray-700 text-sm mt-4 leading-relaxed md:text-base">
             {selectedProduct?.desc}
           </p>
 
