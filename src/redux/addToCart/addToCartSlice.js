@@ -16,29 +16,23 @@ const cartSlice = createSlice({
         (item) => item.key === action.payload.key
       );
       if (!itemExists) {
-        // Add item to the cart
         state.cart.push(action.payload);
-        // Update localStorage
         localStorage.setItem("cart", JSON.stringify(state.cart));
-        setTimeout(() => {
-          toast.success("Item added to your cart successfully", {
-            duration: 3000,
-            position: "top-center",
-          });
-        }, 1000);
+        toast.success("Item added to your cart successfully", {
+          duration: 3000,
+          position: "top-center",
+        });
       } else {
         setTimeout(() => {
           toast.error("This item is already in your cart.", {
             duration: 3000,
             position: "top-center",
           });
-        }, 1000);
+        }, 0);
       }
     },
     removeToCart: (state, action) => {
-      // Remove item from the cart
       state.cart = state.cart.filter((item) => item.key !== action.payload.key);
-      // Update localStorage
       localStorage.setItem("cart", JSON.stringify(state.cart));
     },
   },

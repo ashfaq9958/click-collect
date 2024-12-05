@@ -156,7 +156,7 @@ const Testimonials = () => {
                         backgroundColor: "red",
                       },
                     }}
-                    className="!bg-gradient-to-r from-orange-400 to-orange-600"
+                    className="!bg-red-500 "
                   >
                     Read my story
                   </Button>

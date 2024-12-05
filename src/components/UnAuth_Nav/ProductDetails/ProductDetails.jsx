@@ -70,7 +70,6 @@ let filterData = [
 ];
 const ProductDetails = () => {
   const { cart } = useSelector((state) => state.cart);
-  // console.log(cart);
   const dispatch = useDispatch();
   const { id } = useParams();
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -108,7 +107,7 @@ const ProductDetails = () => {
               {selectedProduct?.brand}
             </p>
           </div>
-          <p className="sm:text-2xl text-xl font-bold mb-2 font-roboto text-gray-800">
+          <p className="sm:text-2xl text-lg font-bold mb-2 font-roboto text-gray-800">
             {selectedProduct?.title}
           </p>
 

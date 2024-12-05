@@ -8,6 +8,8 @@ import logo from "../../../assets/bg_logo.png";
 import React from "react";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <div className="p-8 bg-gradient-to-r from-gray-900 via-gray-800 to-black text-gray-400 w-full mx-auto ">
       {/* Newsletter Subscription Section */}
@@ -170,7 +172,10 @@ const Footer = () => {
       {/* Footer Bottom */}
       <div>
         <p className="text-center mt-6 text-gray-500">
-          © 2024 All rights reserved
+          © {currentYear} All rights reserved
+        </p>
+        <p className="text-center mt-2 text-gray-500">
+          Designed and Developed by Ashfaq Ahmad{" "}
         </p>
       </div>
     </div>
