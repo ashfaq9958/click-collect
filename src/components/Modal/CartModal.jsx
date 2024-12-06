@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Drawer from "@mui/material/Drawer";
 import {
   Box,
@@ -14,10 +14,10 @@ import {
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import CloseIcon from "@mui/icons-material/Close";
-import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { removeToCart } from "../../redux/addToCart/addToCartSlice.js";
+import cartEmpty from "../../assets/empty cart/emptyC.png";
 
 const CartModal = ({ open, handleClose }) => {
   const dispatch = useDispatch();
@@ -58,6 +58,11 @@ const CartModal = ({ open, handleClose }) => {
 
         {/* Cart Items */}
         <List sx={{ flexGrow: 1, mt: 1 }}>
+          {cart && cart.length === 0 && (
+            <div>
+              <img src={cartEmpty} alt="" />
+            </div>
+          )}
           {cart &&
             cart.length > 0 &&
             cart.map((item) => (
@@ -111,30 +116,32 @@ const CartModal = ({ open, handleClose }) => {
         {/* <Divider sx={{ mt: 2 }} /> */}
 
         {/* Total Price and Checkout Button */}
-        <Box sx={{ mt: 2, textAlign: "center" }}>
-          <Button
-            onClick={() => navigate("/cart-checkout")}
-            variant="contained"
-            sx={{
-              display: "flex",
-              justifyContent: "space-between",
-              backgroundImage: "linear-gradient(90deg, #ff6f61, #ff4081)",
-              color: "#fff",
-              fontWeight: { sm: 500 },
-              borderRadius: "5px",
-              padding: { sm: "10px 20px" },
-              width: "100%",
-              textTransform: "none",
-              boxShadow: "0px 4px 10px rgba(255, 105, 135, 0.3)",
-              "&:hover": {
-                backgroundImage: "linear-gradient(90deg, #ff4081, #ff6f61)",
-              },
-            }}
-          >
-            <p className="sm:text-base text-xs"> Proceed to Checkout</p>
-            <p className="sm:text-base text-xs">₹ {totalCartPrice}/-</p>
-          </Button>
-        </Box>
+        {cart.length > 0 && (
+          <Box sx={{ mt: 2, textAlign: "center" }}>
+            <Button
+              onClick={() => navigate("/cart-checkout")}
+              variant="contained"
+              sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                backgroundImage: "linear-gradient(90deg, #ff6f61, #ff4081)",
+                color: "#fff",
+                fontWeight: { sm: 500 },
+                borderRadius: "5px",
+                padding: { sm: "10px 20px" },
+                width: "100%",
+                textTransform: "none",
+                boxShadow: "0px 4px 10px rgba(255, 105, 135, 0.3)",
+                "&:hover": {
+                  backgroundImage: "linear-gradient(90deg, #ff4081, #ff6f61)",
+                },
+              }}
+            >
+              <p className="sm:text-base text-xs"> Proceed to Checkout</p>
+              <p className="sm:text-base text-xs">₹ {totalCartPrice}/-</p>
+            </Button>
+          </Box>
+        )}
       </Box>
     </Drawer>
   );
