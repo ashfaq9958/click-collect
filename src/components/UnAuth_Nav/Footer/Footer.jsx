@@ -122,7 +122,7 @@ const Footer = () => {
           </div>
 
           <div className="leading-8">
-            <p className="text-white text-lg font-semibold">Baby Collection</p>
+            <p className="text-white text-lg font-semibold">Shop Baby</p>
             <p className="hover:text-white cursor-pointer transition-colors duration-200">
               Clothing Fashion
             </p>

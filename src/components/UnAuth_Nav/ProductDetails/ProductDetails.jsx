@@ -26,7 +26,7 @@ let filterData = [
   {
     key: 1,
     img: Feature_1,
-    title: "Men's Quilted Hooded Jacket",
+    title: "Quilted Hooded Jacket",
     subTitle: "Finest Quality Hoodie",
     brand: "HighLander Collection",
     desc: "Stay cozy and stylish with the Comfort Fit Hoodie, your go-to for laid-back days and cool-weather outings. Made from ultra-soft, high-quality cotton blend fabric, this hoodie delivers warmth without sacrificing comfort.",
