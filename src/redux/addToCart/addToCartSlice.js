@@ -19,13 +19,13 @@ const cartSlice = createSlice({
         state.cart.push(action.payload);
         localStorage.setItem("cart", JSON.stringify(state.cart));
         toast.success("Item added to your cart successfully", {
-          duration: 3000,
+          duration: 2000,
           position: "top-center",
         });
       } else {
         setTimeout(() => {
           toast.error("This item is already in your cart.", {
-            duration: 3000,
+            duration: 2000,
             position: "top-center",
           });
         }, 0);
