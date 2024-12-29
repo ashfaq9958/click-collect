@@ -120,7 +120,7 @@ function UnAuthorized_Navigation() {
             </Box>
 
             {/* Right-side Icons and Search Bar */}
-            <Box className="flex items-center md:gap-x-4 gap-x-2">
+            <Box className="flex items-center md:gap-x-6 gap-x-2">
               {/* Search Modal && Icon */}
               <SearchModal open={open} handleClose={() => setOpen(false)} />
               <Tooltip title="Search">
@@ -130,7 +130,7 @@ function UnAuthorized_Navigation() {
               </Tooltip>
 
               {/* Wishlist and Cart Badges */}
-              <Box display="flex" gap={1} alignItems="center">
+              <Box display="flex" gap={2} alignItems="center">
                 <Badge
                   badgeContent={0}
                   color="error"
