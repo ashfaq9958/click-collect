@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
@@ -11,6 +12,7 @@ import img_3 from "../../assets/winter.png";
 import img_4 from "../../assets/denim2.png";
 
 const SearchModal = ({ open, handleClose }) => {
+  const navigate = useNavigate();
   const [query, setQuery] = useState("");
   let productData = [
     {
@@ -55,6 +57,11 @@ const SearchModal = ({ open, handleClose }) => {
   const close = () => {
     handleClose();
     setQuery("");
+  };
+
+  const handleNavigate = (id) => {
+    navigate(`/product-details/${id}`);
+    handleClose();
   };
 
   return (
@@ -141,54 +148,58 @@ const SearchModal = ({ open, handleClose }) => {
               }}
             >
               {filteredData.map((item) => (
-                <Box
-                  key={item.key}
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    gap: 2,
-                    padding: "16px",
-                    borderRadius: "8px",
-                    transition: "transform 0.3s ease-in-out, box-shadow 0.3s",
-                    "&:hover": {
-                      transform: "scale(1.05)",
-                      boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.15)",
-                    },
-                  }}
-                >
+                <>
                   <Box
+                    key={item.key}
                     sx={{
-                      width: 64,
-                      height: 64,
-                      borderRadius: "50%",
-                      overflow: "hidden",
-                      border: "2px solid #ccc",
-                      boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      gap: 2,
+                      cursor: "pointer",
+                      padding: "16px",
+                      borderRadius: "8px",
+                      transition: "transform 0.3s ease-in-out, box-shadow 0.3s",
+                      "&:hover": {
+                        transform: "scale(1.05)",
+                        boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.15)",
+                      },
                     }}
+                    onClick={() => handleNavigate(item.key)}
                   >
-                    <img
-                      src={item.img}
-                      alt={item.title}
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
+                    <Box
+                      sx={{
+                        width: 64,
+                        height: 64,
+                        borderRadius: "50%",
+                        overflow: "hidden",
+                        border: "2px solid #ccc",
+                        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
                       }}
-                    />
+                    >
+                      <img
+                        src={item.img}
+                        alt={item.title}
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                        }}
+                      />
+                    </Box>
+                    <Typography
+                      variant="body1"
+                      sx={{
+                        fontWeight: 500,
+                        color: "#333",
+                        textAlign: "center",
+                        fontSize: "1rem",
+                      }}
+                    >
+                      {item.title}
+                    </Typography>
                   </Box>
-                  <Typography
-                    variant="body1"
-                    sx={{
-                      fontWeight: 500,
-                      color: "#333",
-                      textAlign: "center",
-                      fontSize: "1rem",
-                    }}
-                  >
-                    {item.title}
-                  </Typography>
-                </Box>
+                </>
               ))}
             </Box>
           ) : (
