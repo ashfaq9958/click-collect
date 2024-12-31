@@ -60,8 +60,9 @@ const SearchModal = ({ open, handleClose }) => {
   };
 
   const handleNavigate = (id) => {
-    navigate(`/product-details/${id}`);
     handleClose();
+    setQuery("");
+    navigate(`/product-details/${id}`);
   };
 
   return (
@@ -74,7 +75,7 @@ const SearchModal = ({ open, handleClose }) => {
     >
       <Box sx={style}>
         <Box sx={{ position: "absolute", top: 8, right: 8 }}>
-          <IconButton onClick={handleClose} color="inherit" size="small">
+          <IconButton onClick={close} color="inherit" size="small">
             <CloseIcon />
           </IconButton>
         </Box>
