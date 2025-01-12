@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect } from "react";
 import signupImg from "../../assets/signup/img_2.jpg";
 import logo from "../../assets/bg_logo.png";
 import Input from "../Input/Input";
@@ -6,30 +6,31 @@ import { Link, useNavigate } from "react-router-dom";
 import { Formik } from "formik";
 import toast from "react-hot-toast";
 import signupSchema from "../Schema/Signup/Signup";
+import { signUpThunk } from "../../redux/actions/authActions";
+import { useDispatch, useSelector } from "react-redux";
 
 const SignUp = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { isSuccess } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    if (isSuccess) {
+      navigate("/signin");
+    }
+  }, [isSuccess, navigate]);
+
   const initialValues = {
-    firstName: "",
-    lastName: "",
+    username: "",
     email: "",
     password: "",
     confirmPassword: "",
   };
 
   const handleSubmit = (values, { setSubmitting }) => {
-    setTimeout(() => {
-      localStorage.setItem("userDetails", JSON.stringify(values));
-      localStorage.removeItem("userExist");
-      if (localStorage.getItem("userDetails")) {
-        toast.success("Account has been successfully created.", {
-          duration: 3000,
-          position: "top-right",
-        });
-        navigate("/signin");
-      }
-      setSubmitting(false);
-    }, 2000);
+    debugger;
+    dispatch(signUpThunk(values));
+    setSubmitting(false);
   };
 
   return (
@@ -41,7 +42,7 @@ const SignUp = () => {
       {({ handleSubmit, getFieldProps, isSubmitting, touched, errors }) => (
         <div className="h-screen flex flex-col-reverse lg:flex-row items-center justify-between">
           {/* Left section with gradient background */}
-          <div className="w-full lg:w-[60%] h-full bg-gradient-to-r from-gray-50 to-gray-200 flex flex-col p-0">
+          <div className="w-full lg:w-[60%] h-full bg-gradient-to-r from-gray-50 to-gray-200 flex flex-col">
             <div className="flex items-center justify-center lg:justify-start mb-0">
               <Link to="/signin">
                 <img
@@ -61,47 +62,25 @@ const SignUp = () => {
               </p>
 
               <form className="space-y-6 md:p-0 p-5" onSubmit={handleSubmit}>
-                <div className="flex flex-col gap-4 lg:flex-row lg:gap-6">
-                  <div className="w-full lg:w-1/2">
-                    <Input
-                      label="First Name"
-                      type="text"
-                      name="firstName"
-                      {...getFieldProps("firstName")}
-                      error={touched.firstName && errors.firstName}
-                    />
-                  </div>
-                  <div className="w-full lg:w-1/2">
-                    <Input
-                      label="Last Name"
-                      type="text"
-                      name="lastName"
-                      {...getFieldProps("lastName")}
-                      error={touched.lastName && errors.lastName}
-                    />
-                  </div>
-                </div>
-                <Input
-                  label="Email Address"
-                  type="email"
-                  name="email"
-                  {...getFieldProps("email")}
-                  error={touched.email && errors.email}
-                />
-                <Input
-                  label="Password"
-                  type="password"
-                  name="password"
-                  {...getFieldProps("password")}
-                  error={touched.password && errors.password}
-                />
-                <Input
-                  label="Confirm Password"
-                  type="password"
-                  name="confirmPassword"
-                  {...getFieldProps("confirmPassword")}
-                  error={touched.confirmPassword && errors.confirmPassword}
-                />
+                {[
+                  { label: "User Name", type: "text", name: "username" },
+                  { label: "Email Address", type: "email", name: "email" },
+                  { label: "Password", type: "password", name: "password" },
+                  {
+                    label: "Confirm Password",
+                    type: "password",
+                    name: "confirmPassword",
+                  },
+                ].map((field) => (
+                  <Input
+                    key={field.name}
+                    label={field.label}
+                    type={field.type}
+                    name={field.name}
+                    {...getFieldProps(field.name)}
+                    error={touched[field.name] && errors[field.name]}
+                  />
+                ))}
 
                 <button
                   type="submit"

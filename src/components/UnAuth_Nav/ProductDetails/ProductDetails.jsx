@@ -9,7 +9,7 @@ import Feature_4 from "../../../assets/denim2.png";
 import { useParams } from "react-router-dom";
 import { ShoppingCart, Close } from "@mui/icons-material";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../../../redux/addToCart/addToCartSlice.js";
+
 
 import {
   Button,
@@ -21,6 +21,7 @@ import {
   IconButton,
 } from "@mui/material";
 import CartModal from "../../Modal/CartModal";
+import { addToCart } from "../../../redux/reducers/cart/cartSlice";
 
 let filterData = [
   {
@@ -68,6 +69,7 @@ let filterData = [
     discount: 17,
   },
 ];
+
 const ProductDetails = () => {
   const { cart } = useSelector((state) => state.cart);
   const dispatch = useDispatch();

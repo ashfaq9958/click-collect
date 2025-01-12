@@ -16,7 +16,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import CloseIcon from "@mui/icons-material/Close";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { removeToCart } from "../../redux/addToCart/addToCartSlice.js";
+import { removeToCart } from "../../redux/reducers/cart/cartSlice";
 import cartEmpty from "../../assets/empty cart/emptyC.png";
 
 const CartModal = ({ open, handleClose }) => {
@@ -57,9 +57,9 @@ const CartModal = ({ open, handleClose }) => {
         <Divider sx={{ mb: 1 }} />
 
         {/* Cart Items */}
-        <List sx={{ flexGrow: 1, mt: 1 }}>
+        <List sx={{ flexGrow: 1, mt: 6 }}>
           {cart && cart.length === 0 && (
-            <div>
+            <div >
               <img src={cartEmpty} alt="" />
             </div>
           )}

@@ -22,6 +22,9 @@ import { Link, useNavigate, NavLink, json } from "react-router-dom";
 import SearchModal from "../../Modal/SearchModal";
 import CartModal from "../../Modal/CartModal";
 import { useDispatch, useSelector } from "react-redux";
+import { ACCESS_TOKEN_KEY, USER_DETAILS_KEY } from "../../../utils/environment";
+import { resetState } from "../../../redux/reducers/auth/authSlice";
+import { showNotification } from "../../../redux/reducers/notification/notificationSlice";
 
 const pages = [
   {
@@ -48,8 +51,9 @@ const pages = [
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function UnAuthorized_Navigation() {
-  const { cart } = useSelector((state) => state.cart);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { cart } = useSelector((state) => state.cart);
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
   const [open, setOpen] = useState(false);
@@ -69,10 +73,21 @@ function UnAuthorized_Navigation() {
   };
 
   const handleLogout = () => {
-    if (localStorage.getItem("userExist")) {
-      localStorage.removeItem("userExist");
-      navigate("/signin");
+    if (localStorage.getItem(USER_DETAILS_KEY) !== null) {
+      // Clear User Data from Local Storage
+      localStorage.removeItem(USER_DETAILS_KEY);
+      localStorage.removeItem(ACCESS_TOKEN_KEY);
+      dispatch(resetState());
     }
+    setTimeout(() => {
+      navigate("/signin");
+      dispatch(
+        showNotification({
+          type: "success",
+          message: "Successfully logged out!",
+        })
+      );
+    }, 500);
   };
 
   let cartcount = localStorage.getItem("cart") && cart.length;

@@ -6,14 +6,16 @@ import { Toaster } from "react-hot-toast";
 import Loader from "./components/Loader/Loader.jsx";
 import store from "./store.js";
 import { Provider } from "react-redux";
+import NotificationHandler from "./components/NotificationHandler/NotificationHandler.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Toaster reverseOrder={false} />
-    <Suspense fallback={<Loader />}>
-      <Provider store={store}>
+    <Provider store={store}>
+      <Toaster reverseOrder={false} />
+      <NotificationHandler />
+      <Suspense fallback={<Loader />}>
         <App />
-      </Provider>
-    </Suspense>
+      </Suspense>
+    </Provider>
   </React.StrictMode>
 );

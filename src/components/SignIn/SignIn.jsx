@@ -1,83 +1,42 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import companylogo from "../../assets/bg_logo.png";
 import google from "../../assets/google.png";
 import facebook from "../../assets/facebook.png";
 import login from "../../assets/img_3.jpg";
 import Input from "../Input/Input";
 import { Link, useNavigate } from "react-router-dom";
-import toast from "react-hot-toast";
 import { Formik } from "formik";
 import validationSchema from "../Schema/SignIn/Signin";
+import { signInThunk } from "../../redux/actions/authActions";
+import { useDispatch, useSelector } from "react-redux";
 
 const SignIn = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { isSuccess, isLoading } = useSelector((state) => state.auth);
 
   useEffect(() => {
-    const isUser = JSON.parse(localStorage.getItem("userExist"));
-    {
-      isUser === true ? navigate("/dashboard") : navigate("/signin");
+    if (isSuccess) {
+      navigate("/dashboard");
     }
-  }, []);
+  }, [isSuccess, navigate]);
 
   // Submit handler
   const handleSubmit = (values, { setSubmitting }) => {
-    const { email, password, rememberMe } = values;
-
-    // Check if 'Remember me' is checked
-    if (!rememberMe) {
-      toast.error("Check 'Remember me' to continue.", {
-        duration: 3000,
-        position: "top-right",
-      });
-      setSubmitting(false);
-      return;
+    dispatch(signInThunk(values));
+    setSubmitting(false);
+    if (isSuccess) {
+      navigate("/dashboard");
     }
-
-    localStorage.setItem("userExist", rememberMe);
-    const userDetails = JSON.parse(localStorage.getItem("userDetails"));
-
-    if (!userDetails) {
-      toast.error("Account not found. Please sign up.", {
-        duration: 3000,
-        position: "top-right",
-      });
-      setSubmitting(false);
-      return;
-    }
-
-    setTimeout(() => {
-      if (email === userDetails.email && password === userDetails.password) {
-        toast.success("Successfully logged in.", {
-          duration: 3000,
-          position: "top-center",
-        });
-
-        navigate("/dashboard");
-      } else {
-        toast.error("Check your credentials", {
-          duration: 3000,
-          position: "top-right",
-        });
-      }
-      setSubmitting(false);
-    }, 1000);
   };
 
   return (
     <Formik
-      initialValues={{ email: "", password: "", rememberMe: false }}
+      initialValues={{ email: "", password: "" }}
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
     >
-      {({
-        handleSubmit,
-        getFieldProps,
-        touched,
-        errors,
-        isSubmitting,
-        setFieldValue,
-        values,
-      }) => (
+      {({ handleSubmit, getFieldProps, touched, errors, isSubmitting }) => (
         <div className="flex md:justify-between md:flex-row w-full h-screen bg-gradient-to-r from-gray-100 to-gray-200">
           <div className="hidden lg:block">
             <img src={login} alt="login" className="h-screen w-full " />
@@ -127,10 +86,6 @@ const SignIn = () => {
                     id="remember_me"
                     name="remember_me"
                     type="checkbox"
-                    checked={values.rememberMe}
-                    onChange={() =>
-                      setFieldValue("rememberMe", !values.rememberMe)
-                    }
                     className="h-4 w-4 text-[#FF5E38] focus:ring-[#FF5E38] border-gray-300 rounded"
                     error={touched.rememberMe && errors.rememberMe}
                   />
@@ -146,7 +101,7 @@ const SignIn = () => {
                   disabled={isSubmitting}
                   className="w-full py-2 px-4 border border-transparent rounded-md shadow-md text-sm font-medium text-white bg-gradient-to-r from-[#FF5E38] to-[#ff7e60] hover:bg-black transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FF5E38]"
                 >
-                  {isSubmitting ? "Logging in..." : "Login"}
+                  {isSubmitting || isLoading ? "Logging in..." : "Login"}
                 </button>
               </div>
             </form>
