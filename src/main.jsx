@@ -6,7 +6,8 @@ import { Toaster } from "react-hot-toast";
 import Loader from "./components/Loader/Loader.jsx";
 import store from "./store.js";
 import { Provider } from "react-redux";
-import NotificationHandler from "./components/NotificationHandler/NotificationHandler.jsx";
+import NotificationHandler from "./components/Notification/NotificationHandler.jsx";
+
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

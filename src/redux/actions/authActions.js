@@ -52,8 +52,9 @@
 
 // services/authApi.js
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { signInAPI, signUpAPI } from "../services/authApi"; // Fixed import
+import { signInAPI, signUpAPI } from "../../services/authApi"; // Fixed import
 import { showNotification } from "../reducers/notification/notificationSlice";
+
 
 const extractErrorMessage = (error) => {
   return (

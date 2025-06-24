@@ -1,5 +1,4 @@
-// utils/httpRequests.js
-import { postRequest } from "../../utils/httpRequests";
+import { postRequest } from "../utils/httpRequests";
 
 const BASE_API = "api";
 

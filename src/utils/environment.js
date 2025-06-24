@@ -1,5 +1,5 @@
 // Base API URL for the application
-export const BASE_URL = "https://e-commerce-backend-xi-five.vercel.app/";
+export const BASE_URL = "https://e-commerce-backend-xi-five.vercel.app/"
 
 // Key for storing the access token in localStorage
 export const ACCESS_TOKEN_KEY = "ACCESS_TOKEN";

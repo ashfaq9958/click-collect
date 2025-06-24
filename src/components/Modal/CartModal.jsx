@@ -57,9 +57,9 @@ const CartModal = ({ open, handleClose }) => {
         <Divider sx={{ mb: 1 }} />
 
         {/* Cart Items */}
-        <List sx={{ flexGrow: 1, mt: 6 }}>
+        <List sx={{ flexGrow: 1, mt: 1 }}>
           {cart && cart.length === 0 && (
-            <div >
+            <div>
               <img src={cartEmpty} alt="" />
             </div>
           )}

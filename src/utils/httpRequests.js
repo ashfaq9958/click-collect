@@ -1,4 +1,4 @@
-import axiosConfig from "./axiosConfig";
+import axiosConfig from "./config";
 import { ACCESS_TOKEN_KEY } from "./environment";
 
 export const getRequest = async (url) => {

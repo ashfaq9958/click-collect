@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
@@ -10,7 +10,6 @@ import img_1 from "../../assets/red.png";
 import img_2 from "../../assets/fea_1.png";
 import img_3 from "../../assets/winter.png";
 import img_4 from "../../assets/denim2.png";
-import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 
 const SearchModal = ({ open, handleClose }) => {
   const navigate = useNavigate();
@@ -95,28 +94,47 @@ const SearchModal = ({ open, handleClose }) => {
         >
           Find the best products by typing below.
         </Typography>
-
-        <TextField
-          fullWidth
-          variant="outlined"
-          placeholder="Search products..."
-          onChange={(e) => setQuery(e.target.value.toLowerCase())}
-          value={query}
-          InputProps={{
-            startAdornment: (
-              <SearchRoundedIcon className="text-gray-500 ml-2" />
-            ),
-          }}
-          sx={{
-            "& .MuiOutlinedInput-root": {
-              borderRadius: "6px",
-              paddingLeft: "8px",
-            },
-            "& .MuiInputBase-input": {
-              padding: "12px 8px",
-            },
-          }}
-        />
+        <Box sx={{ display: "flex", gap: 2, justifyContent: "center" }}>
+          <TextField
+            fullWidth
+            variant="outlined"
+            placeholder="Search products..."
+            onChange={(e) => setQuery(e.target.value.toLowerCase())}
+            value={query}
+            sx={{
+              "& .MuiOutlinedInput-root": {
+                borderRadius: "12px",
+                // boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
+              },
+              "& .MuiInputBase-input": {
+                padding: "12px 16px",
+              },
+            }}
+          />
+          <Button
+            variant="contained"
+            sx={{
+              backgroundImage: "linear-gradient(90deg, #ff6f61, #ff4081)",
+              color: "#fff",
+              fontWeight: 500,
+              fontSize: "1.1rem",
+              px: 3,
+              textTransform: "none",
+              borderRadius: "12px",
+              // boxShadow: "0px 4px 10px rgba(76, 175, 80, 0.4)",
+              "&:hover": {
+                backgroundImage: "linear-gradient(90deg, #ff4081, #ff6f61)",
+                transform: "scale(1.05)",
+              },
+              transition: "all 0.3s ease-in-out",
+            }}
+            onClick={() => {
+              console.log("Search button clicked");
+            }}
+          >
+            Search
+          </Button>
+        </Box>
 
         {/* Show data only when there's a query */}
         <Box>

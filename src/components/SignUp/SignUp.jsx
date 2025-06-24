@@ -12,7 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 const SignUp = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { isSuccess } = useSelector((state) => state.auth);
+  const { isSuccess, isLoading } = useSelector((state) => state.auth);
 
   useEffect(() => {
     if (isSuccess) {
@@ -28,7 +28,6 @@ const SignUp = () => {
   };
 
   const handleSubmit = (values, { setSubmitting }) => {
-    debugger;
     dispatch(signUpThunk(values));
     setSubmitting(false);
   };
@@ -87,7 +86,7 @@ const SignUp = () => {
                   disabled={isSubmitting}
                   className="w-full py-3 bg-gradient-to-r from-[#FF5E38] to-[#ff7e60] text-white rounded-lg font-semibold shadow-lg hover:shadow-xl duration-300 hover:bg-black transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FF5E38]"
                 >
-                  {isSubmitting ? "Please wait..." : "Sign Up"}
+                  {isSubmitting || isLoading ? "Please wait..." : "Sign Up"}
                 </button>
               </form>
 

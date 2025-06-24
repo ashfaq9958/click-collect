@@ -23,7 +23,10 @@ import SearchModal from "../../Modal/SearchModal";
 import CartModal from "../../Modal/CartModal";
 import { useDispatch, useSelector } from "react-redux";
 import { ACCESS_TOKEN_KEY, USER_DETAILS_KEY } from "../../../utils/environment";
-import { resetState } from "../../../redux/reducers/auth/authSlice";
+import {
+  resetState,
+  logoutState,
+} from "../../../redux/reducers/auth/authSlice.js";
 import { showNotification } from "../../../redux/reducers/notification/notificationSlice";
 
 const pages = [
@@ -73,12 +76,13 @@ function UnAuthorized_Navigation() {
   };
 
   const handleLogout = () => {
-    if (localStorage.getItem(USER_DETAILS_KEY) !== null) {
-      // Clear User Data from Local Storage
-      localStorage.removeItem(USER_DETAILS_KEY);
-      localStorage.removeItem(ACCESS_TOKEN_KEY);
-      dispatch(resetState());
-    }
+    // if (localStorage.getItem(USER_DETAILS_KEY) !== null) {
+    //   // Clear User Data from Local Storage
+    //   localStorage.removeItem(USER_DETAILS_KEY);
+    //   localStorage.removeItem(ACCESS_TOKEN_KEY);
+    //   dispatch(resetState());
+    // }
+    dispatch(logoutState());
     setTimeout(() => {
       navigate("/signin");
       dispatch(

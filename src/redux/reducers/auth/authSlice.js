@@ -24,6 +24,12 @@ const authSlice = createSlice({
       state.error = null;
       state.userData = null; // Reset user data on reset
     },
+
+    logoutState: (state) => {
+      localStorage.removeItem(ACCESS_TOKEN_KEY);
+      localStorage.removeItem(USER_DETAILS_KEY);
+      state.isSuccess = false;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -57,5 +63,5 @@ const authSlice = createSlice({
   },
 });
 
-export const { resetState } = authSlice.actions;
+export const { resetState, logoutState } = authSlice.actions;
 export default authSlice.reducer;

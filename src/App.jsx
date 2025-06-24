@@ -1,4 +1,3 @@
-import React from "react";
 import * as LazyRoute from "./components/ReactLazyRoute/ReactLazy";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Root from "./Root";
