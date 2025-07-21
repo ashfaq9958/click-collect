@@ -1,4 +1,3 @@
-import React from "react";
 import UnAuthorized_Navigation from "./components/UnAuth_Nav/Navigation/UnAuthorized_Navigation";
 import { Outlet, useLocation } from "react-router-dom";
 import Footer from "./components/UnAuth_Nav/Footer/Footer";
@@ -6,7 +5,8 @@ import Footer from "./components/UnAuth_Nav/Footer/Footer";
 const Root = () => {
   const { pathname } = useLocation();
 
-  const hideNavigation = pathname === "/signin" || pathname === "/signup";
+  const hideNavigation = pathname.includes("signin") || pathname.includes("signup");
+
 
   return (
     <div>
