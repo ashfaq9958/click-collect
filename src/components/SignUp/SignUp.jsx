@@ -42,7 +42,7 @@ const SignUp = () => {
         <div className="h-screen flex flex-col-reverse lg:flex-row items-center justify-between">
           {/* Left section with gradient background */}
           <div className="w-full lg:w-[60%] h-full bg-gradient-to-r from-gray-50 to-gray-200 flex flex-col">
-            <div className="flex items-center justify-center lg:justify-start mb-0">
+            <div className="flex items-center justify-center">
               <Link to="/signin">
                 <img
                   src={logo}
@@ -60,7 +60,7 @@ const SignUp = () => {
                 Join us for a seamless shopping experience!
               </p>
 
-              <form className="space-y-6 md:p-0 p-5" onSubmit={handleSubmit}>
+              <form className="space-y-5 md:p-0 p-5" onSubmit={handleSubmit}>
                 {[
                   { label: "User Name", type: "text", name: "username" },
                   { label: "Email Address", type: "email", name: "email" },

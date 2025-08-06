@@ -22,13 +22,12 @@ export default {
       "2xl": "1536px",
       // => @media (min-width: 1536px) { ... }
     },
-    fontFamily: {
-      eczar: ["Eczar"],
-      cursive: ["Sevillana"],
-      dancing: ["Dancing"],
-      roboto: ["Roboto"],
-    },
+
     extend: {
+      fontFamily: {
+        sans: ["Libertinus Sans", "sans-serif"],
+      },
+
       screens: {
         xs: "300",
       },
